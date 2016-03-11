@@ -5,8 +5,10 @@
 ``` ruby
   rails new project_name    #Crear proyecto
   rails server              #Iniciar servidor en localhost:3000
+
   rake db:create            #Crear base de datos
   rake db:migrate           #Actualizar los modelos y migraciones
+  rake db:seed              #Insertar datos de prueba
 
   #Generar un controlador con sus respectiva vista
   rails generate controller controller_name
@@ -17,8 +19,7 @@
   bundle install #Instalar las gemas que hay en el Gemfile
 ```
 
-
-
+https://www.codecademy.com/articles/standard-controller-actions
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
