@@ -21,3 +21,13 @@
    padding: 40px 15px;
    text-align: center;
  }
+
+ #error_explanation h2 {
+   display: none;
+ }
+#error_explanation{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 3px 0;
+}
