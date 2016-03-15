@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-<<<<<<< HEAD
 Company.create(id: 1, name: 'CIMAT', description: 'El Centro de Investigación en Matemáticas AC es un centro público de investigación integrado al Sistema de Centros Públicos CONACYT, dedicado a la generación, transmisión y aplicación de conocimientos especializados en las áreas de matemáticas, estadística y ciencias de la computación.')
 
 
@@ -67,6 +66,3 @@ Practice.create(name: 'Conciliar los niveles de trabajo y de recursos', question
 Practice.create(name: 'Obtener el compromiso con el plan', question: '¿Se obtiene un compromiso con el plan?', examples: 'Ejemplo de productos de trabajo:
 * Peticiones de compromisos documentadas.
 * Compromisos documentados. ', added_value: 0, specific_goals_id: 3)
-=======
-Company.create(name: 'TestCompany', description: 'Una compania enfocada en el desarrollo de software')
->>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6

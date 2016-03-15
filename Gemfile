@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 
 #My gems
 gem 'devise', '3.5.6'
-<<<<<<< HEAD
 gem 'will_paginate', '3.1.0'
-=======
->>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

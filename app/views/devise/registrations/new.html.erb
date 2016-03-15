@@ -14,10 +14,9 @@
   </div>
 
   <div class="form-group">
-<<<<<<< HEAD
     <%= f.label :company_id %>
     <%= f.collection_select(:company_id, Company.all, :id, :name, {:prompt => "Seleccione empresa"}) %> <br>
-    <%= link_to "Agregar organización", new_company_path %>
+    <%= link_to "Agregar empresa", new_company_path %>
   </div>
 
   <div class="form-group">
@@ -26,8 +25,6 @@
   </div>
 
   <div class="form-group">
-=======
->>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
     <% if @validatable %>
