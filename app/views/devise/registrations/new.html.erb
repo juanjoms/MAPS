@@ -1,0 +1,43 @@
+<%= header "Registrarse" %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_id %>
+    <%= f.collection_select(:company_id, Company.all, :id, :name, {:prompt => "Seleccione empresa"}) %> <br>
+    <%= link_to "Agregar organización", new_company_path %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :position %>
+    <%= f.select(:position, options_for_select([['Desarrollador', 1], ['Encargado de Mejoras', 2]]), {:prompt => "Seleccione puesto"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <% if @validatable %>
+      <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Sign up", class: 'btn btn-primary' %>
+<% end %>
+
+<%= render "devise/shared/links" %>

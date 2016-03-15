@@ -17,7 +17,32 @@
  body {
    padding-top: 50px;
  }
+ label{
+   cursor: pointer;
+ }
  .starter-template {
    padding: 40px 15px;
    text-align: center;
  }
+
+ #error_explanation h2 {
+   display: none;
+ }
+#error_explanation{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 3px 0;
+}
+
+/* Preguntas */
+.question{
+  font-weight: bold;
+}
+.options{
+  color: #555;
+}
+
+.td-space{
+  padding-left: 15px;
+}

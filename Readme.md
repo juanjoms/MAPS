@@ -19,6 +19,19 @@
   bundle install #Instalar las gemas que hay en el Gemfile
 ```
 
+``` ruby
+rails generate model Company
+rails generate devise:install
+rails generate devise User
+rails generate devise:views
+
+rails generate model ProcessArea
+rails generate model SpecificGoal
+rails generate model Practice
+rails generate model UserPractice
+
+```
+
 https://www.codecademy.com/articles/standard-controller-actions
 
 This README would normally document whatever steps are necessary to get the

@@ -1,0 +1,13 @@
+<%= link_to "Agregar organización", new_company_path %>
+
+<% @companies.each do |company| %>
+  <h3> <%= link_to company.name, company %> </h3>
+  <p>
+    <%=  truncate(company.description, length: 70) %>
+  </p>
+<% end %>
+
+<!--
+<%= #will_paginate @company
+%>
+-->

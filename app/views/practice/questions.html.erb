@@ -1,0 +1,11 @@
+<% @practices.each do |practice| %>
+  <div class="question">
+    <%= practice.question %> <br>
+  </div>
+  <%=  simple_format(practice.examples) %>
+
+  <%= render 'responses' %>
+  render
+
+
+<% end %>
