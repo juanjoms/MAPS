@@ -24,12 +24,15 @@ rails generate model Company
 rails generate devise:install
 rails generate devise User
 rails generate devise:views
+<<<<<<< HEAD
 
 rails generate model ProcessArea
 rails generate model SpecificGoal
 rails generate model Practice
 rails generate model UserPractice
 
+=======
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
 ```
 
 https://www.codecademy.com/articles/standard-controller-actions

@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/secret', to: 'welcome#secret', as: :secret
+<<<<<<< HEAD
   get 'completete_profile', to: 'practice'
 
   get '/questions', to: 'practice#questions', as: :questions
   resources :companies
 
+=======
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

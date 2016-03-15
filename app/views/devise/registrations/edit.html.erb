@@ -9,6 +9,7 @@
   </div>
 
   <div class="form-group">
+<<<<<<< HEAD
     <%= f.label :company_id %>
     <%= f.collection_select(:company_id, Company.all, :id, :name, {:prompt => "Seleccione empresa"}) %> <br>
     <%= link_to "Agregar una nueva", new_company_path %>
@@ -20,6 +21,8 @@
   </div>
 
   <div class="form-group">
+=======
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

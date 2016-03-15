@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160315061514) do
 
   create_table "companies", force: :cascade do |t|
@@ -34,10 +35,18 @@ ActiveRecord::Schema.define(version: 20160315061514) do
     t.string   "name"
     t.string   "description"
     t.string   "purpose"
+=======
+ActiveRecord::Schema.define(version: 20160313072623) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+<<<<<<< HEAD
   create_table "specific_goals", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -62,6 +71,12 @@ ActiveRecord::Schema.define(version: 20160315061514) do
     t.string   "name"
     t.string   "last_name"
     t.integer  "position"
+=======
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.integer  "type"
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

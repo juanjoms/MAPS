@@ -4,7 +4,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ##My custom fields
       t.string :name
       t.string :last_name
+<<<<<<< HEAD
       t.integer :position #Puesto de trabajo
+=======
+      t.integer :type
+>>>>>>> 42f2c83f52beda2485d6231bdd0f90c7395645c6
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
