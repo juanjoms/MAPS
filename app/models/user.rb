@@ -13,4 +13,17 @@ class User < ActiveRecord::Base
     (self.position != nil) and (self.company_id != nil)
   end
 
+  def is_developer?
+    self.position >= 1
+  end
+
+  def is_sepg?
+    self.position >= 2
+  end
+
+  def is_admin?
+    self.position >= 3
+  end
+
+
 end

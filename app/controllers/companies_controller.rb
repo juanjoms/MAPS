@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   # GET /companies
   def index
@@ -7,7 +8,6 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
   end
 
 
@@ -18,7 +18,6 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @company = Company.find(params[:id])    
   end
 
   # POST /companies
@@ -57,6 +56,10 @@ class CompaniesController < ApplicationController
   end
 
   private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_company
+    @company = Company.find(params[:id])
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def company_params
     params.require(:company).permit(:name, :description)

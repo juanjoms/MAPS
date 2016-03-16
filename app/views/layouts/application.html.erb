@@ -8,16 +8,19 @@
 </head>
 <body>
   <%= render "partials/navigation" %>
-  
-  <div style="<%= 'display:none' if notice.nil? and alert.nil? %>">
-    <div class="alert alert-info">
-      <%= notice %>
-      <%= alert %>
-    </div>
-  </div>
 
-<h2><%= yield :header %></h2>
-<%= yield %>
+    <div style="<%= 'display:none' if notice.nil? and alert.nil? %>">
+      <div class="alert alert-info">
+        <div class="container">
+          <%= notice %>
+          <%= alert %>
+        </div>
+      </div>
+    </div>
+  <div class="container">
+    <h2><%= yield :header %></h2>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

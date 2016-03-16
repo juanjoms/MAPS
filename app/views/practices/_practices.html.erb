@@ -1,0 +1,18 @@
+<% @practices.each do |practice| %>
+<div class="row">
+  <div class="col-md-7">
+    <div class="question">
+      <%= practice.question %> <br>
+    </div>
+    <%=  simple_format(practice.examples) %>
+  </div>
+  <div class="col-md-5">
+    <%= render 'responses' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5 col-md-offset-4">
+    <%= will_paginate @practices, :page_links=>false %> <br>
+  </div>
+</div>
+<% end %>

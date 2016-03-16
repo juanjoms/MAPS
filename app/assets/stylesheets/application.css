@@ -14,16 +14,26 @@
  *= require_self
  */
 
- body {
-   padding-top: 50px;
- }
- label{
-   cursor: pointer;
- }
- .starter-template {
-   padding: 40px 15px;
-   text-align: center;
- }
+html, body, #container, #canvas {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  padding-top: 50px;
+}
+#canvas{
+	margin: 0 auto;
+  height: 500px;
+}
+
+label{
+  cursor: pointer;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
 
  #error_explanation h2 {
    display: none;
@@ -45,3 +55,5 @@
 .td-space{
   padding-left: 15px;
 }
+
+.pagination { margin: 0; }

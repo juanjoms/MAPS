@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :companies
 
   root 'welcome#index'
-  get '/secret', to: 'welcome#secret', as: :secret
-  get '/questions', to: 'practice#questions', as: :questions
+  get '/questions', to: 'practices#index', as: :questions
 
 
   # The priority is based upon order of creation: first created -> highest priority.
