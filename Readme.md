@@ -29,7 +29,6 @@ rails generate model ProcessArea
 rails generate model SpecificGoal
 rails generate model Practice
 rails generate model UserPractice
-
 ```
 
 https://www.codecademy.com/articles/standard-controller-actions

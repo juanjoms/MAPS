@@ -25,5 +25,4 @@ class User < ActiveRecord::Base
     self.position >= 3
   end
 
-
 end

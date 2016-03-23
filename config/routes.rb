@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/questions', to: 'practices#index', as: :questions
+  get '/summertime', to: 'practices#summertime', as: :summertime
 
 
   # The priority is based upon order of creation: first created -> highest priority.

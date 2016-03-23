@@ -1,6 +1,7 @@
 class PracticesController < ApplicationController
   before_action :authenticate_user!
   before_action :profile_complete!
+  before_action :association_complete!, only: [:summertime]
 
   #GET /questions/
   def index
@@ -16,4 +17,26 @@ class PracticesController < ApplicationController
       format.js
     end
   end
+
+  def summertime
+    ### @hola = "Hola que tal, summertime sadness"
+  end
+
+  ### esto lo progamé sin internet
+  private
+  def association_complete!
+    @user_practices = UserPractice.where("user_id": current_user.id)
+
+    if @user_practices.count == 0
+      practices = Practice.all
+      practices.each do |practice|
+        UserPractice.create(user_id: current_user.id, practice_id: practice.id)
+      end
+    else
+      ### Encontrar la practica actual que no ha sido contestada
+
+    end
+
+  end
+
 end
