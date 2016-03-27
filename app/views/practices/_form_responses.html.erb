@@ -1,3 +1,19 @@
+<%= form_for @current_practice, url: {action: "create_up"} do |f| %>
+  <% if @current_practice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@current_practice.errors.count, "error") %> </h2>
+      <% @current_practice.errors.full_messages.each do |message| %>
+        <p><%= message %><p>
+      <% end %>
+    </div>
+  <% end %>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
 <div class="option">
   <%= radio_button_tag(:respuesta, "siempre") %>
   <%= label_tag(:respuesta_siempre, "Siempre") %>

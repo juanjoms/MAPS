@@ -14,7 +14,7 @@
            <li class="active"> <%= link_to "Home", root_path %> </li>
            <% if user_signed_in? %>
             <li> <%= link_to "Cuestionario", questions_path %> </li>
-              <li> <%= link_to "summertime sadness", summertime_path %> </li>
+              <li> <%= link_to "summertime sadness", user_practice_index_path %> </li>
            <% end %>
            <li><a href="#about">Acerca del método</a></li>
            <li><a href="#contact">Contacto</a></li>

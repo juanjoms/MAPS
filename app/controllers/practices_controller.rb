@@ -19,24 +19,31 @@ class PracticesController < ApplicationController
   end
 
   def summertime
-    ### @hola = "Hola que tal, summertime sadness"
+    user_practices = UserPractice.where(user_id: current_user.id)
+    @current_practice = user_practices.first
+    user_practices.each do |up|
+      if up.respuesta.nil?
+        @current_practice = up
+        break
+      end
+    end
+    @practice = @current_practice.practice
+  end
+
+  def create_up
   end
 
   ### esto lo progamé sin internet
   private
   def association_complete!
-    @user_practices = UserPractice.where("user_id": current_user.id)
+    user_practices = UserPractice.where("user_id": current_user.id)
 
-    if @user_practices.count == 0
+    if user_practices.count == 0
       practices = Practice.all
       practices.each do |practice|
         UserPractice.create(user_id: current_user.id, practice_id: practice.id)
       end
-    else
-      ### Encontrar la practica actual que no ha sido contestada
-
     end
-
   end
 
 end

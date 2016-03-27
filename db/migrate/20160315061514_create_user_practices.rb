@@ -4,9 +4,11 @@ class CreateUserPractices < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.belongs_to :practice, index: true
 
-      t.integer :respuesta
-      t.integer :added_value
+      t.integer :answer
       #a) Siempre b) Regularmente c) Pocas veces d) Nunca e) No sabe => [1,2,3,4,5]
+
+      t.integer :added_value
+      #1-5 estrellas  => [1,2,3,4,5]
 
       t.timestamps null: false
     end

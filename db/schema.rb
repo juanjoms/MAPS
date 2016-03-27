@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160315061514) do
     t.string   "name"
     t.string   "description"
     t.string   "purpose"
-
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -50,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160315061514) do
   create_table "user_practices", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "practice_id"
-    t.integer  "respuesta"
+    t.integer  "answer"
     t.integer  "added_value"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

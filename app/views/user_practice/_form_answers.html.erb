@@ -1,0 +1,27 @@
+<%= form_for @current_user_practice do |f| %>
+
+  <br><div>Frecuencia:</div>
+  <%= f.radio_button(:answer, 5) %>
+  <%= f.label(:answer_5, "Siempre") %>
+  <br>
+  <%= f.radio_button(:answer, 4) %>
+  <%= f.label(:answer_4, "Regularmente") %>
+  <br>
+  <%= f.radio_button(:answer, 3) %>
+  <%= f.label(:answer_3, "Pocas veces") %>
+  <br>
+  <%= f.radio_button(:answer, 2) %>
+  <%= f.label(:answer_2, "Nunca") %>
+  <br>
+  <%= f.radio_button(:answer, 1) %>
+  <%= f.label(:answer_1, "No sabe") %>
+
+  <div class="field">
+    <%= f.label :added_value %><br>
+    <%= f.text_field :added_value, class: "form-control" %>
+  </div>
+
+
+  <%= f.submit "Next" %>
+
+<% end %>

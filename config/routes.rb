@@ -5,7 +5,14 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/questions', to: 'practices#index', as: :questions
-  get '/summertime', to: 'practices#summertime', as: :summertime
+#  get '/summertime', to: 'practices#summertime', as: :summertime
+
+
+  #get '/summertime', to: 'user_practice#index'
+  #patch '/summertime/:id', to: 'user_practice#update'
+  resources :user_practice
+
+  #patch gasta menos ancho de banda que put, porque solo actuliza una porción del registro (en teoría)
 
 
   # The priority is based upon order of creation: first created -> highest priority.

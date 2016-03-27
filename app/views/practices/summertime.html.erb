@@ -1,4 +1,19 @@
-Practicas: <%= @user_practices.count %> <br><hr>
-<% @user_practices.each do |up| %>
-  <%= "#{up.id} - #{up.practice.name}"  %><br>
-<% end %>
+Practicas: <%= UserPractice.all.count %> <br><hr>
+
+<div class="row">
+  <div class="col-md-7">
+    <div class="question">
+      <%= @practice.question %> <br>
+    </div>
+    <%=  simple_format(@practice.examples) %>
+  </div>
+  <div class="col-md-5">
+    <%= render 'form_responses' %>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-md-5 col-md-offset-4">
+    <%= link_to "Next" %>
+  </div>
+</div>

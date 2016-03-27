@@ -8,6 +8,7 @@
 
   rake db:create            #Crear base de datos
   rake db:migrate           #Actualizar los modelos y migraciones
+  rake db:rollback         #Resetear última migracióon
   rake db:seed              #Insertar datos de prueba
 
   #Generar un controlador con sus respectiva vista
