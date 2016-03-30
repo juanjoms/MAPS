@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_many :user_practices
   has_many :practices, through: :user_practices
+  ratyrate_rater
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

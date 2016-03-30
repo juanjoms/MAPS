@@ -7,8 +7,8 @@ class CreateUserPractices < ActiveRecord::Migration
       t.integer :answer
       #a) Siempre b) Regularmente c) Pocas veces d) Nunca e) No sabe => [1,2,3,4,5]
 
-      t.integer :added_value
-      #1-5 estrellas  => [1,2,3,4,5]
+      t.float :added_value, default: 0.0
+      #1-5 estrellas  => [0.0-5.0]
 
       t.timestamps null: false
     end

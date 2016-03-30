@@ -1,27 +1,32 @@
-<%= form_for @current_user_practice do |f| %>
+<div class="col-md-5">
+  <%= form_for @current_user_practice do |f| %>
 
-  <br><div>Frecuencia:</div>
-  <%= f.radio_button(:answer, 5) %>
-  <%= f.label(:answer_5, "Siempre") %>
-  <br>
-  <%= f.radio_button(:answer, 4) %>
-  <%= f.label(:answer_4, "Regularmente") %>
-  <br>
-  <%= f.radio_button(:answer, 3) %>
-  <%= f.label(:answer_3, "Pocas veces") %>
-  <br>
-  <%= f.radio_button(:answer, 2) %>
-  <%= f.label(:answer_2, "Nunca") %>
-  <br>
-  <%= f.radio_button(:answer, 1) %>
-  <%= f.label(:answer_1, "No sabe") %>
+    <div class="answer-head"> Frecuencia: </div>
+    <%= f.radio_button(:answer, 5) %> <%= f.label(:answer_5, "Siempre") %>
+    <br>
+    <%= f.radio_button(:answer, 4) %> <%= f.label(:answer_4, "Regularmente") %>
+    <br>
+    <%= f.radio_button(:answer, 3) %> <%= f.label(:answer_3, "Pocas veces") %>
+    <br>
+    <%= f.radio_button(:answer, 2) %> <%= f.label(:answer_2, "Nunca") %>
+    <br>
+    <%= f.radio_button(:answer, 1) %> <%= f.label(:answer_1, "No sabe") %>
 
-  <div class="field">
-    <%= f.label :added_value %><br>
-    <%= f.text_field :added_value, class: "form-control" %>
+    <div class="answer-head"> Valor añadido: </div>
+     <!--  targetType: "score"  %>    -->
+    <%= rating_for @current_user_practice, "added_value",
+      disable_after_rate: false,
+      target: '#hintStars',
+      cancel_place: 'right',
+      cancel_hint: "Cancel this rating"
+    %>
+    <div id="hintStars"></div>
+
+
+</div>
+
+  <div class="col-md-5 col-md-offset-4">
+    <%= f.submit "Siguiente", class:"btn btn-primary" %>
   </div>
 
-
-  <%= f.submit "Next" %>
-
-<% end %>
+  <% end %>

@@ -14,14 +14,9 @@
       </div>
       <%=  simple_format(@practice.examples) %>
     </div>
-    <div class="col-md-5">
-      <%= render 'form_answers' %>
-    </div>
-  </div>
-  <div class="row">
+    <%= render 'form_answers' %>
 
-    <div class="col-md-5 col-md-offset-4">
-      <%= link_to "Next" %>
-    </div>
+
   </div>
+  
 <% end %>

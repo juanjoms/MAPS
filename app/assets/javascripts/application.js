@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
+//= require jquery.raty
+//= require ratyrate
 //= require turbolinks
-//= require_tree .
 
 function load_bpmn(){
   var BpmnJS = window.BpmnJS;

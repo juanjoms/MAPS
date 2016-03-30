@@ -29,15 +29,18 @@ body {
 
 label{
   cursor: pointer;
+  font-weight: normal;
 }
+input[type="radio"]:checked+label { font-weight: bold; }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 
- #error_explanation h2 {
-   display: none;
- }
+#error_explanation h2 {
+ display: none;
+}
 #error_explanation{
   color: #a94442;
   background-color: #f2dede;
@@ -49,11 +52,10 @@ label{
 .question{
   font-weight: bold;
 }
-.options{
-  color: #555;
+.answer-head{
+  font-weight: bold;
+  margin-top:10px;
 }
-.td-space{
-  padding-left: 15px;
+.star, #hintStars{
+  display: inline-block;
 }
-
-.pagination { margin: 0; }
