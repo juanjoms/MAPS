@@ -16,12 +16,12 @@
      <!--  targetType: "score"  %>    -->
     <%= rating_for @current_user_practice, "added_value",
       disable_after_rate: false,
+      #enable_half: true,
       target: '#hintStars',
       cancel_place: 'right',
       cancel_hint: "Cancel this rating"
     %>
     <div id="hintStars"></div>
-
 
 </div>
 
