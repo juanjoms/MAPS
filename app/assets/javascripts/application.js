@@ -11,11 +11,15 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap.min
 //= require jquery.raty
 //= require ratyrate
+//= require bpmn-modeler
+//= require bundle-cli
 //= require turbolinks
+
 
 function load_bpmn(){
   var BpmnJS = window.BpmnJS;

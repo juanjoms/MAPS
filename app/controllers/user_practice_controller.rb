@@ -45,7 +45,7 @@ class UserPracticeController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_practice_params
-    params.require(:user_practice).permit(:answer, :added_value)
+    params.require(:user_practice).permit(:answer)
   end
 
 

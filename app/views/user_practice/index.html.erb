@@ -15,8 +15,10 @@
       <%=  simple_format(@practice.examples) %>
     </div>
     <%= render 'form_answers' %>
-
-
   </div>
-  
+
+  <% if current_user.is_sepg? %>
+    <%= render 'bpmn' %>
+  <% end %>
+
 <% end %>
