@@ -26,6 +26,7 @@ function load_bpmn(){
   //CliModule = new Cli();
   var bpmnjs = new BpmnJS({
     container: '#canvas',
+    zoomScroll: { enabled: false },
     additionalModules: [CliModule],
     cli: { bindTo: 'cli' }
   });
@@ -38,7 +39,6 @@ function load_bpmn(){
       if (err) { console.log(err); }
       try {
         bpmnjs.get('canvas').zoom('fit-viewport');
-        console.log("success");
       } catch (e) {
         console.log(e);
       }
@@ -57,14 +57,20 @@ function saveDiagram(done) {
   });
 }
 
+/*
+//Diagram my custom functions
+function add_element(element_name){
+  var element = 'StartEvent_15g66lo';
+  var new_element = cli.append(element, 'bpmn:Task', '150,0');
+  cli.setLabel(new_element, element_name);
+}
 
-
-$(document).on('ready', function(){
-  if ( $( "#canvas" ).length ) {
-    console.log("Canvas exists and is loaded");
-    alert("Canvas exists and is loaded");
-  }else{
-    console.log("Canvas donesnt exists");
-  }
-
+$(document).on("ajax:success", "form#up_form", function(e, data){
+  add_element("Practica 1");
+  //console.log(data.practice.id);
 });
+
+$(document).on("ajax:error", "form#up_form", function(e, data){
+  console.log(data);
+});
+*/

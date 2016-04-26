@@ -1,24 +1,9 @@
+<div id="cuestionario">
+  <%= render 'cuestionario' %>
+</div>
 
-<% if @finished %>
-<h2 style="margin-top:100px;text-align:center;">
-  Cuestionario terminado
-</h2>
-
-<% else %>
-
-  <div class="row">
-    <div class="col-md-7">
-      <h2> Cuestionario </h2>
-      <div class="question">
-        <%= @practice.question %> <br>
-      </div>
-      <%=  simple_format(@practice.examples) %>
-    </div>
-    <%= render 'form_answers' %>
-  </div>
-
+<div id="bpmn">
   <% if current_user.is_sepg? %>
     <%= render 'bpmn' %>
   <% end %>
-
-<% end %>
+</div>

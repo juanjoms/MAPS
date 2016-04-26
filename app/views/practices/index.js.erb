@@ -13,5 +13,13 @@ if (typeof new_task === 'undefined' || new_task === null) {
   var new_task = cli.append(task, 'bpmn:Task', '150,0');
   cli.setLabel(new_task, "<%= @practices.last.name %>");
 
+/*
+  Si ves esto entonces te la tienes que ingeniar para
+  aumentar el canvas (o el que esta adentro) cuando el
+  elemento que se agregue se pase
+*/
+  
+  if new_task.x > 11300:
+    canvas.width = 1400;
 
 <% end %>

@@ -1,0 +1,38 @@
+var new_element;
+function add_element(element_name) {
+    var element = (new_element === undefined)? 'StartEvent_0gwlf1v' : new_element;
+    new_element = cli.append(element, 'bpmn:Task', '150,0');
+    cli.setLabel(new_element, element_name);
+
+    last_x = cli.element(new_element).x;
+    if( last_x >= 999){
+      $("#canvas").width((last_x+200)+"px");
+      $(".scroll-canvas").scrollLeft(last_x);
+    }
+}
+
+
+/*
+  Si ves esto entonces te la tienes que ingeniar para
+  aumentar el canvas (o el que esta adentro) cuando el
+  elemento que se agregue se pase
+*/
+
+//  if new_task.x > 11300:
+//    canvas.width = 1400;
+
+<% practice_name = @current_user_practice.practice.name %>
+<% id = @current_user_practice.id %>
+<% if UserPractice.exists?(id+1) %>
+  <% @current_user_practice = UserPractice.find(id+1)%>
+<% else %>
+  <% @current_user_practice = nil %>
+<% end %>
+add_element("<%= practice_name %>");
+
+//Get the next practice
+$('#cuestionario').fadeOut(400, function(){
+  //Animation complete
+  $('#cuestionario').html("<%= escape_javascript(render('cuestionario')) %>");
+  $('#cuestionario').fadeIn();
+});

@@ -1,28 +1,22 @@
-<div class="col-md-5">
-  <%= form_for @current_user_practice do |f| %>
+<%= form_for(@current_user_practice, remote: true, html: {id:"up_form" }) do |f| %>
+  <div class="answer-head"> Frecuencia: </div>
+  <%= f.radio_button(:answer, 5) %> <%= f.label(:answer_5, "Siempre") %> <br>
+  <%= f.radio_button(:answer, 4) %> <%= f.label(:answer_4, "Regularmente") %> <br>
+  <%= f.radio_button(:answer, 3) %> <%= f.label(:answer_3, "Pocas veces") %> <br>
+  <%= f.radio_button(:answer, 2) %> <%= f.label(:answer_2, "Nunca") %> <br>
+  <%= f.radio_button(:answer, 1) %> <%= f.label(:answer_1, "No sabe") %>
 
-    <div class="answer-head"> Frecuencia: </div>
-    <%= f.radio_button(:answer, 5) %> <%= f.label(:answer_5, "Siempre") %> <br>
-    <%= f.radio_button(:answer, 4) %> <%= f.label(:answer_4, "Regularmente") %> <br>
-    <%= f.radio_button(:answer, 3) %> <%= f.label(:answer_3, "Pocas veces") %> <br>
-    <%= f.radio_button(:answer, 2) %> <%= f.label(:answer_2, "Nunca") %> <br>
-    <%= f.radio_button(:answer, 1) %> <%= f.label(:answer_1, "No sabe") %>
+  <div class="answer-head mtop"> Valor añadido: </div>
 
-    <div class="answer-head"> Valor añadido: </div>
+  <%= rating_for @current_user_practice, "added_value",
+    disable_after_rate: false,
+    target: '#hintStars',
+    cancel_place: 'right',
+    cancel_hint: "Cancel this rating"
+  %>
+  <div id="hintStars"></div>
 
-    <%= rating_for @current_user_practice, "added_value",
-      disable_after_rate: false,
-      #enable_half: true,
-      target: '#hintStars',
-      cancel_place: 'right',
-      cancel_hint: "Cancel this rating"
-    %>
-    <div id="hintStars"></div>
-
-</div>
-
-  <div class="col-md-5 col-md-offset-4">
+  <div class="mtop">
     <%= f.submit "Siguiente", class:"btn btn-primary" %>
   </div>
-
-  <% end %>
+<% end %>

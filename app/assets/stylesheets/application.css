@@ -14,19 +14,11 @@
  *= require_self
  */
 
-html, body, #container, #canvas {
-  height: 100%;
-  margin: 0;
-}
+body{ padding-top: 50px; }
 
-body {
-  padding-top: 50px;
-}
-#canvas{
-	margin: 0 auto;
-  height: 500px;
-  background-color: red;
-}
+/* Digram */
+.scroll-canvas{ overflow:auto; margin-bottom: 20px;}
+#canvas{ height: 610px; background-color: #e8e8e8; }
 
 label{
   cursor: pointer;
@@ -50,13 +42,8 @@ input[type="radio"]:checked+label { font-weight: bold; }
 }
 
 /* Preguntas */
-.question{
-  font-weight: bold;
-}
-.answer-head{
-  font-weight: bold;
-  margin-top:10px;
-}
-.star, #hintStars{
-  display: inline-block;
-}
+.question{ font-weight: bold; }
+.questions-finished{ margin: 50px 0; text-align: center; }
+.answer-head{ font-weight: bold; }
+.mtop{ margin-top:10px;}
+.star, #hintStars{ display: inline-block; }
