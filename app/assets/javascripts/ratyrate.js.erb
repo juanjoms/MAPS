@@ -3,8 +3,14 @@ $.fn.raty.defaults.halfShow = true;
 $.fn.raty.defaults.path = "/assets";
 $.fn.raty.defaults.cancel = false;
 
-//Ojo con esto, mejor utilizar jqurery-turbolinks para tampoco tener problema con el diagram.js
+$.fn.raty.defaults.path = "/assets";
+$.fn.raty.defaults.half_show = true;
+
 $(function(){
+  setRatyStar();
+});
+
+function setRatyStar(){
   $(".star").each(function() {
     var $readonly = ($(this).attr('data-readonly') == 'true');
     var $half     = ($(this).attr('data-enable-half') == 'true');
@@ -60,4 +66,4 @@ $(function(){
       }
     });
   });
-});
+}

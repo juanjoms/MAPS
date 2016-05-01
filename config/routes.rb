@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   resources :companies
 
   root 'welcome#index'
-  get '/questions', to: 'practices#index', as: :questions
-#  get '/summertime', to: 'practices#summertime', as: :summertime
+
+  get '/contacto', to: 'welcome#contacto', as: :contacto
 
 
-  #get '/summertime', to: 'user_practice#index'
-  #patch '/summertime/:id', to: 'user_practice#update'
+
   resources :user_practice
+  get '/cuestionario', to: 'user_practice#index', as: :questions
 
   #patch gasta menos ancho de banda que put, porque solo actuliza una porción del registro (en teoría)
 
