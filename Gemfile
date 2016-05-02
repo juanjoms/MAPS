@@ -5,6 +5,7 @@ gem 'devise', '3.5.6'
 gem 'will_paginate', '3.1.0'
 gem 'ratyrate'
 gem 'jquery-turbolinks', '2.1.0'
+gem 'font-awesome-rails', '4.6.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

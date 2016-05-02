@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/contacto', to: 'welcome#contacto', as: :contacto
+  get 'acerca', to:'welcome#acerca', as: :acerca
 
 
 
