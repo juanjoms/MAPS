@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 
-#My gems
+### My gems  ###
+#Manage users
 gem 'devise', '3.5.6'
-gem 'will_paginate', '3.1.0'
+#Rating stars
 gem 'ratyrate'
+#This gem fix turbolinks
 gem 'jquery-turbolinks', '2.1.0'
+#Font icons
 gem 'font-awesome-rails', '4.6.1.0'
+#Gravatar
+gem 'gravtastic', '3.2.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

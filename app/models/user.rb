@@ -3,11 +3,14 @@ class User < ActiveRecord::Base
   has_many :user_practices
   has_many :practices, through: :user_practices
   ratyrate_rater
+  include Gravtastic
+  gravtastic
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 
 
   def has_profile_complete?

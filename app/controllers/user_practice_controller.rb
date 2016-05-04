@@ -1,7 +1,7 @@
 class UserPracticeController < ApplicationController
   before_action :authenticate_user!
   before_action :profile_complete!
-  before_action :association_complete!, only: [:index]
+  before_action :association_complete!
 
   def index
     user_practices = UserPractice.where(user_id: current_user.id)
@@ -10,7 +10,7 @@ class UserPracticeController < ApplicationController
         @current_user_practice = up
         break
       end
-    end    
+    end
   end
 
   # PATCH /user_practice/:id
@@ -24,6 +24,11 @@ class UserPracticeController < ApplicationController
         raise "Nope, no se creó"
       end
     end
+  end
+
+  def done
+    @test = "Cuestionario completo"
+
   end
 
 

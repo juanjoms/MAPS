@@ -1,345 +1,376 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require font-awesome
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require font-awesome
+*= require_self
+*/
 
- /**  Reset CSS **/
- html, body, div, span, object, iframe,
- h1, h2, h3, h4, h5, h6, p, blockquote, pre,
- a, abbr, acronym, address, big, cite, code,
- del, dfn, em, img, ins, kbd, q, s, samp,
- small, strike, strong, sub, sup, tt, var,
- b, u, i, center,
- dl, dt, dd, ol, ul, li,
- fieldset, form, label, legend,
- table, caption, tbody, tfoot, thead, tr, th, td,
- article, aside, canvas, details, embed,
- figure, figcaption, footer, header, hgroup,
- menu, nav, output, ruby, section, summary,
- time, mark, audio, video {
- 	margin: 0;
- 	padding: 0;
- 	border: 0;
- 	font-size: 100%;
- 	font: inherit;
- 	vertical-align: baseline;
- }
- /* HTML5 display-role reset for older browsers */
- article, aside, details, figcaption, figure,
- footer, header, hgroup, menu, nav, section {
- 	display: block;
- }
- body {
- 	line-height: 1;
- 	font-family: 'Open Sans Condensed', sans-serif;
+/**  Reset CSS **/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+.section-padding { padding:30px 0px; }
+
+
+body {
+  line-height: 1;
+  font-family: 'Open Sans Condensed', sans-serif;
+/*   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
   background-color: #f5f5f5;
- }
- .section-padding
- {
- 	padding:30px 0px;
- }
+}
 
- /**header**/
- #header
- {
- 	background-color: #fff;
- }
- .navbar-default{
-   background-color: #fff !important;
-   border-bottom: 1px solid #e5e5e5;
- }
- .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-     color: #9AD22D;
-     background-color: #fff;
-     }
- .navbar-default .navbar-brand  {
-     font-family: 'Oswald', sans-serif;
-     font-size: 24px;
-     color: #9AD22D;
- }
- .navbar-default .navbar-nav > li > a {
-     color: #A4A6A5;
-     text-transform: uppercase;
-     font-weight: 600;
-     font-size: 14px;
- }
- .navbar-default .navbar-nav > li > a:hover
- {
- 	color: #9AD22D;
- }
- .banner
- {
- 	background: url("http://placehold.it/4133x1990/303030/404040") no-repeat 0% 0% / 100% 100%;
- 	padding-bottom: 131px;
- }
- .banner-text h2
- {
- 	font-family: 'Raleway', serif;
- 	color: #ffffff;
- 	font-size: 48px;
- 	padding: 131px 0 10px 0;
- }
- .banner-text h2 span
- {
- 	color: #9AD22D;
- }
- .banner-text p {
- 	font-size: 24px;
- 	color: #fcffff;
- 	padding-bottom: 10px;
- }
- .banner-text a
- {
- 	font-size: 18px;
- 	text-decoration: none;
- 	padding: 10px 30px;
- 	border-radius: 71px;
- 	background-color: #9AD22D;
- 	margin-top: 10px;
- 	display: inline-block;
- 	color: #fff;
- }
- .banner-text a:hover
- {
- 	color:#fff;
- }
- .navbar-default {
-     background:none;
- }
- /**quote**/
- #quote-desc
- {
- 	border-bottom: 1px solid #ccc;
- 	padding: 40px 0px;
- }
- .desc-text p {
- 	font-size: 36px;
- 	font-family: 'Raleway', sans-serif;
- }
- .banner-text p span {
- 	display: block;
- }
- /** Main titles **/
- .text-head h2
- {
- 	font-family: 'Oswald', sans-serif;
- 	font-size: 36px;
- 	padding: 0px 0 10px 0;
- 	color: #ccc;
- }
- .text-head h2::after {
-     display: block;
-     margin: 17px auto 0px;
-     width: 70px;
-     height: 1px;
-     background: #19A9E5 none repeat scroll 0% 0%;
-     content: "";
- }
+/** Main titles **/
+.text-head  /* h1 */
+{
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  padding: 0px 0 10px 0;
+  color: #999;
+}
+.text-head::after {
+  display: block;
+  margin: 17px auto 0px;
+  width: 70px;
+  height: 1px;
+  background: #19A9E5 none repeat scroll 0% 0%;
+  content: "";
+}
+.text-head-h2{
+  font-family: "Raleway",sans-serif;
+  color: #0e0e0e;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  padding-bottom: 12px;
+}
+text-head-h3{
+  color: #0E0D0D;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
 
- /**contact**/
- #contact
- {
- 	/*
- 	border: 1px solid #ccc;
- 	border-width: 1px 0px 1px;
- 	*/
- }
+.modal-title{
+  margin-top: 15px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  color: #999;
+}
+.modal-title::after {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 70px;
+  height: 1px;
+  background: #19A9E5 none repeat scroll 0% 0%;
+  content: "";
+}
 
- .text-contact h3 {
-     font-family: "Raleway",sans-serif;
-    	color: #0e0e0e;
-     font-size: 28px;
-     line-height: 40px;
-     letter-spacing: 1px;
-     padding-bottom: 10px;
- }
- .form-group input, .form-group textarea
- {
- 	background-color: rgba(25, 169, 229, 0.26);
- 	border: 1px solid #ffffff;
- }
- .form-group textarea
- {
- 	height:150px;
- 	resize:none;
- }
- label {
-     color: #0e0e0e;
-     padding-bottom: 10px;
- }
- .btn-default {
-     color: #ffffff;
-     background-color: #19A9E5;
-     border-color: #CCC;
-     padding: 8px 30px;
-     }
- .text-address h3{
 
-     	font-family: "Raleway",sans-serif;
- 	    color: #0e0e0e;
- 	    font-size: 28px;
- 	    line-height: 40px;
- 	    letter-spacing: 1px;
- 	    padding-bottom: 12px;
- }
- .small-address p
- {
- 	color:	#0e0e0e;
- 	font-size:	20px;
- 	padding-top: 5px;
- }
- .small-address p i{
- 	color:	#9AD22D;
- 	width:30px;
- 	height: 30px;
- 	line-height: 50px;
- }
- /**footer**/
- .footer
- {
- 	padding-top: 20px;
- 	padding-bottom: 20px;
- }
- .footer-menu ul li a{
- 	padding-right: 15px;
- }
- .icon-social nav li a
- {
- 	color:#ccc;
- }
- .footer-link ul{
- 	list-style: none;
- }
- .footer-line p {
- 		color: #0E0D0D;
- 		font-family: 'Montserrat', sans-serif;
- }
- .footer-line p a:hover {
- 	color: #9AD22D;
- 	text-decoration: dashed;
- }
- /**media Queries**/
- @media (min-width: 768px) and (max-width: 980px)
- {
- 	.sub-text h3
- 	{
- 		font-size: 28px;
- 	}
- 	.sub-text p
- 	{
- 		font-size: 14px;
- 	}
- 	.img-portfolio
- 	{
- 		padding-bottom: 5px;
- 	}
- }
- @media (min-width:360px ) and (max-width: 768px)
- {
- 	.banner-text h2 {
-     font-size: 41px;
-     padding: 100px 0px 10px;
- 	}
- 	.quote-desc p {
-     font-size: 30px;
-     padding: 30px 0px;
- 	}
- 	.large-box h3 {
-     font-size: 25px;
- 	}
- 	.sub-icon i
- 	{
-     padding-top: 50px;
-     padding-bottom: 50px;
-     font-size: 100px;
- 	}
- 	.sub-text h3 {
-     padding-top: 20px;
-     font-size: 25px;
- 	}
- 	.sub-text p
- 	{
- 		font-size: 14px;
- 	}
- 	.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
- 	{
-     margin-bottom: 20px;
- 	}
- 	.small-address p {
-     font-size: 15px;
- 	}
- 	.btn-default {
-     padding: 4px 5px;
- 	}
- 	.text-contact h3 {
-     font-size: 20px;
- 	}
- 	.text-address h3 {
-     font-size: 24px;
- 	}
- 	.footer-line p {
-     font-size: 11px;
- }
- }
- @media (min-width:30px ) and (max-width: 360px)
- {
- 	.banner-text h2 {
-     font-size: 32px;
-     padding: 50px 0px 10px;
- 	}
- 	.quote-desc p {
-     font-size: 18px;
-     padding: 30px 0px;
- 	}
- 	.large-box h3 {
-     font-size: 22px;
- 	}
- 	.sub-icon i
- 	{
-     padding-top: 50px;
-     padding-bottom: 50px;
-     font-size: 100px;
- 	}
- 	.sub-text h3 {
-     padding-top: 20px;
-     font-size: 25px;
- 	}
- 	.btn-default {
-     padding: 4px 5px;
- 	}
- 	.sub-text p
- 	{
- 		font-size: 14px;
- 	}
- 	.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
- 	{
-     margin-bottom: 20px;
- 	}
- 	.small-address p {
-     font-size: 15px;
- 	}
- 	.text-contact h3 {
-     font-size: 20px;
- 	}
- 	.text-address h3 {
-     font-size: 22px;
- 	}
- 	.footer-line p {
-     font-size: 10px;
-   }
- }
+/**header**/
+#header
+{
+  background-color: #fff;
+}
+.navbar-default{
+  background-color: #fff !important;
+  border-bottom: 1px solid #e5e5e5;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  color: #9AD22D;
+  background-color: #fff;
+}
+.navbar-default .navbar-brand  {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  color: #9AD22D;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #A4A6A5;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+.navbar-default .navbar-nav > li > a:hover
+{
+  color: #9AD22D;
+}
+.img-grav{
+  vertical-align: middle;
+  width: 28px;
+  margin-right: 5px;
+}
+.banner
+{
+  background: url("http://placehold.it/4133x1990/303030/404040") no-repeat 0% 0% / 100% 100%;
+  padding-bottom: 131px;
+}
+.banner-text h2
+{
+  font-family: 'Raleway', serif;
+  color: #ffffff;
+  font-size: 48px;
+  padding: 131px 0 10px 0;
+}
+.banner-text h2 span
+{
+  color: #9AD22D;
+}
+.banner-text p {
+  font-size: 24px;
+  color: #fcffff;
+  padding-bottom: 10px;
+}
+.banner-text a
+{
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 71px;
+  background-color: #9AD22D;
+  margin-top: 10px;
+  display: inline-block;
+  color: #fff;
+}
+.banner-text a:hover
+{
+  color:#fff;
+}
+.navbar-default {
+  background:none;
+}
+/**quote**/
+#quote-desc
+{
+  border-bottom: 1px solid #ccc;
+  padding: 40px 0px;
+}
+.desc-text p {
+  font-size: 36px;
+  font-family: 'Raleway', sans-serif;
+}
+.banner-text p span {
+  display: block;
+}
+
+
+.input-group{
+  margin-bottom: 15px;
+}
+/**contact**/
+.form-group input, .form-group textarea
+{
+  background-color: rgba(25, 169, 229, 0.26);
+}
+.form-group textarea
+{
+  height:150px;
+  resize:none;
+}
+label {
+  color: #0e0e0e;
+  padding-bottom: 10px;
+}
+.btn-default {
+  color: #ffffff;
+  background-color: #19A9E5;
+  border-color: #CCC;
+  padding: 8px 30px;
+}
+.small-address p
+{
+  color:	#0e0e0e;
+  font-size:	20px;
+  padding-top: 5px;
+}
+.small-address p i{
+  color:	#9AD22D;
+  width:30px;
+  height: 30px;
+  line-height: 50px;
+}
+/**footer**/
+.footer
+{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer-menu ul li a{
+  padding-right: 15px;
+}
+.icon-social nav li a
+{
+  color:#ccc;
+}
+.footer-link ul{
+  list-style: none;
+}
+.footer-line p {
+  color: #0E0D0D;
+  font-family: 'Montserrat', sans-serif;
+}
+.footer-line p a:hover {
+  color: #9AD22D;
+  text-decoration: dashed;
+}
+
+/** modals **/
+.modal-dialog{
+  width: 350px;
+}
+
+.devise-forms{
+  width: 300px;
+  margin: 0 auto;
+}
+
+/*  Hay que revisar todas las medias, ver cuales no se están utilizando, y
+de las que se utilizan actualizarlas
+*/
+/**media Queries**/
+@media (min-width: 768px) and (max-width: 980px)
+{
+  .sub-text h3
+  {
+    font-size: 28px;
+  }
+  .sub-text p
+  {
+    font-size: 14px;
+  }
+  .img-portfolio
+  {
+    padding-bottom: 5px;
+  }
+}
+@media (min-width:360px ) and (max-width: 768px)
+{
+  .banner-text h2 {
+    font-size: 41px;
+    padding: 100px 0px 10px;
+  }
+  .quote-desc p {
+    font-size: 30px;
+    padding: 30px 0px;
+  }
+  .large-box h3 {
+    font-size: 25px;
+  }
+  .sub-icon i
+  {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 100px;
+  }
+  .sub-text h3 {
+    padding-top: 20px;
+    font-size: 25px;
+  }
+  .sub-text p
+  {
+    font-size: 14px;
+  }
+  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
+  {
+    margin-bottom: 20px;
+  }
+  .small-address p {
+    font-size: 15px;
+  }
+  .btn-default {
+    padding: 4px 5px;
+  }
+  .text-contact h3 {
+    font-size: 20px;
+  }
+  .text-address h3 {
+    font-size: 24px;
+  }
+  .footer-line p {
+    font-size: 11px;
+  }
+}
+@media (min-width:30px ) and (max-width: 360px)
+{
+  .banner-text h2 {
+    font-size: 32px;
+    padding: 50px 0px 10px;
+  }
+  .quote-desc p {
+    font-size: 18px;
+    padding: 30px 0px;
+  }
+  .large-box h3 {
+    font-size: 22px;
+  }
+  .sub-icon i
+  {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 100px;
+  }
+  .sub-text h3 {
+    padding-top: 20px;
+    font-size: 25px;
+  }
+  .btn-default {
+    padding: 4px 5px;
+  }
+  .sub-text p
+  {
+    font-size: 14px;
+  }
+  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
+  {
+    margin-bottom: 20px;
+  }
+  .small-address p {
+    font-size: 15px;
+  }
+  .text-contact h3 {
+    font-size: 20px;
+  }
+  .text-address h3 {
+    font-size: 22px;
+  }
+  .footer-line p {
+    font-size: 10px;
+  }
+}
 
 
 /* Digram */
@@ -354,7 +385,7 @@ input[type="radio"]:checked+label { font-weight: bold; }
 
 
 #error_explanation h2 {
- display: none;
+  display: none;
 }
 #error_explanation{
   color: #a94442;

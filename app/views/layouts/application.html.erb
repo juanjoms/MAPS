@@ -14,16 +14,6 @@
   <body>
     <%= render "partials/navigation" %>
 
-    <!-- alerts start-->
-    <div style="<%= 'display:none' if notice.nil? and alert.nil? %>">
-      <div class="alert alert-info">
-          <%= notice %>
-          <%= alert %>
-      </div>
-    </div>
-    <!-- end alerts -->
-
-    <h2><%= yield :header %></h2>
     <%= yield %>
 
     <!--footer starts-->
@@ -37,3 +27,5 @@
     <!--contact ends-->
   </body>
 </html>
+
+<%= render "partials/modals_devise" %>

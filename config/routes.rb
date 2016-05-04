@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :user_practice
   get '/cuestionario', to: 'user_practice#index', as: :questions
+  get '/done',         to: 'user_practice#done', as: :done
 
   #patch gasta menos ancho de banda que put, porque solo actuliza una porción del registro (en teoría)
 
