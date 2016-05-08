@@ -12,6 +12,9 @@
       <div class="collapse navbar-collapse navbar-left" id="mynavbar">
         <ul class="nav navbar-nav">
           <li class="active"> <%= link_to "Inicio", root_path %> </li>
+          <% if user_signed_in? %>
+            <li> <%= link_to "Ejecutar el método", questions_path %> </li>
+          <% end %>
           <li> <%= link_to "Acerca del método", acerca_path %> </li>
           <li> <%= link_to "Contacto", contacto_path %> </li>
         </ul>

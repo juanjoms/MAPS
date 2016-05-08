@@ -1,9 +1,11 @@
-<div id="cuestionario">
-  <%= render 'cuestionario' %>
-</div>
+<div class="container">
+  <div id="cuestionario">
+    <%= render 'cuestionario' %>
+  </div>
 
-<div id="bpmn">
-  <% if current_user.is_sepg? %>
+  <div id="bpmn">
+    <% if current_user.is_sepg? %>
     <%= render 'bpmn' %>
-  <% end %>
+    <% end %>
+  </div>  
 </div>

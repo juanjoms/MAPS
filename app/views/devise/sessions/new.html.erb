@@ -2,6 +2,16 @@
 
   <h2 class="modal-title">Iniciar sesión</h2>
 
+  <!-- alerts start-->
+  <div style="<%= 'display:none' if notice.nil? and alert.nil? %>">
+    <div class="alert alert-info">
+      <%= notice %>
+      <%= alert %>
+    </div>
+  </div>
+  <!-- alerts end-->
+  
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <!-- Email -->
@@ -25,7 +35,7 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Iniciar sesión",  class: 'btn btn-primary'  %>
+      <%= f.submit "Iniciar sesión",  class: 'btn btn-default'  %>
     </div>
   <% end %>
 

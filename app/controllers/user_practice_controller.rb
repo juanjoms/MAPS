@@ -27,8 +27,9 @@ class UserPracticeController < ApplicationController
   end
 
   def done
-    @test = "Cuestionario completo"
 
+    @company = Company.find(current_user.company_id)
+    @cont_users = User.where(company_id:@company.id).count
   end
 
 

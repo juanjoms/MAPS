@@ -1,1 +1,13 @@
-<%= @test %>
+<!--done starts-->
+<div class="section-padding">
+  <div class="container">
+    <div class="col-md-12">
+      <h1 class="text-head">Resultados</h1>
+      <div class="footer-line text-center" style="margin-top:15px;">
+        <p> Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario</p>
+        <p> Faltan <%= 5- @cont_users %> personas de a para poder calcular los resultados</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- done ends-->

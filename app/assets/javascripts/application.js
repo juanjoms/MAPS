@@ -20,10 +20,25 @@
 //= require bundle-cli
 //= require turbolinks
 
+$(document).ready(function(){
+  toggle_rate();
+});
 
-function load_bpmn(){
+function toggle_rate(){
+  $('body').on('change', "input[type='radio']", function(){
+    if(this.value < 3){
+      $('.star').fadeTo(200, 0);
+      $('.added-value-title').fadeTo(200, 0);
+    }else{
+      $('.star').fadeTo(200, 1);
+      $('.added-value-title').fadeTo(200, 1);
+    }
+  });
+}
+
+function load_bpmn(diagramXML){
+  //$("#canvas").empty();
   var BpmnJS = window.BpmnJS;
-  //CliModule = new Cli();
   var bpmnjs = new BpmnJS({
     container: '#canvas',
     zoomScroll: { enabled: false },
@@ -31,8 +46,16 @@ function load_bpmn(){
     cli: { bindTo: 'cli' }
   });
   //var file_path = "./resources/diagram.bpmn";
-  var file_path = "assets/ini_diagram.bpmn"
+  var file_path = "assets/ini_diagram.bpmn";
 
+  //open diagram
+  bpmnjs.importXML(diagramXML, function(err) {
+    if (err) { console.log(err); }
+    var canvas = bpmnjs.get('canvas');
+    canvas.zoom('fit-viewport');
+  });
+
+  /*
   //Open Diagram
   $.get(file_path, function(diagram) {
     bpmnjs.importXML(diagram, function(err){
@@ -44,6 +67,8 @@ function load_bpmn(){
       }
     });
   }, 'text');
+
+  */
 }
 
 

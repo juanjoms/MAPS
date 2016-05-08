@@ -9,32 +9,18 @@
 * compiled file so the styles you add here take precedence over styles defined in any styles
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
-*
 *= require_tree .
 *= require font-awesome
 *= require_self
 */
 
 /**  Reset CSS **/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+html, body, div,
+h1, h2, h3, h4, p{
+	margin: 0;
+	padding: 0;
+	font: inherit;
+  line-height: 1;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -45,10 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 
 body {
-  line-height: 1;
-  font-family: 'Open Sans Condensed', sans-serif;
-/*   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
-  background-color: #f5f5f5;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+  background-color: #fafafa;
 }
 
 /** Main titles **/
@@ -93,7 +77,7 @@ text-head-h3{
 .modal-title::after {
   display: block;
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   width: 70px;
   height: 1px;
   background: #19A9E5 none repeat scroll 0% 0%;
@@ -124,6 +108,7 @@ text-head-h3{
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 .navbar-default .navbar-nav > li > a:hover
 {
@@ -138,6 +123,12 @@ text-head-h3{
 {
   background: url("http://placehold.it/4133x1990/303030/404040") no-repeat 0% 0% / 100% 100%;
   padding-bottom: 131px;
+}
+.banner-text p, .banner-text a{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.banner-text a{
+  font-weight: 14px;
 }
 .banner-text h2
 {
@@ -192,6 +183,9 @@ text-head-h3{
   margin-bottom: 15px;
 }
 /**contact**/
+#contact .form-group{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 .form-group input, .form-group textarea
 {
   background-color: rgba(25, 169, 229, 0.26);
@@ -201,7 +195,7 @@ text-head-h3{
   height:150px;
   resize:none;
 }
-label {
+#contact label {
   color: #0e0e0e;
   padding-bottom: 10px;
 }
@@ -216,6 +210,7 @@ label {
   color:	#0e0e0e;
   font-size:	20px;
   padding-top: 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 .small-address p i{
   color:	#9AD22D;
@@ -257,6 +252,61 @@ label {
   width: 300px;
   margin: 0 auto;
 }
+
+
+/** Radio buttons **/
+/******************/
+.rd-btn { clear: both; }
+.rd-btn label {
+	color: #999;
+  width: 150px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+input.radio{ margin: 0;}
+/* hide input */
+input.radio:empty {	margin-left: -999px; }
+input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 2em;
+	text-indent: 3.25em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #C2C2C2;
+}
+input.radio:hover:not(:checked) ~ label { color: #888; }
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #9CE2AE;
+	color: #c2d1a5;
+	color: #d9ded1;
+	background-color: #4DCB6D;
+	background-color: #9bd12e;
+
+}
+input.radio:checked ~ label { color: #777; }
+input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
+
 
 /*  Hay que revisar todas las medias, ver cuales no se están utilizando, y
 de las que se utilizan actualizarlas
@@ -375,28 +425,29 @@ de las que se utilizan actualizarlas
 
 /* Digram */
 .scroll-canvas{ overflow:auto; margin-bottom: 20px;}
-#canvas{ height: 610px; background-color: #e8e8e8; }
-
-label{
-  cursor: pointer;
-  font-weight: normal;
-}
-input[type="radio"]:checked+label { font-weight: bold; }
+#canvas{ height: 610px; background-color: #fff; margin-top: 15px;}
 
 
-#error_explanation h2 {
-  display: none;
-}
+/** Display errors **/
 #error_explanation{
+  padding: 15px;
+  margin-bottom: 20px;
   color: #a94442;
+  border: 1px solid transparent;
   background-color: #f2dede;
-  border-color: #ebccd1;
-  padding: 3px 0;
+  border-radius: 4px;
 }
+#error_explanation h2 { display: none; }
+#error_explanation ul li{ list-style: none; }
+.alert-info{ margin-top: 15px;}
 
 /* Preguntas */
 .question{ font-weight: bold; }
 .questions-finished{ margin: 50px 0; text-align: center; }
-.answer-head{ font-weight: bold; }
 .mtop{ margin-top:10px;}
 .star, #hintStars{ display: inline-block; }
+.added-value-title{
+	font-weight: bold;
+	clear: both;
+	margin-top: 50px;
+}
