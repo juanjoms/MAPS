@@ -6,13 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Company.create(id: 1, name: 'CIMAT', description: 'El Centro de Investigación en Matemáticas AC es un centro público de investigación integrado al Sistema de Centros Públicos CONACYT, dedicado a la generación, transmisión y aplicación de conocimientos especializados en las áreas de matemáticas, estadística y ciencias de la computación.')
-
 
 #Cuestionarios
 ProcessArea.create(id: 1, name: 'Planificación de Proyectos', description: 'Un área de proceso de Gestión de Proyectos en el nivel de madurez 2', purpose: 'El propósito de la Planificación del Proyecto (PP) es establecer y mantener
 planes que definan las actividades del proyecto.')
 
+#Specifics Goals
 SpecificGoal.create(id: 1, name: 'Establecer las estimaciones', description: '', process_areas_id: 1)
 SpecificGoal.create(id: 2, name: 'Desarrollar un plan del proyecto', description: '', process_areas_id: 1)
 SpecificGoal.create(id: 3, name: 'Obtener el compromiso con el plan', description: '', process_areas_id: 1)

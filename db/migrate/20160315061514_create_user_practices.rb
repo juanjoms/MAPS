@@ -5,7 +5,7 @@ class CreateUserPractices < ActiveRecord::Migration
       t.belongs_to :practice, index: true
 
       t.integer :answer
-      #a) Siempre b) Regularmente c) Pocas veces d) Nunca e) No sabe => [1,2,3,4,5]
+      # 3)Si, 2)No, 1)No sabe      
 
       t.float :added_value, default: 0.0
       #1-5 estrellas  => [0.0-5.0]

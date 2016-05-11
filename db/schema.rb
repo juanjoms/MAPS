@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20160327082349) do
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "as_is_diagram"
+    t.text     "final_diagram"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "overall_averages", force: :cascade do |t|

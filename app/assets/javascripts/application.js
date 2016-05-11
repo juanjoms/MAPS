@@ -36,39 +36,21 @@ function toggle_rate(){
   });
 }
 
+var bpmnjs;
 function load_bpmn(diagramXML){
-  //$("#canvas").empty();
   var BpmnJS = window.BpmnJS;
-  var bpmnjs = new BpmnJS({
+  bpmnjs = new BpmnJS({
     container: '#canvas',
     zoomScroll: { enabled: false },
     additionalModules: [CliModule],
     cli: { bindTo: 'cli' }
   });
-  //var file_path = "./resources/diagram.bpmn";
-  var file_path = "assets/ini_diagram.bpmn";
-
-  //open diagram
+  //import diagram
   bpmnjs.importXML(diagramXML, function(err) {
     if (err) { console.log(err); }
     var canvas = bpmnjs.get('canvas');
     canvas.zoom('fit-viewport');
   });
-
-  /*
-  //Open Diagram
-  $.get(file_path, function(diagram) {
-    bpmnjs.importXML(diagram, function(err){
-      if (err) { console.log(err); }
-      try {
-        bpmnjs.get('canvas').zoom('fit-viewport');
-      } catch (e) {
-        console.log(e);
-      }
-    });
-  }, 'text');
-
-  */
 }
 
 
