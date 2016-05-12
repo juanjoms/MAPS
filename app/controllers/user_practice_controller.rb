@@ -34,7 +34,7 @@ class UserPracticeController < ApplicationController
 
   def create
     @company = current_user.company
-    if @company.update(as_is_diagram: params['xml_diagram'])
+    if @company.update({as_is_diagram: params['xml_diagram'], final_element: params['fe']})
       render :json => { response:"diagram saved" } # send back any data if necessary
     else
       render :json => { response: "Diagram not saved" }, :status => 500
@@ -42,8 +42,9 @@ class UserPracticeController < ApplicationController
   end
 
   def done
-    @company = current_user.company;
-    @cont_users = User.where(company_id:@company.id).count
+    @company = current_user.company
+    @cont_users = @company.users.count
+    @sample = @company.employees_number / 2 + 1
   end
 
 

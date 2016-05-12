@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20160327082349) do
     t.text     "description"
     t.text     "as_is_diagram"
     t.text     "final_diagram"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "employees_number"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "final_element",    default: "StartEvent_0gwlf1v"
   end
 
   create_table "overall_averages", force: :cascade do |t|

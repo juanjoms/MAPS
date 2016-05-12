@@ -1,50 +1,34 @@
-function find_last_element(){
-  var last_element = "StartEvent_0gwlf1v";  //Nothing has been added
-  var elems = cli.elements();
-  for (var i=0; i<elems.length; i++){
-    if(elems[i].startsWith("Task")){
-      last_element = elems[i];
-    }
-  }
-  return last_element;
-}
-
-function add_element(element_name) {
-  var last_element = find_last_element();
-  var new_element = cli.append(last_element, 'bpmn:Task', '150,0');
+function append_element(source, element_name) {
+  //var last_element = find_last_element();
+  var new_element = cli.append(source, 'bpmn:Task', '150,0');
   cli.setLabel(new_element, element_name);
 
-/*
-  var element = (new_element === undefined)? 'StartEvent_0gwlf1v' : new_element;
-  new_element = cli.append(element, 'bpmn:Task', '150,0');
-  cli.setLabel(new_element, element_name);
-*/
-  last_x = cli.element(new_element).x;
+  var last_x = cli.element(new_element).x;
   if( last_x >= 999){
-    $("#canvas").width((last_x+200)+"px");
+    $("#canvas").width((last_x + 200) + "px");
     $(".scroll-canvas").scrollLeft(last_x);
   }
+  save_diagram(new_element);
 }
 
-function save_diagram(){
+function save_diagram(final_element){
   bpmnjs.saveXML(function(err, xml){
     $.ajax({
       url: "/user_practice",
       type: "POST",
-      data: {xml_diagram: xml},
-      success: function(resp){ console.log(resp); }
+      data: {xml_diagram: xml, fe:final_element},
+      success: function(resp){ console.log("Diagram saved"); }
     });
-
   });
-  console.log("saving diagram");
 }
 
+<% source = @company.final_element %> //Last task added
+<% practice_name = @current_user_practice.practice.name %>  //Nombre de la práctica a añadir
+<% answer = @current_user_practice.answer %>  //Respuesta
+<% id = @current_user_practice.id %>  //Id
 
-<% practice_name = @current_user_practice.practice.name %>
-<% answer = @current_user_practice.answer %>
-<% id = @current_user_practice.id %>
-<% if UserPractice.exists?(id+1) %>
-  <% @current_user_practice = UserPractice.find(id+1)%>
+<% if UserPractice.exists?(id + 1) %>
+  <% @current_user_practice = UserPractice.find(id + 1)%>
 <% else %>
   <% @current_user_practice = nil %>
 <% end %>
@@ -60,7 +44,5 @@ $('#cuestionario').fadeOut(400, function(){
 
 //Añadiendo la práctica al diagrama
 <% if answer == 3 %>
-  add_element("<%= practice_name %>");
+  append_element('<%= source %>', '<%= practice_name %>');
 <% end %>
-//Almacenando el diagrama
-save_diagram();

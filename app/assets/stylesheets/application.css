@@ -425,8 +425,7 @@ de las que se utilizan actualizarlas
 
 /* Digram */
 .scroll-canvas{ overflow:auto; margin-bottom: 20px;}
-#canvas{ height: 610px; background-color: #fff; margin-top: 15px;}
-
+#canvas{ height: 650px; background-color: #fff; margin-top: 15px;}
 
 /** Display errors **/
 #error_explanation{

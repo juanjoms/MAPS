@@ -18,8 +18,15 @@
   </div>
 
   <!-- Descripción -->
-  <div style="margin-bottom:15px;">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-file-text fa-fw"></i></span>
     <%= f.text_area :description, class: 'form-control', :placeholder => 'Descripción...' %>
+  </div>
+
+  <!-- Numero de empleados -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
+    <%= f.number_field :employees_number, class: 'form-control', :placeholder => 'Núm. de empleados' %>
   </div>
 
   <div class="actions">

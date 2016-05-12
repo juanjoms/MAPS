@@ -2,11 +2,11 @@
   <div class="questions-finished">
     <h2 class="modal-title">Cuestionario terminado</h2>
     <p> Termina el digrama y presiona Guardar </p>
-    <a href="/done" class="btn btn-primary"> Guardar diagrama </a>        
+    <a id="save-diagram" class="btn btn-primary"> Guardar diagrama </a>
   </div>
 <% else %>
+<!-- if current.nil pero curren.developer => redirect to done -->
   <% @practice = @current_user_practice.practice %>
-
 
   <h2 class="modal-title">Identificación de Prácticas</h2>
   <div class="row">

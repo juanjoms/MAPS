@@ -22,6 +22,7 @@
 
 $(document).ready(function(){
   toggle_rate();
+  $('#save-diagram').click(save_diagram);
 });
 
 function toggle_rate(){
@@ -51,7 +52,21 @@ function load_bpmn(diagramXML){
     var canvas = bpmnjs.get('canvas');
     canvas.zoom('fit-viewport');
   });
+
 }
+
+function save_diagram(){
+  bpmnjs.saveXML(function(err, xml){
+    $.ajax({
+      url: "/user_practice",
+      type: "POST",
+      data: {xml_diagram: xml},
+      success: function(resp){ console.log("Diagram saved"); }
+    });
+  });
+  window.location.href = "/done";
+}
+
 
 
 function saveSVG(done) {
@@ -63,6 +78,7 @@ function saveDiagram(done) {
     done(err, xml);
   });
 }
+
 
 /*
 //Diagram my custom functions

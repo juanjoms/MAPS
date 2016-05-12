@@ -1,13 +1,12 @@
-<%= link_to "Agregar organización", new_company_path %>
+<div class="devise-forms">
+  <h2 class="modal-title">Empresas</h2>
+  
+  <% @companies.each do |company| %>
+    <h2> <%= link_to company.name, company %> </h2>
+    <p>
+      <%=  truncate(company.description, length: 70) %>
+    </p>
+  <% end %><br>
+  <%= link_to "Agregar organización", new_company_path %>
 
-<% @companies.each do |company| %>
-  <h3> <%= link_to company.name, company %> </h3>
-  <p>
-    <%=  truncate(company.description, length: 70) %>
-  </p>
-<% end %>
-
-<!--
-<%= #will_paginate @company
-%>
--->
+</div>

@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#company
+Company.create(id:1, name: 'CIMAT', description: 'Centro de Investigación en Matemáticas')
 
 #Cuestionarios
 ProcessArea.create(id: 1, name: 'Planificación de Proyectos', description: 'Un área de proceso de Gestión de Proyectos en el nivel de madurez 2', purpose: 'El propósito de la Planificación del Proyecto (PP) es establecer y mantener

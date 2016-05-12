@@ -1,7 +1,10 @@
-<h2><%= @company.name %></h2>  
-<p>
-  <%= @company.description %>
-</p>
+<div class="devise-forms">
+  <h2 class="modal-title"><%= @company.name %></h2>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+  <p>
+    <%= @company.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_company_path(@company) %> |
+  <%= link_to 'Back', companies_path %>
+</div>
