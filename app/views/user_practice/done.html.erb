@@ -2,13 +2,24 @@
 <div class="section-padding">
   <div class="container">
       <h1 class="text-head">Resultados</h1>
-      <% if @sample < @cont_users %>
-        <p>Ok empezando a calcular</p>
-      <% else %>
+      <% if @incomplete_sample %>
         <p class="text-center">
           Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
-          Faltan <%= @sample - @cont_users %> personas de a para poder calcular los resultados
+          Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
         </p>
+      <% else %>
+        <h2 class="text-head-h2">Análisis del valor añadido</h2>
+        <table class="table">
+          <tr>
+            <th>Práctica</th><th>Valor añadido</th><th>Acción a ejecutar</th>
+          </tr>
+          <% for val in @value_matrix %>
+            <tr>
+              <td><%= val[0] %></td><td><%= "%.2f" % val[1] %></td><td><%= val[2] %></td>
+            </tr>
+          <% end %>
+        </table>
+
       <% end %>
 
   </div>

@@ -43,8 +43,39 @@ class UserPracticeController < ApplicationController
 
   def done
     @company = current_user.company
-    @cont_users = @company.users.count
     @sample = @company.employees_number / 2 + 1
+
+    @cont_users = 0
+    @company.users.each do |user|
+      practice = UserPractice.where(user_id: user.id).last
+      if !practice.answer.nil?
+        @cont_users += 1
+      end
+    end
+    if @sample > @cont_users
+      @incomplete_sample = true
+      return
+    end
+
+      #################################
+     ### Analizar el valor añadido ###
+    #################################
+    @value_matrix = []
+    practices = Practice.all
+    practices.each do |practice|
+      sum = 0
+      cont = 0
+      @company.users.each do |user|
+        up = UserPractice.where('user_id': user.id, practice_id: practice.id).last
+        if !up.answer.nil?
+          sum += up.added_value
+          cont += 1
+        end
+      end
+      average = sum / cont
+      index = (average / 5) * 100
+      @value_matrix.push([practice.name, index, "accion"])
+    end
   end
 
 
@@ -58,6 +89,11 @@ class UserPracticeController < ApplicationController
         UserPractice.create(user_id: current_user.id, practice_id: practice.id)
       end
     end
+  end
+
+  def questions_answered?(user)
+    user_practices = UserPractice.where("user_id": user.id)
+    return !user_practices.last.answer.nil?
   end
 
   def save_initial_diagram!
