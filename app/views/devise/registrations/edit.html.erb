@@ -8,7 +8,7 @@
     </div>
   </div>
   <!-- alerts end-->
-  
+
   <h2 class="modal-title">Editar usuario</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -74,7 +74,7 @@
 
   <p>
     <%= button_to "Eliminar mi cuenta", registration_path(resource_name), class: 'btn btn-danger',
-                  data: { confirm: "¿Está seguro que desear eliminar su cuenta?" }, method: :delete %>
+                  data: { confirm: "¿Está seguro que desear eliminar su cuenta?" }, method: :delete %>                  
   </p>
   <br>
 

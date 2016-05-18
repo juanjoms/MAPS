@@ -2,23 +2,64 @@
 <div class="section-padding">
   <div class="container">
       <h1 class="text-head">Resultados</h1>
-      <% if @incomplete_sample %>
+      <% if !@complete_sample %>
         <p class="text-center">
           Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
           Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
         </p>
       <% else %>
-        <h2 class="text-head-h2">Análisis del valor añadido</h2>
-        <table class="table">
-          <tr>
-            <th>Práctica</th><th>Valor añadido</th><th>Acción a ejecutar</th>
-          </tr>
-          <% for val in @value_matrix %>
-            <tr>
-              <td><%= val[0] %></td><td><%= "%.2f" % val[1] %></td><td><%= val[2] %></td>
-            </tr>
-          <% end %>
-        </table>
+
+        <!-- Valor añadido -->
+        <div class="accordion">
+          Análisis del valor añadido
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </div>
+        <div class="accordion-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Práctica</th><th>Número índice</th><th>Rango</th><th>Análisis del valor añadido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for val in @value_matrix %>
+              <tr>
+                <td><%= val[0] %></td><td><%= "%.2f" % val[1] %></td><td><%= val[2] %></td><td><%= val[3] %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mapeo a prácticas Scrum -->
+        <div class="accordion">
+          Mapeo a prácticas de Scrum
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </div>
+        <div class="accordion-body" style="display:block;">
+          <table class="table table-striped">
+            <thead>
+              <tr><th>Práctica</th><th>¿Soportada?</th><th>Práctica de Scrum</th></tr>
+            </thead>
+            <tbody>
+              <% for scrum in @scrum_matrix %>
+                <tr>
+                  <td><%= scrum[0] %></td>
+                  <td class="text-center">
+                    <% if scrum[1] == 0 %>
+                      <i class="fa fa-battery-empty" aria-hidden="true"></i>
+                    <% elsif scrum[1] == 1 %>
+                      <i class="fa fa-battery-half" aria-hidden="true"></i>
+                    <% else %>
+                      <i class="fa fa-battery-full" aria-hidden="true"></i>
+                    <% end %>
+                  </td>
+                  <td><%= scrum[2]  %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
 
       <% end %>
 

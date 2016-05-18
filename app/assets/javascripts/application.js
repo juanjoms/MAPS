@@ -22,7 +22,26 @@
 
 $(document).ready(function(){
   toggle_rate();
-  $('#save-diagram').click(save_diagram);
+  $('body').on('click', '#save-diagram', save_diagram);
+
+  $('.accordion').click(function(){    
+    $(this).next().slideToggle();
+    $(this).children().toggleClass('fa-caret-up');
+    $(this).toggleClass('open');
+  });
+
+/*
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+      acc[i].onclick = function(){
+          this.classList.toggle("active");
+          this.nextElementSibling.classList.toggle("show");
+    }
+  }
+*/
+
 });
 
 function toggle_rate(){

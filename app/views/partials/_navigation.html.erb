@@ -1,3 +1,4 @@
+<%= @hola %>
 <!--header section-->
 <header class="header">
   <!--navigation bar-->
@@ -13,7 +14,10 @@
         <ul class="nav navbar-nav">
           <li class="active"> <%= link_to "Inicio", root_path %> </li>
           <% if user_signed_in? %>
-            <li> <%= link_to "Ejecutar el método", questions_path %> </li>
+            <li> <%= link_to "Ejecutar el método", questions_path %> </li>            
+            <% if session[:show_results] %>
+              <li> <%= link_to "Resultados", done_path %> </li>
+            <% end %>
           <% end %>
           <li> <%= link_to "Acerca del método", acerca_path %> </li>
           <li> <%= link_to "Contacto", contacto_path %> </li>

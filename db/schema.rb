@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327082349) do
+ActiveRecord::Schema.define(version: 20160517051123) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -83,6 +83,21 @@ ActiveRecord::Schema.define(version: 20160327082349) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
+
+  create_table "scrum_practices", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "meeting"
+    t.text     "ingredients"
+    t.text     "procedure"
+    t.text     "tools"
+    t.text     "techniques"
+    t.string   "duration"
+    t.integer  "supported"
+    t.integer  "practice_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "specific_goals", force: :cascade do |t|
     t.string   "name"

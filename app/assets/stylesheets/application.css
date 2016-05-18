@@ -19,8 +19,6 @@ html, body, div,
 h1, h2, h3, h4, p{
 	margin: 0;
 	padding: 0;
-	font: inherit;
-  line-height: 1;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -32,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
-  background-color: #fafafa;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 18px;
 }
 
 /** Main titles **/
@@ -46,25 +45,22 @@ body {
 }
 .text-head::after {
   display: block;
-  margin: 17px auto 0px;
+  margin: 10px auto 0px;
   width: 70px;
   height: 1px;
   background: #19A9E5 none repeat scroll 0% 0%;
   content: "";
 }
 .text-head-h2{
-  font-family: "Raleway",sans-serif;
-  color: #0e0e0e;
-  font-size: 28px;
-  line-height: 40px;
-  letter-spacing: 1px;
-  padding-bottom: 12px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+	padding-bottom: 12px;
+	color: #666;
 }
-text-head-h3{
-  color: #0E0D0D;
+.text-head-h3{
   font-size: 18px;
-  margin-bottom: 10px;
-  font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	margin: 10px 0;
 }
 
 .modal-title{
@@ -77,7 +73,7 @@ text-head-h3{
 .modal-title::after {
   display: block;
   margin: 0 auto;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   width: 70px;
   height: 1px;
   background: #19A9E5 none repeat scroll 0% 0%;
@@ -92,11 +88,12 @@ text-head-h3{
 }
 .navbar-default{
   background-color: #fff !important;
-  border-bottom: 1px solid #e5e5e5;
+	background-color: #fafafa !important;
+  border-bottom: 1px solid #e7e7e7;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   color: #9AD22D;
-  background-color: #fff;
+	background-color: #fafafa;
 }
 .navbar-default .navbar-brand  {
   font-family: 'Oswald', sans-serif;
@@ -171,8 +168,14 @@ text-head-h3{
   padding: 40px 0px;
 }
 .desc-text p {
-  font-size: 36px;
+  font-size: 32px;
   font-family: 'Raleway', sans-serif;
+}
+.desc-author p{
+	font-size: 22px;
+  font-family: 'Monserrat', sans-serif;
+	color: #999;
+	margin-top: 5px;
 }
 .banner-text p span {
   display: block;
@@ -183,6 +186,13 @@ text-head-h3{
   margin-bottom: 15px;
 }
 /**contact**/
+#contact h2{
+	font-family: "Raleway",sans-serif;
+  color: #0e0e0e;
+  font-size: 24px;
+  padding-bottom: 12px;
+	margin-top: 10px;
+}
 #contact .form-group{
   font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -196,8 +206,8 @@ text-head-h3{
   resize:none;
 }
 #contact label {
+	font-weight: normal;
   color: #0e0e0e;
-  padding-bottom: 10px;
 }
 .btn-default {
   color: #ffffff;
@@ -216,31 +226,7 @@ text-head-h3{
   color:	#9AD22D;
   width:30px;
   height: 30px;
-  line-height: 50px;
-}
-/**footer**/
-.footer
-{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.footer-menu ul li a{
-  padding-right: 15px;
-}
-.icon-social nav li a
-{
-  color:#ccc;
-}
-.footer-link ul{
-  list-style: none;
-}
-.footer-line p {
-  color: #0E0D0D;
-  font-family: 'Montserrat', sans-serif;
-}
-.footer-line p a:hover {
-  color: #9AD22D;
-  text-decoration: dashed;
+  ight: 50px;
 }
 
 /** modals **/
@@ -258,6 +244,7 @@ text-head-h3{
 /******************/
 .rd-btn { clear: both; }
 .rd-btn label {
+	margin-bottom: 0;
 	color: #999;
   width: 150px;
   border-radius: 3px;
@@ -302,7 +289,6 @@ input.radio:checked ~ label:before {
 	color: #d9ded1;
 	background-color: #4DCB6D;
 	background-color: #9bd12e;
-
 }
 input.radio:checked ~ label { color: #777; }
 input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
@@ -424,8 +410,17 @@ de las que se utilizan actualizarlas
 
 
 /* Digram */
-.scroll-canvas{ overflow:auto; margin-bottom: 20px;}
-#canvas{ height: 650px; background-color: #fff; margin-top: 15px;}
+.scroll-canvas{
+	overflow:auto;
+	margin-bottom: 20px;
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	padding: 15px 2px;
+}
+#canvas{
+	height: 650px;
+	background-color: #fafa;
+}
 
 /** Display errors **/
 #error_explanation{
@@ -441,12 +436,51 @@ de las que se utilizan actualizarlas
 .alert-info{ margin-top: 15px;}
 
 /* Preguntas */
-.question{ font-weight: bold; }
+.question{ line-height: 1.3; }
+.question_examples{ font-size: 16px; color: #777; }
 .questions-finished{ margin: 50px 0; text-align: center; }
 .mtop{ margin-top:10px;}
 .star, #hintStars{ display: inline-block; }
 .added-value-title{
 	font-weight: bold;
 	clear: both;
-	margin-top: 50px;
+	margin-top: 15px;
+	/*margin-top: 50px;*/
+}
+
+/* Resultados */
+.table{
+	font-size: 14px;
+	margin-bottom: 0px;
+}
+.table td, .table th{
+	padding: 5px !important;
+}
+
+/* Acordion */
+.accordion{
+	margin-top: 10px;
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 7px;
+	cursor: pointer;
+
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	color: #888;
+}
+.open{
+	border-radius: 4px 4px 0 0;
+}
+.accordion.active, .accordion:hover{
+	background-color: #f5f5f5;
+}
+
+.accordion-body {
+    padding: 18px;
+    display: none;
+		border-radius: 0 0 4px 4px;
+		border: 1px solid #ddd;
+		border-top: none;
 }

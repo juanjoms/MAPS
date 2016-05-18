@@ -16,7 +16,8 @@
   rails generate controller controller_name
 
   #Generar un modelo
-  rais generate model ModelName titulo:string body:text
+  rails generate model ModelName titulo:string body:text
+
 
   bundle install #Instalar las gemas que hay en el Gemfile
 ```
@@ -31,6 +32,10 @@ rails generate model ProcessArea
 rails generate model SpecificGoal
 rails generate model Practice
 rails generate model UserPractice
+rails g ratyrate user
+rails generate model ScrumPractice
+
+
 ```
 
 https://www.codecademy.com/articles/standard-controller-actions

@@ -3,9 +3,8 @@
   <div class="rd-btn"> <%= f.radio_button(:answer, 3, class:"radio") %> <%= f.label(:answer_3, "Sí") %> </div>
   <div class="rd-btn"> <%= f.radio_button(:answer, 2, class:"radio") %> <%= f.label(:answer_2, "No") %> </div>
   <div class="rd-btn"> <%= f.radio_button(:answer, 1, class:"radio") %> <%= f.label(:answer_1, "No sabe") %> </div>
-
+  <div style="clear:both;"> </div>
   <div class="added-value-title" > Califica ésta práctica: </div>
-
   <%= rating_for @current_user_practice, "added_value",
     disable_after_rate: false,
     target: '#hintStars',
