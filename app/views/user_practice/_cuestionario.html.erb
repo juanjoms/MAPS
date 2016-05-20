@@ -5,10 +5,11 @@
     <a id="save-diagram" class="btn btn-primary"> Guardar diagrama </a>
   </div>
 <% else %>
-<!-- if current.nil pero curren.developer => redirect to done -->
   <% @practice = @current_user_practice.practice %>
 
   <h2 class="modal-title">Identificación de Prácticas</h2>
+
+
   <div class="row">
     <div class="col-md-7 question">
       <div class="text-head-h3">
@@ -22,6 +23,6 @@
     <div class="col-md-5">
       <%= render 'form_answers' %>
     </div>
-
   </div>
+  
 <% end %>

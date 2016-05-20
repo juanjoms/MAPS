@@ -22,26 +22,19 @@
 
 $(document).ready(function(){
   toggle_rate();
+  $('[data-toggle="tooltip"]').tooltip()
   $('body').on('click', '#save-diagram', save_diagram);
 
-  $('.accordion').click(function(){    
+  $('.accordion').click(function(){
     $(this).next().slideToggle();
     $(this).children().toggleClass('fa-caret-up');
     $(this).toggleClass('open');
   });
 
-/*
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-      acc[i].onclick = function(){
-          this.classList.toggle("active");
-          this.nextElementSibling.classList.toggle("show");
-    }
-  }
-*/
-
+  $('.show-guides').click(function(){
+    $(this).closest('tr').next().slideToggle();
+    $(this).children().toggleClass('fa-chevron-up');
+  });
 });
 
 function toggle_rate(){

@@ -149,6 +149,35 @@ procedure: 'Crear un tablero con las siguientes columnas:
 3. Work in Progress. Cuando un miembro del equipo inicia una tarea, se mueve la nota adhesiva de esta tarea a esta columna.
 4. Done. Cuando se ha completado una tarea, se mueve la nota adhesiva a esta columna.')
 
-ScrumPractice.create(practice_id:12, supported: 0, name:'No soportada', description: 'En Scrum el WBS se compone de Product Backlog y de los Sprints predefinidos, sin embargo, el Producto Backlog es elaborado por el cliente y presentado por el Product Owner, sin presentar guías sobre cómo se éste se crea.')
-ScrumPractice.create(practice_id:13, supported: 0, name:'No soportada', description: 'En Scrum el WBS se compone de Product Backlog y de los Sprints predefinidos, sin embargo, el Producto Backlog es elaborado por el cliente y presentado por el Product Owner, sin presentar guías sobre cómo se éste se crea.')
-ScrumPractice.create(practice_id:14, supported: 0, name:'No soportada', description: 'En Scrum el WBS se compone de Product Backlog y de los Sprints predefinidos, sin embargo, el Producto Backlog es elaborado por el cliente y presentado por el Product Owner, sin presentar guías sobre cómo se éste se crea.')
+
+ScrumPractice.create(practice_id:12, supported: 2, name:'Revisar los planes que afectan al proyecto durante las reuniones de planificación y retrospectiva', description: 'En Scrum, los planes se revisan al comienzo de cada sprint y las posibles adaptaciones se llevan a cabo conforme al cambio de requisitos y tecnologías.',
+  meeting: 'Sprint Review', ingredients: '* Incremento del producto potencialmente entregable, presentado por el equipo.
+* Taskboard, notas adhesivas, marcadores.', procedure: '1. El Product Owner da la bienvenida a los participantes del Sprint Review
+2. El Product Owner les recuerda a los presentes el propósito del Sprint pasado: el objetivo del Sprint, el cual soporta las historias que el equipo había seleccionado.
+3. Los miembros del equipo de desarrollo demuestran las nuevas funcionalidades y piden al usuario final que las prueben.
+4. El Scrum Master modera la sesión.
+5. La retroalimentación del usuario final es documentada por el ScrumMaster.', duration:'90 min. al final del Sprint')
+
+ScrumPractice.create(practice_id:13, supported: 2, name:'Conciliar los niveles de trabajo y de recursos durante la planificación de Sprints', description: 'Durante la reunión de planificación de Sprint se produce la conciliación de trabajo debido a que el Backlog es dinámico, por lo que son posibles nuevas estimaciones y calendarios.
+El equipo, el Product Owner y el Scrum Master definen las funcionalidades que se desarrollarán en el Sprint.',
+meeting:'Sprint Planning Meeting #2', ingredients: '* El Product Backlog seleccionado para el Sprint.
+* Rotafolios, marcadores, tijeras, notas adhesivas, pizarras, lápices, etc.', procedure: '1. Comenzar con el primer ítem del Product Backlog.
+2. Recapitular la comprensión del equipo de lo que es realmente deseado examinado los rotafolios de reunión de planificación de Sprint # 1.
+3. Ejecutar una discusión orientada a como podría ser implementado el ítem del Backlog.
+  Estas preguntas pueden ayudar:
+  a) ¿Qué interfaces necesitamos escribir?
+  b) ¿Qué bases de datos necesitaremos?
+  c) ¿Qué arquitectura es necesaria?
+Una vez que el equipo tiene un claro entendimiento de la manera en la que desea construir una característica, se puede pasar al siguiente ítem del Backlog.', duration: '60 minutos por semana de Sprint')
+
+ScrumPractice.create(practice_id:14, supported: 2, name:'Obtener el compromiso con el plan durante la planificación de Sprints ', description: 'El compromiso del plan se produce de forma continua al comienzo de cada sprint, durante la reunión de planificación de Sprint. En ella el ScrumMaster pregunta al equipo si desea comprometerse con cada ítem del Product Backlog.',
+meeting:'Sprint Planning Meeting #1', ingredients:'* El Product Backlog estimado y pririzado.
+* Rotafolios, marcadores, tijeras, notas adhesivas, pizarras, lápices, etc.', procedure: '1. Comenzar con el primer ítem del Product Backlog (Historia).
+2. El equipo discute y analiza los requerimientos de la historia.
+3. El equipo elabora las pruebas de aceptación de usuario.
+4. Anotar las restricciones.
+5. Definir los criterios de aceptación.
+6. Determinar el nivel de Hecho para la historia.
+7. Dibujar bocetos de las funcionalidades de la historia.
+8. Para el siguiente ítem del Backlog, regresar al paso 1.
+Una vez elegidos los ítems que se van a desarrollar en el Sprint, el ScrumMaster le pregunta al equipo si se compromete a entregar dichos ítems.', duration: '60 minutos por semana de Sprint.')

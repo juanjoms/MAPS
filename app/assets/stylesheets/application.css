@@ -14,6 +14,7 @@
 *= require_self
 */
 
+
 /**  Reset CSS **/
 html, body, div,
 h1, h2, h3, h4, p{
@@ -29,9 +30,9 @@ footer, header, hgroup, menu, nav, section {
 
 
 body {
-  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
+	line-height: 1;
 }
 
 /** Main titles **/
@@ -164,11 +165,10 @@ body {
 /**quote**/
 #quote-desc
 {
-  border-bottom: 1px solid #ccc;
   padding: 40px 0px;
 }
 .desc-text p {
-  font-size: 32px;
+  font-size: 30px;
   font-family: 'Raleway', sans-serif;
 }
 .desc-author p{
@@ -209,12 +209,14 @@ body {
 	font-weight: normal;
   color: #0e0e0e;
 }
+/*
 .btn-default {
   color: #ffffff;
   background-color: #19A9E5;
   border-color: #CCC;
   padding: 8px 30px;
 }
+*/
 .small-address p
 {
   color:	#0e0e0e;
@@ -238,6 +240,21 @@ body {
   width: 300px;
   margin: 0 auto;
 }
+
+.field{
+	font-size: 14px;
+}
+
+a.forgot {
+	z-index: 3;
+	color: #909090;
+	font-size: 12px;
+	position: absolute;
+	right: 10px;
+	text-shadow: 1px 1px 1px #FFFFFF;
+	top: 9px;
+}
+
 
 
 /** Radio buttons **/
@@ -292,7 +309,6 @@ input.radio:checked ~ label:before {
 }
 input.radio:checked ~ label { color: #777; }
 input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
-
 
 /*  Hay que revisar todas las medias, ver cuales no se están utilizando, y
 de las que se utilizan actualizarlas
@@ -412,6 +428,7 @@ de las que se utilizan actualizarlas
 /* Digram */
 .scroll-canvas{
 	overflow:auto;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	background-color: #fafafa;
 	border: 1px solid #ddd;
@@ -456,12 +473,22 @@ de las que se utilizan actualizarlas
 .table td, .table th{
 	padding: 5px !important;
 }
+.table-nested{
+	width: 100%;
+	font-size: 12px;
+	border-collapse: collapse !important;
+}
+.table-nested th, .table-nested td{
+	border-top: 1px solid #ddd !important;
+}
+.battery{ cursor: pointer;}
+
 
 /* Acordion */
 .accordion{
 	margin-top: 10px;
 	background-color: #fafafa;
-	border: 1px solid #ddd;
+	border: 1px solid #eaeaea;
 	border-radius: 4px;
 	padding: 7px;
 	cursor: pointer;
@@ -478,9 +505,25 @@ de las que se utilizan actualizarlas
 }
 
 .accordion-body {
+		display: none;
     padding: 18px;
-    display: none;
 		border-radius: 0 0 4px 4px;
-		border: 1px solid #ddd;
+		border: 1px solid #eaeaea;
 		border-top: none;
+}
+.accordion-row {
+	display: none;
+}
+
+.footer{
+	width: 100%;
+	border-top: 1px solid #eaeaea;
+	font-size: 14px;
+  background-color: #f5f5f5;
+	padding: 10px;
+}
+
+.footer p a:hover {
+	color: #9AD22D;
+	text-decoration: dashed;
 }

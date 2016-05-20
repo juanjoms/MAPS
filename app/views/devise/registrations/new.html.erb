@@ -21,7 +21,7 @@
   <div class="form-group">
     <%= f.collection_select(:company_id, Company.all, :id, :name,
     {:prompt => "Seleccione su empresa:"}, {class: "form-control"}) %>
-    <%= link_to "Agregar empresa", new_company_path %>
+    <%= link_to "Agregar empresa", new_company_path, class:'field' %>
   </div>
 
   <!-- Puesto -->
@@ -51,7 +51,9 @@
   <%= f.submit "Registrarse", class: 'btn btn-default' %>
   <% end %>
 
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <div class="field">
+    <%= link_to "Log in", new_session_path(resource_name) %><br />
+  </div>
 
   <!-- alerts start-->
   <div style="<%= 'display:none' if notice.nil? and alert.nil? %>">
