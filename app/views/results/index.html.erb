@@ -15,7 +15,7 @@
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="accordion-body">
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>ID</th><th>Práctica</th><th>Valor</th><th>Rango</th><th>Análisis del valor</th>
@@ -74,7 +74,7 @@
                 </tr>
                 <!-- Guias -->
                 <tr class="accordion-row">
-                  <td></td>
+                  <td></td><td></td>
                   <td colspan="3">
                     <table class="table-nested" style="width:640px;">
                       <tr>
@@ -114,26 +114,69 @@
           Sugerencia de técnicas y herramientas ligeras
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
-        <div class="accordion-body">
-          <table class="table">
+        <div class="accordion-body" style="display:block">
+          <table class="table table-hover table-techtool">
             <thead>
               <tr>
                 <th>ID</th><th>Práctica</th><th>Técnica o herramienta</th>
               </tr>
             </thead>
             <tbody>
-              <% for val in @tools_matrix %>
-                <tr class="<%= val[3] %>">
-                  <td><%= val[0] %></td> <td><%= val[1] %></td> <td><%= val[2] %></td>
+              <% for techtool in @tools_matrix %>
+                <tr class="<%= techtool[2] %>">
+                  <td class="condensed"><%= techtool[0] %></td>
+                  <td class="condensed"><%= techtool[1] %></td>
+                  <td class="condensed">
+                    <table class="table table-nested">
+                      <tr>
+                        <th> Sencillas </th>
+                        <td>
+                          <% techtool[3][:easy].each do |tt| %>
+                            <%= tt %><br>
+                          <% end %>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th> Punto medio </th>
+                        <td>
+                          <% techtool[3][:medium].each do |tt| %>
+                            <%= tt %><br>
+                          <% end %>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th> Complicadas </th>
+                        <td>
+                          <% techtool[3][:hard].each do |tt| %>
+                            <%= tt %><br>
+                          <% end %>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
         </div>
 
-        <div class="" style="height:460px;">
+        <br><br>
+        <!-- Rediseño del proceso -->
+        <h2 class="text-head-h2">
+          Proceso rediseñado
+        </h2>
 
-        </div>
+
+
+          <!-- render bpmn -->
+          <div id="bpmn">
+            <%= render 'bpmn' %>
+          </div>
+
+
+
 
 
       <% end %>

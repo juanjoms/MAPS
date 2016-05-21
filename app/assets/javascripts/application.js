@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   $('.show-guides').click(function(){
     $(this).closest('tr').next().slideToggle();
-    $(this).children().toggleClass('fa-chevron-up');
+    $(this).children().toggleClass('fa-chevron-down');
   });
 });
 

@@ -3,4 +3,5 @@ class Practice < ActiveRecord::Base
   has_many :user_practices
   has_many :users, through: :user_practices
   has_one :scrum_practice
+  has_one :technique_tool
 end

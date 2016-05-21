@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
 
   def index
     @company = current_user.company
+    @diagramXML = @company.as_is_diagram.squish
     @sample = @company.employees_number / 2 + 1
 
     @cont_users = 0
@@ -44,8 +45,9 @@ class ResultsController < ApplicationController
       @value_matrix.push([practice.id, practice.name, index, value_range(index), value_anlys(index), value_class(index)])
     end
 
-      ##################################
-     ### Mapeo a prácticas de Scrum ###
+       ##################################
+      ### Mapeo a prácticas de Scrum ###
+     ### y técnicas y herramientas  ###
     ##################################
     @value_matrix.each do |p|
       if (p[2] < 76) and (p[2] > 25)
@@ -54,17 +56,30 @@ class ResultsController < ApplicationController
           scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
           scrump.procedure, scrump.tools, scrump.techniques, scrump.duration]);
         if scrump.supported == 0
-          @tools_matrix.push([p[0], p[1], "I will remember how you kiss me", value_class(p[2]) ])
+          insert_technique_tool(p[0], p[1], p[5])
         end
       elsif p[2] >= 76
-        @tools_matrix.push([p[0], p[1], "Técnica o herramienta ligera", value_class(p[2]) ])
+        insert_technique_tool(p[0], p[1], p[5])
       end
     end
-
-
   end
 
+
   private
+  def insert_technique_tool(practice_id, practice_name, practice_class)
+    @tools_matrix.push([practice_id, practice_name, practice_class, {:easy => [], :medium => [], :hard =>[]} ])
+    techtool = TechniqueTool.where(practice_id: practice_id)
+    techtool.each do |tt|
+      if tt.complexity == 0
+        @tools_matrix.last[3][:easy].push(tt.name)
+      elsif tt.complexity == 1
+        @tools_matrix.last[3][:medium].push(tt.name)
+      else
+        @tools_matrix.last[3][:hard].push(tt.name)
+      end
+    end
+  end
+
   def value_anlys(index)
     if index < 26
       return "No aporta valor"

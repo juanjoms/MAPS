@@ -181,3 +181,112 @@ meeting:'Sprint Planning Meeting #1', ingredients:'* El Product Backlog estimado
 7. Dibujar bocetos de las funcionalidades de la historia.
 8. Para el siguiente ítem del Backlog, regresar al paso 1.
 Una vez elegidos los ítems que se van a desarrollar en el Sprint, el ScrumMaster le pregunta al equipo si se compromete a entregar dichos ítems.', duration: '60 minutos por semana de Sprint.')
+
+
+##Técnicas y herramientas ligeras
+#Practice 1
+TechniqueTool.create(practice_id:1, name: "Juicio experto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:1, name: "COCOMO", complexity:2, approach:1)
+TechniqueTool.create(practice_id:1, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:1, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:1, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
+TechniqueTool.create(practice_id:1, name: "Consectetur adipisicing elit", complexity:1, approach:1)
+TechniqueTool.create(practice_id:1, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+
+#Practica 2
+TechniqueTool.create(practice_id:2, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:2, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:2, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:2, name: "Consectetur adipisicing elit", complexity:1, approach:0)
+TechniqueTool.create(practice_id:2, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practice 3
+TechniqueTool.create(practice_id:3, name: "Juicio experto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:3, name: "COCOMO", complexity:2, approach:1)
+TechniqueTool.create(practice_id:3, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:3, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:3, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
+TechniqueTool.create(practice_id:3, name: "Consectetur adipisicing elit", complexity:1, approach:1)
+TechniqueTool.create(practice_id:3, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+
+
+#Practica 4
+TechniqueTool.create(practice_id:4, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:4, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:4, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:4, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
+TechniqueTool.create(practice_id:4, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practica 5
+TechniqueTool.create(practice_id:5, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:5, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:5, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:5, name: "Consectetur adipisicing elit", complexity:1, approach:0)
+TechniqueTool.create(practice_id:5, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practice 6
+TechniqueTool.create(practice_id:6, name: "Juicio experto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "COCOMO", complexity:2, approach:1)
+TechniqueTool.create(practice_id:6, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:6, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+
+#Practica 7
+TechniqueTool.create(practice_id:7, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:7, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:7, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:7, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
+TechniqueTool.create(practice_id:7, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practice 8
+TechniqueTool.create(practice_id:8, name: "Juicio experto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "COCOMO", complexity:2, approach:1)
+TechniqueTool.create(practice_id:8, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:8, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:8, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
+TechniqueTool.create(practice_id:8, name: "Consectetur adipisicing elit", complexity:1, approach:1)
+TechniqueTool.create(practice_id:8, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+
+
+#Practica 9
+TechniqueTool.create(practice_id:9, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:9, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:9, name: "Consectetur adipisicing elit", complexity:1, approach:0)
+TechniqueTool.create(practice_id:9, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practica 10
+TechniqueTool.create(practice_id:10, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:10, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:10, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:10, name: "Consectetur adipisicing elit", complexity:1, approach:0)
+TechniqueTool.create(practice_id:10, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practica 11
+TechniqueTool.create(practice_id:11, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:11, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:11, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:11, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:11, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
+TechniqueTool.create(practice_id:11, name: "Consectetur adipisicing elit", complexity:1, approach:0)
+TechniqueTool.create(practice_id:11, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practice 12
+TechniqueTool.create(practice_id:12, name: "Juicio experto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "COCOMO", complexity:2, approach:1)
+TechniqueTool.create(practice_id:12, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:12, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
+TechniqueTool.create(practice_id:12, name: "Consectetur adipisicing elit", complexity:1, approach:1)
+
+
+#Practica 13
+TechniqueTool.create(practice_id:13, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:13, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:13, name: "Método delphi", complexity:1, approach:1)
+TechniqueTool.create(practice_id:13, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:13, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+
+#Practica 14
+TechniqueTool.create(practice_id:14, name: "Juicio experto", complexity:0, approach:2)
+TechniqueTool.create(practice_id:14, name: "COCOMO", complexity:2, approach:2)
+TechniqueTool.create(practice_id:14, name: "Planning poker", complexity:2, approach:1)
+TechniqueTool.create(practice_id:14, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
+TechniqueTool.create(practice_id:14, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)

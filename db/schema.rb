@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517051123) do
+ActiveRecord::Schema.define(version: 20160521062242) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -105,6 +105,15 @@ ActiveRecord::Schema.define(version: 20160517051123) do
     t.integer  "process_areas_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "technique_tools", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "complexity"
+    t.integer  "approach"
+    t.integer  "practice_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "user_practices", force: :cascade do |t|

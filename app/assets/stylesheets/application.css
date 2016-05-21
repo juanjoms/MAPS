@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
-	line-height: 1;
+	line-height: normal;
 }
 
 /** Main titles **/
@@ -55,7 +55,7 @@ body {
 .text-head-h2{
 	font-family: 'Raleway', sans-serif;
 	font-size: 25px;
-	padding-bottom: 12px;
+	font-weight: bold;
 	color: #666;
 }
 .text-head-h3{
@@ -170,6 +170,7 @@ body {
 .desc-text p {
   font-size: 30px;
   font-family: 'Raleway', sans-serif;
+	line-height: 1.1;
 }
 .desc-author p{
 	font-size: 22px;
@@ -206,17 +207,11 @@ body {
   resize:none;
 }
 #contact label {
-	font-weight: normal;
   color: #0e0e0e;
 }
-/*
-.btn-default {
-  color: #ffffff;
-  background-color: #19A9E5;
-  border-color: #CCC;
-  padding: 8px 30px;
-}
-*/
+label{ font-weight: normal; }
+
+
 .small-address p
 {
   color:	#0e0e0e;
@@ -469,9 +464,13 @@ de las que se utilizan actualizarlas
 .table{
 	font-size: 14px;
 	margin-bottom: 0px;
+	background-color: inherit !important;
 }
 .table td, .table th{
 	padding: 5px !important;
+}
+.table th{
+	vertical-align: middle !important;
 }
 .table-nested{
 	width: 100%;
@@ -482,7 +481,7 @@ de las que se utilizan actualizarlas
 	border-top: 1px solid #ddd !important;
 }
 .battery{ cursor: pointer;}
-
+td.condensed{ padding: 0px !important; }
 
 /* Acordion */
 .accordion{

@@ -24,7 +24,7 @@
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
       <%= f.password_field :password, autocomplete: "off", class: 'form-control', :placeholder => 'Contraseña' %>
-      <%= link_to "¿Olvidaste contraseña?", new_password_path(resource_name) , class: 'forgot'%>      
+      <%= link_to "¿Olvidaste contraseña?", new_password_path(resource_name) , class: 'forgot'%>
     </div>
 
 
@@ -36,7 +36,7 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Iniciar sesión",  class: 'btn btn-default'  %>
+      <%= f.submit "Iniciar sesión",  class: 'btn btn-primary'  %>
     </div>
   <% end %>
 
