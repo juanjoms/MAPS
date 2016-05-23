@@ -30,8 +30,9 @@
 
     <!-- Puesto -->
     <div class="form-group">
-      <%= f.select(:position, [['Desarrollador', 1], ['Encargado de Mejoras', '2']],
-      {:prompt => "Seleccione su puesto:"}, {class: "form-control"}) %>
+      <%= f.select(:position, [['Usuario del proceso', 1], ['Encargado de Mejoras (SEPG)', '2']],
+      {:prompt => "Seleccione su puesto:"}, {class: "form-control"}) %>      
+
     </div>
 
     <!-- Email -->
@@ -69,7 +70,7 @@
     <%= f.submit "Actualizar", class: 'btn btn-primary' %>
   <% end %>
 
-  <br>  
+  <br>
   <p>Eliminar mi cuenta</p>
 
   <p>

@@ -17,8 +17,10 @@ class UserPracticeController < ApplicationController
       end
     end
 
-    if @current_user_practice.nil? and current_user.is_developer?
+    if @current_user_practice.nil? and current_user.is_process_user?
       redirect_to results_path
+    elsif !@current_user_practice.nil?
+      @progress = @current_user_practice.practice.progress - (1/14.0*100)
     end
   end
 

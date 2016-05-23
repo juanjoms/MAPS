@@ -26,6 +26,8 @@ function save_diagram(final_element){
 <% practice_name = @current_user_practice.practice.name %>  //Nombre de la práctica a añadir
 <% answer = @current_user_practice.answer %>  //Respuesta
 <% id = @current_user_practice.id %>  //Id
+<% @progress = @current_user_practice.practice.progress %>  //Id
+
 
 <% if UserPractice.exists?(id + 1) %>
   <% @current_user_practice = UserPractice.find(id + 1)%>

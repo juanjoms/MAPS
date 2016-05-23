@@ -11,7 +11,14 @@
     <%= csrf_meta_tags %>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Raleway:400,100,200,300,600' rel='stylesheet' type='text/css'>
   </head>
+
+<% if controller.controller_name == 'results'  %>
+  <body data-no-turbolink="true">
+<% else %>
   <body>
+<% end %>
+
+
     <%= render "partials/navigation" %>
     <%= yield %>
 

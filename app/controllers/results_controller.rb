@@ -3,7 +3,6 @@ class ResultsController < ApplicationController
   before_action :profile_complete!
   before_action :setup_show_results!
 
-
   def index
     @company = current_user.company
     @diagramXML = @company.as_is_diagram.squish
@@ -25,6 +24,8 @@ class ResultsController < ApplicationController
     @value_matrix = []  #Added value array
     @scrum_matrix = []  #Scrum practices array
     @tools_matrix = []  #Tools and techniques array
+    @delete_matrix= []  #Practices to be deleted
+    @changes_matrix=[]  #Practices to be changed
 
       #################################
      ### Analisis el valor añadido ###
@@ -33,15 +34,19 @@ class ResultsController < ApplicationController
     practices.each do |practice|
       sum = 0
       cont = 0
+      max_score = 0
       @company.users.each do |user|
         up = UserPractice.where('user_id': user.id, practice_id: practice.id).last
         if !up.answer.nil?
           sum += up.added_value
           cont += 1
+          if up.added_value > max_score
+            max_score = up.added_value
+          end
         end
       end
       average = sum / cont
-      index = (average / 5) * 100
+      index = (average / max_score) * 100
       @value_matrix.push([practice.id, practice.name, index, value_range(index), value_anlys(index), value_class(index)])
     end
 
@@ -55,18 +60,22 @@ class ResultsController < ApplicationController
         @scrum_matrix.push([p[0], p[1], supported_class(scrump.supported), supported_tooltip(scrump.supported),
           scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
           scrump.procedure, scrump.tools, scrump.techniques, scrump.duration]);
-        if scrump.supported == 0
-          insert_technique_tool(p[0], p[1], p[5])
+        if scrump.supported > 0
+          @changes_matrix.push([p[1], scrump.name])
+        else
+          append_technique_tool(p[0], p[1], p[5])
         end
       elsif p[2] >= 76
-        insert_technique_tool(p[0], p[1], p[5])
+        append_technique_tool(p[0], p[1], p[5])
+      elsif p[2] <= 25
+        @delete_matrix.push(p[1])
       end
     end
   end
 
 
   private
-  def insert_technique_tool(practice_id, practice_name, practice_class)
+  def append_technique_tool(practice_id, practice_name, practice_class)
     @tools_matrix.push([practice_id, practice_name, practice_class, {:easy => [], :medium => [], :hard =>[]} ])
     techtool = TechniqueTool.where(practice_id: practice_id)
     techtool.each do |tt|

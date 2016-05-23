@@ -1,185 +1,181 @@
 <!--results starts-->
 <div class="section-padding">
   <div class="container">
-      <h1 class="text-head">Resultados</h1>
-      <% if !@complete_sample %>
-        <p class="text-center">
-          Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
-          Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
-        </p>
-      <% else %>
+    <h1 class="text-head">Resultados</h1>
+    <% if !@complete_sample %>
+      <p class="text-center">
+        Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
+        Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
+      </p>
+    <% else %>
 
-        <!-- Valor añadido -->
-        <div class="accordion">
-          Análisis del valor añadido
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
-        </div>
-        <div class="accordion-body">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>ID</th><th>Práctica</th><th>Valor</th><th>Rango</th><th>Análisis del valor</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for val in @value_matrix %>
-                <tr class="<%= val[5] %>">
-                  <td><%= val[0] %></td><td><%= val[1] %></td><td><%= "%.2f" % val[2] %></td><td><%= val[3] %></td><td><%= val[4] %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+      <!-- Valor añadido -->
+      <div class="accordion">
+        Análisis del valor añadido
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </div>
+      <div class="accordion-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th><th>Práctica</th><th>Valor</th><th>Rango</th><th>Análisis del valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for val in @value_matrix %>
+            <tr class="<%= val[5] %>">
+              <td><%= val[0] %></td><td><%= val[1] %></td><td><%= "%.2f" % val[2] %></td><td><%= val[3] %></td><td><%= val[4] %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
 
-        <!-- Mapeo a prácticas Scrum -->
-        <div class="accordion">
-          Mapeo a prácticas de Scrum
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
-        </div>
-        <div class="accordion-body">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Práctica</th>
-                <th>Soporte</th>
-                <th>Práctica de Scrum</th>
-                <th>Guías</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for scrum in @scrum_matrix %>
-                <tr>
-                  <td><%= scrum[0] %></td>
-                  <td><%= scrum[1] %></td>
-                  <td class="text-center">
-                    <i class="<%= scrum[2] %>" data-toggle="tooltip" title="<%= scrum[3] %>" aria-hidden="true" ></i>
-                  </td>
-                  <td>
-                    <%= scrum[4]  %>
-                  </td>
-                  <td>
-                    <% if scrum[5] != 0 %>
-                      <button type="button" name="button" class="btn btn-primary btn-sm show-guides" >
-                        Ver guías
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                      </button>
-                    <% else %>
-                      <button type="button" name="button" class="btn btn-default btn-sm" disabled>
-                        Ver guías
-                        <i class="fa fa-chevron-right" style="opacity:0" aria-hidden="true"></i>
-                      </button>
-                    <% end %>
-                  </td>
-                </tr>
-                <!-- Guias -->
-                <tr class="accordion-row">
-                  <td></td><td></td>
-                  <td colspan="3">
-                    <table class="table-nested" style="width:640px;">
-                      <tr>
-                        <td colspan="2">
-                          <%= simple_format(scrum[6]) %>
-                        </td>
-                      </tr>
+      <!-- Mapeo a prácticas Scrum -->
+      <div class="accordion">
+        Mapeo a prácticas de Scrum
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </div>
+      <div class="accordion-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Práctica</th>
+              <th>Soporte</th>
+              <th>Práctica de Scrum</th>
+              <th>Guías</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for scrum in @scrum_matrix %>
+            <tr>
+              <td><%= scrum[0] %></td>
+              <td><%= scrum[1] %></td>
+              <td class="text-center">
+                <i class="<%= scrum[2] %>" data-toggle="tooltip" title="<%= scrum[3] %>" aria-hidden="true" ></i>
+              </td>
+              <td>
+                <%= scrum[4]  %>
+              </td>
+              <td>
+                <% if scrum[5] != 0 %>
+                <button type="button" name="button" class="btn btn-primary btn-sm show-guides" >
+                  Ver guías
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <% else %>
+                <button type="button" name="button" class="btn btn-default btn-sm" disabled>
+                  Ver guías
+                  <i class="fa fa-chevron-right" style="opacity:0" aria-hidden="true"></i>
+                </button>
+                <% end %>
+              </td>
+            </tr>
+            <!-- Guias -->
+            <tr class="accordion-row">
+              <td></td><td></td>
+              <td colspan="3">
+                <table class="table-nested" style="width:640px;">
+                  <tr>
+                    <td colspan="2">
+                      <%= simple_format(scrum[6]) %>
+                    </td>
+                  </tr>
 
-                      <% if !scrum[7].nil? %>
-                        <tr><th colspan="2"> <%= simple_format(scrum[7]) %></th></tr>
+                  <% if !scrum[7].nil? %>
+                  <tr><th colspan="2"> <%= simple_format(scrum[7]) %></th></tr>
+                  <% end %>
+                  <% if !scrum[8].nil? %>
+                  <tr><th>Ingredientes:</th><td> <%= simple_format(scrum[8]) %></td></tr>
+                  <% end %>
+                  <% if !scrum[9].nil? %>
+                  <tr><th>Procedimiento:</th><td> <%= simple_format(scrum[9]) %></td></tr>
+                  <% end %>
+                  <% if !scrum[10].nil? %>
+                  <tr><th>Herramientas:</th><td> <%= simple_format(scrum[10]) %></td></tr>
+                  <% end %>
+                  <% if !scrum[11].nil? %>
+                  <tr><th>Técnicas:</th><td> <%= simple_format(scrum[11]) %></td></tr>
+                  <% end %>
+                  <% if !scrum[12].nil? %>
+                  <tr><th>Duración:</th><td> <%= simple_format(scrum[12]) %></td></tr>
+                  <% end %>
+                </table>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sugerencia de técnicas y herramientas ligeras -->
+      <div class="accordion">
+        Sugerencia de técnicas y herramientas ligeras
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </div>
+      <div class="accordion-body">
+        <table class="table table-hover table-techtool">
+          <thead>
+            <tr>
+              <th>ID</th><th>Práctica</th><th>Técnica o herramienta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for techtool in @tools_matrix %>
+            <tr class="<%= techtool[2] %>">
+              <td class="condensed"><%= techtool[0] %></td>
+              <td class="condensed"><%= techtool[1] %></td>
+              <td class="condensed">
+                <table class="table table-nested">
+                  <tr>
+                    <th> Sencillas </th>
+                    <td>
+                      <% techtool[3][:easy].each do |tt| %>
+                      <%= tt %><br>
                       <% end %>
-                      <% if !scrum[8].nil? %>
-                        <tr><th>Ingredientes:</th><td> <%= simple_format(scrum[8]) %></td></tr>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th> Punto medio </th>
+                    <td>
+                      <% techtool[3][:medium].each do |tt| %>
+                      <%= tt %><br>
                       <% end %>
-                      <% if !scrum[9].nil? %>
-                        <tr><th>Procedimiento:</th><td> <%= simple_format(scrum[9]) %></td></tr>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th> Complicadas </th>
+                    <td>
+                      <% techtool[3][:hard].each do |tt| %>
+                      <%= tt %><br>
                       <% end %>
-                      <% if !scrum[10].nil? %>
-                        <tr><th>Herramientas:</th><td> <%= simple_format(scrum[10]) %></td></tr>
-                      <% end %>
-                      <% if !scrum[11].nil? %>
-                        <tr><th>Técnicas:</th><td> <%= simple_format(scrum[11]) %></td></tr>
-                      <% end %>
-                      <% if !scrum[12].nil? %>
-                        <tr><th>Duración:</th><td> <%= simple_format(scrum[12]) %></td></tr>
-                      <% end %>
-                    </table>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br>
 
-        <!-- Sugerencia de técnicas y herramientas ligeras -->
-        <div class="accordion">
-          Sugerencia de técnicas y herramientas ligeras
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
-        </div>
-        <div class="accordion-body" style="display:block">
-          <table class="table table-hover table-techtool">
-            <thead>
-              <tr>
-                <th>ID</th><th>Práctica</th><th>Técnica o herramienta</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for techtool in @tools_matrix %>
-                <tr class="<%= techtool[2] %>">
-                  <td class="condensed"><%= techtool[0] %></td>
-                  <td class="condensed"><%= techtool[1] %></td>
-                  <td class="condensed">
-                    <table class="table table-nested">
-                      <tr>
-                        <th> Sencillas </th>
-                        <td>
-                          <% techtool[3][:easy].each do |tt| %>
-                            <%= tt %><br>
-                          <% end %>
-                        </td>
-                      </tr>
+      <hr>
 
-                      <tr>
-                        <th> Punto medio </th>
-                        <td>
-                          <% techtool[3][:medium].each do |tt| %>
-                            <%= tt %><br>
-                          <% end %>
-                        </td>
-                      </tr>
+      <!-- Rediseño del proceso -->
+      <h2 class="text-head-h2">
+        Proceso rediseñado
+      </h2>
 
-                      <tr>
-                        <th> Complicadas </th>
-                        <td>
-                          <% techtool[3][:hard].each do |tt| %>
-                            <%= tt %><br>
-                          <% end %>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+      <!-- render bpmn -->
+      <div id="bpmn">
+        <%= render 'bpmn_redesign' %>
+      </div>      
 
-        <br><br>
-        <!-- Rediseño del proceso -->
-        <h2 class="text-head-h2">
-          Proceso rediseñado
-        </h2>
-
-
-
-          <!-- render bpmn -->
-          <div id="bpmn">
-            <%= render 'bpmn' %>
-          </div>
-
-
-
-
-
-      <% end %>
+    <% end %>
   </div>
 </div>
 

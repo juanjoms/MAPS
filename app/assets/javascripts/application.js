@@ -64,7 +64,6 @@ function load_bpmn(diagramXML){
     var canvas = bpmnjs.get('canvas');
     canvas.zoom('fit-viewport');
   });
-
 }
 
 function save_diagram(){
@@ -76,9 +75,8 @@ function save_diagram(){
       success: function(resp){ console.log("Diagram saved"); }
     });
   });
-  window.location.href = "/done";
+  window.location.href = "/results";
 }
-
 
 
 function saveSVG(done) {
@@ -89,6 +87,37 @@ function saveDiagram(done) {
   bpmnjs.saveXML({ format: true }, function(err, xml) {
     done(err, xml);
   });
+}
+
+
+function remove_practice(practice){
+  var elements = cli.elements();
+
+  for(i in elements){
+    var elem = cli.element(elements[i]);
+    if(practice == elem.businessObject.name){
+      var incoming_id = cli.element(elem.id).incoming[0].source.id;
+      if(cli.element(elem.id).outgoing.length > 0){
+        var outgoing_id = cli.element(elem.id).outgoing[0].target.id;
+        cli.connect(incoming_id, outgoing_id, 'bpmn:SequenceFlow');
+      }
+      cli.removeShape(elem.id);
+      break;
+    }
+  }
+}
+
+function change_practice(p_old, p_new){
+  var elements = cli.elements();
+
+  for(i in elements){
+    var elem = cli.element(elements[i]);
+
+    if(p_old == elem.businessObject.name){
+      cli.setLabel(elem, p_new);
+      break;
+    }
+  }
 }
 
 
