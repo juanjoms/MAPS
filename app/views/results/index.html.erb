@@ -5,7 +5,12 @@
     <% if !@complete_sample %>
       <p class="text-center">
         Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
+      </p>
+      <p class="text-center">
+        Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
         Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
+      </p>
+
       </p>
     <% else %>
 
@@ -173,7 +178,7 @@
       <!-- render bpmn -->
       <div id="bpmn">
         <%= render 'bpmn_redesign' %>
-      </div>      
+      </div>
 
     <% end %>
   </div>

@@ -2,12 +2,7 @@ function append_element(source, element_name) {
   //var last_element = find_last_element();
   var new_element = cli.append(source, 'bpmn:Task', '150,0');
   cli.setLabel(new_element, element_name);
-
-  var last_x = cli.element(new_element).x;
-  if( last_x >= 999){
-    $("#canvas").width((last_x + 200) + "px");
-    $(".scroll-canvas").scrollLeft(last_x);
-  }
+  resize_canvas();
   save_diagram(new_element);
 }
 

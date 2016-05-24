@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to @company
+      redirect_to root_path      
       flash[:notice] = "Organización creada correctamente"
     else
       render :new

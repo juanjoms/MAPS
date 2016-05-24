@@ -16,7 +16,7 @@
 //= require bootstrap.min
 //= require jquery.raty
 //= require ratyrate
-//= require bpmn-modeler
+//= require bpmn-modeler.min
 //= require bundle-cli
 //= require turbolinks
 
@@ -51,8 +51,8 @@ function toggle_rate(){
 
 var bpmnjs;
 function load_bpmn(diagramXML){
-  var BpmnJS = window.BpmnJS;
-  bpmnjs = new BpmnJS({
+  var BpmnViewer = window.BpmnJS;
+  bpmnjs = new BpmnViewer({
     container: '#canvas',
     zoomScroll: { enabled: false },
     additionalModules: [CliModule],
@@ -62,9 +62,20 @@ function load_bpmn(diagramXML){
   bpmnjs.importXML(diagramXML, function(err) {
     if (err) { console.log(err); }
     var canvas = bpmnjs.get('canvas');
-    canvas.zoom('fit-viewport');
+    //canvas.zoom('fit-viewport');
+    canvas.zoom(1);
   });
+  waitForCliToResize(false);
 }
+
+function waitForCliToResize(){
+  if(typeof cli !== "undefined")
+  {
+    resize_canvas();
+  }
+  else{ setTimeout(function(){ waitForCliToResize(); },250); }
+}
+
 
 function save_diagram(){
   bpmnjs.saveXML(function(err, xml){
@@ -89,6 +100,11 @@ function saveDiagram(done) {
   });
 }
 
+
+function add_missing_practices(){
+  var lane = cli.create("bpmn:Participant",  {x:78, y:450, width:1400, height:150}, "Collaboration_07pzko3");
+  cli.setLabel(lane, "Prácticas faltantes");
+}
 
 function remove_practice(practice){
   var elements = cli.elements();
@@ -118,6 +134,25 @@ function change_practice(p_old, p_new){
       break;
     }
   }
+}
+
+
+/* Resize canvas:
+  Aumenta el tamaño del div para
+  que aparesca el scroll bar */
+function resize_canvas(scrollLeft){
+  var elems = cli.elements();
+  width = 0;
+  for(var i=0; i< elems.length; i++){
+    if(elems[i].startsWith("Participant")){
+      var elem = cli.element(elems[i]);
+      if (width < elem.width )
+        width = elem.width + 100;
+    }
+  }
+  $("#canvas").width(width + "px");
+  if(scrollLeft)
+    $(".scroll-canvas").scrollLeft(width);
 }
 
 

@@ -22,7 +22,9 @@
         change_practice("<%= p[0] %>", "<%= p[1] %>");
       <% end %>
 
+      add_missing_practices();
 
+      $('.djs-palette').removeClass('open');
 
     }
     else{ setTimeout(function(){ waitForCliLoaded(); },250); }

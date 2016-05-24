@@ -1,8 +1,11 @@
 <% if @current_user_practice.nil? %>
   <div class="questions-finished">
     <h2 class="modal-title">Cuestionario terminado</h2>
-    <p> Termina el digrama y presiona Guardar </p>
-    <a id="save-diagram" class="btn btn-primary"> Guardar diagrama </a>
+    <p>
+      Has terminado de calificar prácticas,<br>
+      puedes modificar el diagrama antes de terminar y ver los resultados.
+    </p>    <br>
+    <a id="save-diagram" class="btn btn-primary"> Terminar y guardar </a>
   </div>
 <% else %>
   <% @practice = @current_user_practice.practice %>
