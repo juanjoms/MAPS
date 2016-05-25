@@ -24,6 +24,8 @@ $(document).ready(function(){
   toggle_rate();
   $('[data-toggle="tooltip"]').tooltip()
   $('body').on('click', '#save-diagram', save_diagram);
+  $('body').on('click', '#completed_survey', completed_survey);
+
 
   $('.accordion').click(function(){
     $(this).next().slideToggle();
@@ -66,6 +68,7 @@ function load_bpmn(diagramXML){
     canvas.zoom(1);
   });
   waitForCliToResize(false);
+
 }
 
 function waitForCliToResize(){
@@ -88,6 +91,9 @@ function save_diagram(){
   });
   window.location.href = "/results";
 }
+function completed_survey(){
+  window.location.href = "/results";
+}
 
 
 function saveSVG(done) {
@@ -101,9 +107,38 @@ function saveDiagram(done) {
 }
 
 
-function add_missing_practices(){
-  var lane = cli.create("bpmn:Participant",  {x:78, y:450, width:1400, height:150}, "Collaboration_07pzko3");
-  cli.setLabel(lane, "Prácticas faltantes");
+function add_missing_lane(){
+  /* Recorriendo carriles hacia abajo*/
+  var elems = cli.elements();
+  for(j in elems){
+    var elem = elems[j];
+    if(elem.startsWith("Participant")){
+      cli.move(elem, {x:0, y:130});
+    }
+  }
+  /* Añadiendo carrill al principio */
+  var lane = cli.create("bpmn:Participant",  {x:78, y:20, width:1200, height:120}, "Collaboration_07pzko3");
+  cli.setLabel(lane, "Prácticas faltantes que aportan valor");
+  return lane;
+}
+
+x = 0;
+function add_missing_practice(practice, lane){
+  var is_missing = true;
+  var elems = cli.elements();
+  for(j in elems){
+    var elem = cli.element(elems[j]);
+    if(practice == elem.businessObject.name){
+      is_missing = false;
+      break;
+    }
+  }
+
+  if(is_missing){
+    var missing_practice = cli.create("bpmn:Task", {x:160+x,y:80}, lane);
+    cli.setLabel(missing_practice, practice);
+    x += 150;
+  }
 }
 
 function remove_practice(practice){

@@ -1,12 +1,26 @@
 <% if @current_user_practice.nil? %>
-  <div class="questions-finished">
-    <h2 class="modal-title">Cuestionario terminado</h2>
-    <p>
-      Has terminado de calificar prácticas,<br>
-      puedes modificar el diagrama antes de terminar y ver los resultados.
-    </p>    <br>
-    <a id="save-diagram" class="btn btn-primary"> Terminar y guardar </a>
-  </div>
+  <% if @current_user.is_process_user? %>
+    <div class="questions-finished">
+      <h2 class="modal-title">Cuestionario terminado</h2>
+      <p>
+        Has terminado de calificar prácticas,<br>
+        puedes regresar a alguna pregunta o terminar el cuestionario.
+      </p>
+      <a id="questions-completed" class="btn btn-primary"> Terminar y guardar </a>
+    </div>
+
+  <% else %>
+    <div class="questions-finished">
+      <h2 class="modal-title">Cuestionario terminado</h2>
+      <p>
+        Has terminado de calificar prácticas,<br>
+        puedes modificar el diagrama antes de terminar y continuar a los resultados.
+      </p>    <br>
+      <a id="save-diagram" class="btn btn-primary"> Terminar y guardar </a>
+    </div>
+  <% end %>
+
+
 <% else %>
   <% @practice = @current_user_practice.practice %>
 

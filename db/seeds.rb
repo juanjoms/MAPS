@@ -137,7 +137,7 @@ ScrumPractice.create(practice_id:9, supported: 0, name:'No soportada', descripti
 
 ScrumPractice.create(practice_id:10, supported: 1, name:'Definir roles y responsabilidades al principio y fin del Sprint', description: 'Scrum define roles, responsabilidades y participación de las partes interesadas al principio y al final de cada sprint. Esta participación es supervisada por el Scrum Master y registrada en un plan de comunicación.')
 
-ScrumPractice.create(practice_id:11, supported: 2, name:'Establecer el plan del proyecto con base a la visión y el Product Backlog del proyecto ', description: 'El documento de visión y el Producto Backlog crean una base para la elaboración de un plan de proyecto de alto nivel.
+ScrumPractice.create(practice_id:11, supported: 2, name:'Establecer el plan del proyecto con base en el Product Backlog', description: 'El documento de visión y el Producto Backlog crean una base para la elaboración de un plan de proyecto de alto nivel.
 La visión describe por qué el proyecto se está realizando y lo cual es el estado final deseado. El Product Backlog define los requisitos funcionales y no funcionales que el sistema debe cumplir para entregar la visión, priorizados y estimados.',
 meeting:'TaskBoard', tools: '- Taskboard: Ofrece una descripción visual de los ítems seleccionados del Product Backlog (historias) y el Sprint Backlog (tareas).
 a) El taskboard sólo es mantenido por el equipo.
@@ -150,7 +150,7 @@ procedure: 'Crear un tablero con las siguientes columnas:
 4. Done. Cuando se ha completado una tarea, se mueve la nota adhesiva a esta columna.')
 
 
-ScrumPractice.create(practice_id:12, supported: 2, name:'Revisar los planes que afectan al proyecto durante las reuniones de planificación y retrospectiva', description: 'En Scrum, los planes se revisan al comienzo de cada sprint y las posibles adaptaciones se llevan a cabo conforme al cambio de requisitos y tecnologías.',
+ScrumPractice.create(practice_id:12, supported: 2, name:'Revisar los planes que afectan al proyecto en la revisión de Sprint', description: 'En Scrum, los planes se revisan al comienzo de cada sprint y las posibles adaptaciones se llevan a cabo conforme al cambio de requisitos y tecnologías.',
   meeting: 'Sprint Review', ingredients: '* Incremento del producto potencialmente entregable, presentado por el equipo.
 * Taskboard, notas adhesivas, marcadores.', procedure: '1. El Product Owner da la bienvenida a los participantes del Sprint Review
 2. El Product Owner les recuerda a los presentes el propósito del Sprint pasado: el objetivo del Sprint, el cual soporta las historias que el equipo había seleccionado.
@@ -158,7 +158,7 @@ ScrumPractice.create(practice_id:12, supported: 2, name:'Revisar los planes que 
 4. El Scrum Master modera la sesión.
 5. La retroalimentación del usuario final es documentada por el ScrumMaster.', duration:'90 min. al final del Sprint')
 
-ScrumPractice.create(practice_id:13, supported: 2, name:'Conciliar los niveles de trabajo y de recursos durante la planificación de Sprints', description: 'Durante la reunión de planificación de Sprint se produce la conciliación de trabajo debido a que el Backlog es dinámico, por lo que son posibles nuevas estimaciones y calendarios.
+ScrumPractice.create(practice_id:13, supported: 2, name:'Conciliar los niveles de trabajo y de recursos en la planificación de Sprints', description: 'Durante la reunión de planificación de Sprint se produce la conciliación de trabajo debido a que el Backlog es dinámico, por lo que son posibles nuevas estimaciones y calendarios.
 El equipo, el Product Owner y el Scrum Master definen las funcionalidades que se desarrollarán en el Sprint.',
 meeting:'Sprint Planning Meeting #2', ingredients: '* El Product Backlog seleccionado para el Sprint.
 * Rotafolios, marcadores, tijeras, notas adhesivas, pizarras, lápices, etc.', procedure: '1. Comenzar con el primer ítem del Product Backlog.

@@ -1,7 +1,6 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :profile_complete!
-  before_action :setup_show_results!
 
   def index
     @company = current_user.company
@@ -24,6 +23,7 @@ class ResultsController < ApplicationController
     @value_matrix = []  #Added value array
     @scrum_matrix = []  #Scrum practices array
     @tools_matrix = []  #Tools and techniques array
+    @diagram_matrix=[]  #Practicas que deben estar en el diagrama
     @delete_matrix= []  #Practices to be deleted
     @changes_matrix=[]  #Practices to be changed
 
@@ -60,6 +60,7 @@ class ResultsController < ApplicationController
         @scrum_matrix.push([p[0], p[1], supported_class(scrump.supported), supported_tooltip(scrump.supported),
           scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
           scrump.procedure, scrump.tools, scrump.techniques, scrump.duration]);
+        @diagram_matrix.push(p[1]);
         if scrump.supported > 0
           @changes_matrix.push([p[1], scrump.name])
         else
@@ -67,6 +68,7 @@ class ResultsController < ApplicationController
         end
       elsif p[2] >= 76
         append_technique_tool(p[0], p[1], p[5])
+        @diagram_matrix.push(p[1]);
       elsif p[2] <= 25
         @delete_matrix.push(p[1])
       end
@@ -145,15 +147,5 @@ class ResultsController < ApplicationController
       return "Soportada"
     end
   end
-
-  def setup_show_results!
-    user_practices = UserPractice.where("user_id": current_user.id)
-    if user_practices.last.answer.nil?
-      session[:show_results] = false
-    else
-      session[:show_results] = true
-    end
-  end
-
 
 end

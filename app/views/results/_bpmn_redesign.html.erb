@@ -12,6 +12,12 @@
   function waitForCliLoaded(){
     if(typeof cli !== "undefined")
     {
+      var lane = add_missing_lane();
+      //Añadiendo prácticas no contempladas
+      <% @diagram_matrix.each do |p| %>
+        add_missing_practice("<%= p %>", lane);
+      <% end %>
+
       //Borrando practicas
       <% @delete_matrix.each do |p| %>
         remove_practice("<%= p %>");
@@ -20,11 +26,9 @@
       //Cambiando practicas
       <% @changes_matrix.each do |p| %>
         change_practice("<%= p[0] %>", "<%= p[1] %>");
-      <% end %>
+      <% end %>      
 
-      add_missing_practices();
-
-      $('.djs-palette').removeClass('open');
+      //$('.djs-palette').removeClass('open');
 
     }
     else{ setTimeout(function(){ waitForCliLoaded(); },250); }

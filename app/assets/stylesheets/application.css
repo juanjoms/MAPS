@@ -78,7 +78,7 @@ body {
 .modal-title::after {
   display: block;
   margin: 0 auto;
-  margin-bottom: 15px;
+	margin-bottom: 30px;
   width: 70px;
   height: 1px;
   background: #19A9E5 none repeat scroll 0% 0%;
@@ -446,13 +446,13 @@ de las que se utilizan actualizarlas
 .scroll-canvas{
 	overflow:auto;
 	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: #fafafa;
+	margin-bottom: 10px;	
+	background-color: #eee;
 	border: 1px solid #ddd;
 }
 #canvas{
 	height: 650px;
-	background-color: #fafa;
+	background-color: #eee;
 }
 
 /** Display errors **/
