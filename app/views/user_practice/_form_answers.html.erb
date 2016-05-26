@@ -15,6 +15,16 @@
   ></div>
 
   <div class="mtop">
-    <%= f.submit "Siguiente", class:"btn btn-primary" %>
+
+    <button type="button" class="btn btn-default" name="back">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      Atrás
+    </button>
+
+    <button type="submit" class="btn btn-primary" name="back">
+      Siguiente
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+
   </div>
 <% end %>

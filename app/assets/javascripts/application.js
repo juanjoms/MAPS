@@ -25,7 +25,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip()
   $('body').on('click', '#save-diagram', save_diagram);
   $('body').on('click', '#completed_survey', completed_survey);
-
+  $('#company_employees_number').on('input', calc_sample_size );
 
   $('.accordion').click(function(){
     $(this).next().slideToggle();
@@ -51,8 +51,8 @@ function toggle_rate(){
   });
 }
 
-var bpmnjs;
-function load_bpmn(diagramXML){
+var bpmnjs, canvas;
+function load_bpmn(diagramXML, company_name){
   var BpmnViewer = window.BpmnJS;
   bpmnjs = new BpmnViewer({
     container: '#canvas',
@@ -63,20 +63,20 @@ function load_bpmn(diagramXML){
   //import diagram
   bpmnjs.importXML(diagramXML, function(err) {
     if (err) { console.log(err); }
-    var canvas = bpmnjs.get('canvas');
+    canvas = bpmnjs.get('canvas');
     //canvas.zoom('fit-viewport');
     canvas.zoom(1);
   });
-  waitForCliToResize(false);
-
+  waitForCliToResize(company_name);
 }
 
-function waitForCliToResize(){
+function waitForCliToResize(company_name){
   if(typeof cli !== "undefined")
   {
+    cli.setLabel('Participant_1jxwwcj', company_name);
     resize_canvas();
   }
-  else{ setTimeout(function(){ waitForCliToResize(); },250); }
+  else{ setTimeout(function(){ waitForCliToResize(company_name); },250); }
 }
 
 
@@ -117,8 +117,8 @@ function add_missing_lane(){
     }
   }
   /* Añadiendo carrill al principio */
-  var lane = cli.create("bpmn:Participant",  {x:78, y:20, width:1200, height:120}, "Collaboration_07pzko3");
-  cli.setLabel(lane, "Prácticas faltantes que aportan valor");
+  var width = cli.element('Participant_1jxwwcj').width;
+  var lane = cli.create("bpmn:Participant",  {x:78, y:20, width:width, height:120}, "Collaboration_07pzko3");  
   return lane;
 }
 
@@ -137,6 +137,7 @@ function add_missing_practice(practice, lane){
   if(is_missing){
     var missing_practice = cli.create("bpmn:Task", {x:160+x,y:80}, lane);
     cli.setLabel(missing_practice, practice);
+    canvas.addMarker(missing_practice, 'highlight');
     x += 150;
   }
 }
@@ -171,7 +172,6 @@ function change_practice(p_old, p_new){
   }
 }
 
-
 /* Resize canvas:
   Aumenta el tamaño del div para
   que aparesca el scroll bar */
@@ -181,7 +181,7 @@ function resize_canvas(scrollLeft){
   for(var i=0; i< elems.length; i++){
     if(elems[i].startsWith("Participant")){
       var elem = cli.element(elems[i]);
-      if (width < elem.width )
+      if (width < elem.width + 100)
         width = elem.width + 100;
     }
   }
@@ -190,6 +190,17 @@ function resize_canvas(scrollLeft){
     $(".scroll-canvas").scrollLeft(width);
 }
 
+
+function calc_sample_size(){
+  var N = $('#company_employees_number').val();
+  var variance_p = 0.3 * 0.3;  //Varianza al cuadrado
+  var confidence_p = 1.28 * 1.28;
+  var error_p= 0.1 * 0.1;
+
+  //var n = (N*(variance**2)*(confidence**2)) / ( (error**2)*(N-1) + (variance**2) * (confidence**2) );
+  var n = (N * variance_p * confidence_p) / ( error_p * (N-1) + (variance_p) * (confidence_p) );
+  $('#sample-size').val(Math.round(n));
+}
 
 /*
 //Diagram my custom functions

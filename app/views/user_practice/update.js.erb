@@ -2,7 +2,7 @@ function append_element(source, element_name) {
   //var last_element = find_last_element();
   var new_element = cli.append(source, 'bpmn:Task', '150,0');
   cli.setLabel(new_element, element_name);
-  resize_canvas();
+  resize_canvas(true);
   save_diagram(new_element);
 }
 

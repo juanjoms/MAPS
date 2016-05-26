@@ -29,7 +29,13 @@
     <%= f.number_field :employees_number, class: 'form-control', :placeholder => 'Núm. de empleados' %>
   </div>
 
+  <!-- Numero de empleados -->
+  <div class="input-group">
+    <span class="input-group-addon"> <b> Muestra:</b></span>
+    <input type="text" id="sample-size" class="form-control" readonly style="background-color:#f6f6f6;">
+  </div>
+
   <div class="actions">
-    <%= f.submit "Agregar empresa", class:'btn btn-primary' %>
+  <%= f.submit stext, class:'btn btn-primary' %>
   </div>
 <% end %>

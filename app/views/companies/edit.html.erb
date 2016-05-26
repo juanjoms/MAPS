@@ -2,9 +2,13 @@
   <h2 class="modal-title">Editando empresa</h2>
 
 
-  <%= render 'form' %>
+  <%= render 'form', stext: "Editar empresa"  %>
+
 
   <%= link_to 'Show', @company %> |
   <%= link_to 'Back', companies_path %>
+  <script type="text/javascript">
+    calc_sample_size();
+  </script>
 
 </div>

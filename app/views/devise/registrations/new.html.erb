@@ -34,12 +34,12 @@
   <!-- Password -->
   <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control', :placeholder => 'Contraseña' %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control', :placeholder => 'Contraseña (mínimo 8 caracteres)' %>
     <!--
     <% if @validatable %>
     <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
     <% end %>
-  -->
+    -->
   </div>
 
   <!-- Confirm Password -->

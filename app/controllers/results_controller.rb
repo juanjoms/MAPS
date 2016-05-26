@@ -5,7 +5,15 @@ class ResultsController < ApplicationController
   def index
     @company = current_user.company
     @diagramXML = @company.as_is_diagram.squish
-    @sample = @company.employees_number / 2 + 1
+
+
+    eN = @company.employees_number
+    variance_p   = 0.3 * 0.3; # variance powered 2
+    confidence_p = 1.28 * 1.28; # confidence powered 2
+    error_p      = 0.1 * 0.1;  # error powered 2
+
+    n = (eN * variance_p * confidence_p) / ( error_p * (eN-1) + (variance_p) * (confidence_p) )
+    @sample = n.round
 
     @cont_users = 0
     @company.users.each do |user|
@@ -34,19 +42,15 @@ class ResultsController < ApplicationController
     practices.each do |practice|
       sum = 0
       cont = 0
-      max_score = 0
       @company.users.each do |user|
         up = UserPractice.where('user_id': user.id, practice_id: practice.id).last
         if !up.answer.nil?
           sum += up.added_value
           cont += 1
-          if up.added_value > max_score
-            max_score = up.added_value
-          end
         end
       end
       average = sum / cont
-      index = (average / max_score) * 100
+      index = (average / 5) * 100
       @value_matrix.push([practice.id, practice.name, index, value_range(index), value_anlys(index), value_class(index)])
     end
 

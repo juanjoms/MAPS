@@ -3,14 +3,9 @@
   <div class="container">
     <h1 class="text-head">Resultados</h1>
     <% if !@complete_sample %>
-      <p class="text-center">
-        Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
-      </p>
-      <p class="text-center">
-        Sólo <%= @cont_users %> en la empresa: <%= @company.name %> ha realizado el cuesionario <br>
-        Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados
-      </p>
-
+      <p class="p-completed">
+        Se require una muestra de <%= @sample %> empelados para la empresa <b><%= @company.name %></b>.  <br>      
+        Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados.
       </p>
     <% else %>
 
