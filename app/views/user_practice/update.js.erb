@@ -1,7 +1,9 @@
 function append_element(source, element_name) {
-  //var last_element = find_last_element();
   var new_element = cli.append(source, 'bpmn:Task', '150,0');
   cli.setLabel(new_element, element_name);
+  if (final_practice == true){
+    cli.append(new_element, 'bpmn:EndEvent', '150,0');
+  }
   resize_canvas(true);
   save_diagram(new_element);
 }
@@ -26,8 +28,10 @@ function save_diagram(final_element){
 
 <% if UserPractice.exists?(id + 1) %>
   <% @current_user_practice = UserPractice.find(id + 1)%>
+  final_practice = false;
 <% else %>
   <% @current_user_practice = nil %>
+  final_practice = true;
 <% end %>
 
 //Get the next practice

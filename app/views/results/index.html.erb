@@ -4,7 +4,7 @@
     <h1 class="text-head">Resultados</h1>
     <% if !@complete_sample %>
       <p class="p-completed">
-        Se require una muestra de <%= @sample %> empelados para la empresa <b><%= @company.name %></b>.  <br>      
+        Se require una muestra de <%= @sample %> empleados para la empresa <b><%= @company.name %></b>.  <br>      
         Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados.
       </p>
     <% else %>

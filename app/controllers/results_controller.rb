@@ -7,14 +7,16 @@ class ResultsController < ApplicationController
     @diagramXML = @company.as_is_diagram.squish
 
 
+    #Cálculo del tamaño muestral
     eN = @company.employees_number
     variance_p   = 0.3 * 0.3; # variance powered 2
     confidence_p = 1.28 * 1.28; # confidence powered 2
     error_p      = 0.1 * 0.1;  # error powered 2
-
     n = (eN * variance_p * confidence_p) / ( error_p * (eN-1) + (variance_p) * (confidence_p) )
     @sample = n.round
 
+    #Checo si el numero de usuarios que han
+    #contestado es igual o mayor a la muestra
     @cont_users = 0
     @company.users.each do |user|
       practice = UserPractice.where(user_id: user.id).last
@@ -35,35 +37,42 @@ class ResultsController < ApplicationController
     @delete_matrix= []  #Practices to be deleted
     @changes_matrix=[]  #Practices to be changed
 
-      #################################
-     ### Analisis el valor añadido ###
+    #################################
+    ### Analisis el valor añadido ###
     #################################
     practices = Practice.all
     practices.each do |practice|
-      sum = 0
-      cont = 0
+      av_list = []
       @company.users.each do |user|
         up = UserPractice.where('user_id': user.id, practice_id: practice.id).last
         if !up.answer.nil?
-          sum += up.added_value
-          cont += 1
+          av_list.push(up.added_value)
         end
       end
-      average = sum / cont
-      index = (average / 5) * 100
-      @value_matrix.push([practice.id, practice.name, index, value_range(index), value_anlys(index), value_class(index)])
+
+      #Detect outliers
+      outliers = detect_outliers(av_list)
+      outliers.each do |outlier|
+        av_list.delete(outlier)
+      end
+
+      #Calc average and index number
+      average = av_list.sum / av_list.length.to_f
+      index = (average / 5.0) * 100
+      @value_matrix.push([practice.id, practice.name, index, value_range(index), value_anlys(index), value_class(index), practice.necessary])
     end
 
-       ##################################
-      ### Mapeo a prácticas de Scrum ###
-     ### y técnicas y herramientas  ###
+    ##################################
+    ### Mapeo a prácticas de Scrum ###
+    ### y técnicas y herramientas  ###
     ##################################
     @value_matrix.each do |p|
-      if (p[2] < 76) and (p[2] > 25)
+      #Practicas entre 26-75, o menores a 25 solo si son indispensable
+      if (p[2] > 25 and p[2] < 76) or (p[2] <= 25 and p[6] == 1)
         scrump = ScrumPractice.where(practice_id: p[0]).last;
         @scrum_matrix.push([p[0], p[1], supported_class(scrump.supported), supported_tooltip(scrump.supported),
-          scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
-          scrump.procedure, scrump.tools, scrump.techniques, scrump.duration]);
+        scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
+        scrump.procedure, scrump.tools, scrump.techniques, scrump.duration]);
         @diagram_matrix.push(p[1]);
         if scrump.supported > 0
           @changes_matrix.push([p[1], scrump.name])
@@ -81,6 +90,41 @@ class ResultsController < ApplicationController
 
 
   private
+
+  # Examples and more about this function:
+  # https://gist.github.com/juanjo23/66babe93c732043b4abad3c8f973aea7
+  def detect_outliers(list_nums)
+    average = list_nums.sum.to_f / list_nums.length
+    sup = 0
+    inf = 0
+    list_sup = []
+    list_inf = []
+
+    list_nums.each do |i|
+      #Superior outliers
+      if i - average >= 3
+        list_sup.push(i)
+        sup += 1
+      end
+      #Inferior outliers
+      if average - i >= 3
+        list_inf.push(i)
+        inf += 1
+      end
+    end
+
+    #Checks if there are outliers and they are smaller than 25%
+    if sup > 0 and sup.to_f / list_nums.length <= 0.25
+      return list_sup
+    end
+
+    if inf > 0 and inf.to_f / list_nums.length <= 0.25
+      return list_inf
+    end
+
+    return []
+  end
+
   def append_technique_tool(practice_id, practice_name, practice_class)
     @tools_matrix.push([practice_id, practice_name, practice_class, {:easy => [], :medium => [], :hard =>[]} ])
     techtool = TechniqueTool.where(practice_id: practice_id)

@@ -25,6 +25,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip()
   $('body').on('click', '#save-diagram', save_diagram);
   $('body').on('click', '#completed_survey', completed_survey);
+
   $('#company_employees_number').on('input', calc_sample_size );
 
   $('.accordion').click(function(){
@@ -86,11 +87,15 @@ function save_diagram(){
       url: "/user_practice",
       type: "POST",
       data: {xml_diagram: xml},
-      success: function(resp){ console.log("Diagram saved"); }
+      success: function(resp){ console.log("Diagram saved"); },
+      error: function(){
+        console.err("Error al guardar diagrama");
+      }
     });
   });
   window.location.href = "/results";
 }
+
 function completed_survey(){
   window.location.href = "/results";
 }
@@ -106,24 +111,22 @@ function saveDiagram(done) {
   });
 }
 
-
+missing_lane = "";
 function add_missing_lane(){
   /* Recorriendo carriles hacia abajo*/
   var elems = cli.elements();
   for(j in elems){
-    var elem = elems[j];
-    if(elem.startsWith("Participant")){
-      cli.move(elem, {x:0, y:130});
+    if(elems[j].startsWith("Participant")){
+      cli.move(elems[j], {x:0, y:130});
     }
   }
   /* Añadiendo carrill al principio */
   var width = cli.element('Participant_1jxwwcj').width;
-  var lane = cli.create("bpmn:Participant",  {x:78, y:20, width:width, height:120}, "Collaboration_07pzko3");  
-  return lane;
+  missing_lane = cli.create("bpmn:Participant",  {x:78, y:20, width:width, height:120}, "Collaboration_07pzko3");
 }
 
 x = 0;
-function add_missing_practice(practice, lane){
+function add_missing_practice(practice){
   var is_missing = true;
   var elems = cli.elements();
   for(j in elems){
@@ -135,11 +138,26 @@ function add_missing_practice(practice, lane){
   }
 
   if(is_missing){
-    var missing_practice = cli.create("bpmn:Task", {x:160+x,y:80}, lane);
+    var missing_practice = cli.create("bpmn:Task", {x:160+x,y:80}, missing_lane);
     cli.setLabel(missing_practice, practice);
     canvas.addMarker(missing_practice, 'highlight');
     x += 150;
   }
+}
+
+function delete_lane_if_empty(){
+  if (cli.element(missing_lane).children.length == 0){
+    cli.removeShape(missing_lane);
+    /* Recorriendo carriles hacia arriba */
+    var elems = cli.elements();
+    for(j in elems){
+      if(elems[j].startsWith("Participant")){
+        console.log(elems[j]);
+        cli.move(elems[j], {x:0, y:-130});
+      }
+    }
+  }
+
 }
 
 function remove_practice(practice){

@@ -6,7 +6,8 @@
         Has terminado de calificar prácticas,<br>
         puedes regresar a alguna pregunta o terminar el cuestionario.
       </p>
-      <a id="questions-completed" class="btn btn-primary"> Terminar y guardar </a>
+      <br>
+      <a id="completed_survey" class="btn btn-primary"> Terminar cuestionario </a>
     </div>
 
   <% else %>
@@ -30,6 +31,7 @@
   <div class="row">
     <div class="col-md-7 question">
       <div class="text-head-h3">
+        <%= @practice.id %>.
         <%= @practice.question %>
       </div>
       <div class="question_examples question">

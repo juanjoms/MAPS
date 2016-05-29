@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 20160521062242) do
     t.string   "name"
     t.string   "question"
     t.text     "examples"
-    t.integer  "added_value"
+    t.integer  "necessary",         default: 0
     t.integer  "specific_goals_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "process_areas", force: :cascade do |t|

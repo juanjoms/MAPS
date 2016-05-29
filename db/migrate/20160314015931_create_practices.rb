@@ -4,7 +4,9 @@ class CreatePractices < ActiveRecord::Migration
       t.string :name
       t.string :question
       t.text :examples
-      t.integer :added_value
+
+      #0 No necessary, 1 necessary
+      t.integer :necessary, default: 0
 
       t.references :specific_goals
       t.timestamps null: false
