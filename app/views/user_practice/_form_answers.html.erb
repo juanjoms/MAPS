@@ -16,15 +16,21 @@
 
   <div class="mtop">
 
-    <button type="button" class="btn btn-default" name="back">
+    <button type="submit" class="btn btn-default" name="back" value="back">
       <i class="fa fa-chevron-left" aria-hidden="true"></i>
       Atrás
     </button>
 
-    <button type="submit" class="btn btn-primary" name="back">
+    <button type="submit" class="btn btn-primary" name="next" value="next">
       Siguiente
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </button>
 
   </div>
 <% end %>
+<script type="text/javascript">
+  if ($('#user_practice_answer_1').is(':checked') || $('#user_practice_answer_2').is(':checked')){
+    $('.star').fadeTo(200, 0);
+    $('.added-value-title').fadeTo(200, 0);
+  }
+</script>

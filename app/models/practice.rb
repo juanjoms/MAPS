@@ -6,7 +6,7 @@ class Practice < ActiveRecord::Base
   has_one :technique_tool
 
   def progress
-    return self.id / 14.0 * 100
+    return self.id / 14.0 * 100 - (1/14.0*100)
   end
 
 end

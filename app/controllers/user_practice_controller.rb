@@ -22,16 +22,24 @@ class UserPracticeController < ApplicationController
     end
 
     if !@current_user_practice.nil?
-      @progress = @current_user_practice.practice.progress - (1/14.0*100)
+      @progress = @current_user_practice.practice.progress
     end
   end
 
   # PATCH /user_practice/:id
   def update
+
+    #Si va hacia atrás no es necesario que haya respuesta
+    if params[:back] == 'back' and !params[:user_practice].present?
+      question_answer = nil
+    else
+      question_answer = params[:user_practice][:answer]
+    end
+
     @company = current_user.company
     @current_user_practice = UserPractice.find(params[:id])
     respond_to do |format|
-      if @current_user_practice.update(user_practice_params)
+      if @current_user_practice.update(answer:question_answer)
         format.html { redirect_to user_practice_index_path }
         format.js
       else

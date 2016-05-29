@@ -45,6 +45,7 @@ function toggle_rate(){
     if(this.value < 3){
       $('.star').fadeTo(200, 0);
       $('.added-value-title').fadeTo(200, 0);
+      $('.raty-cancel').click();
     }else{
       $('.star').fadeTo(200, 1);
       $('.added-value-title').fadeTo(200, 1);

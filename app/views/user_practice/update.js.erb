@@ -1,4 +1,12 @@
 function append_element(source, element_name) {
+  //Si la pŕactica ya está añadida se sale de la función
+  elems = cli.elements();
+  for(i in elems){
+    if(cli.element(elems[i]).businessObject.name == element_name){
+      return;
+    }
+  }
+
   var new_element = cli.append(source, 'bpmn:Task', '150,0');
   cli.setLabel(new_element, element_name);
   if (final_practice == true){
@@ -19,19 +27,28 @@ function save_diagram(final_element){
   });
 }
 
+
 <% source = @company.final_element %> //Last task added
 <% practice_name = @current_user_practice.practice.name %>  //Nombre de la práctica a añadir
 <% answer = @current_user_practice.answer %>  //Respuesta
 <% id = @current_user_practice.id %>  //Id
-<% @progress = @current_user_practice.practice.progress %>  //Id
 
 
-<% if UserPractice.exists?(id + 1) %>
-  <% @current_user_practice = UserPractice.find(id + 1)%>
-  final_practice = false;
+
+final_practice = false;
+<% if params[:next] == 'next' %>
+  <% if UserPractice.exists?(id + 1) %>
+    <% @current_user_practice = UserPractice.find(id + 1)%>
+    <% @progress = @current_user_practice.practice.progress %>
+  <% else %>
+    <% @current_user_practice = nil %>
+    final_practice = true;
+  <% end %>
 <% else %>
-  <% @current_user_practice = nil %>
-  final_practice = true;
+  <% if UserPractice.exists?(id - 1) and @current_user_practice.practice.id != 1 %>
+    <% @current_user_practice = UserPractice.find(id - 1)%>
+    <% @progress = @current_user_practice.practice.progress %>
+  <% end %>
 <% end %>
 
 //Get the next practice
