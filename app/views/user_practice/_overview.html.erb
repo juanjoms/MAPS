@@ -1,0 +1,48 @@
+<div class="survey-finished">
+  <h2 class="modal-title">Cuestionario terminado</h2>
+
+  <% if @current_user.is_sepg? %>
+    <div class="text-overview">
+      <p style="margin-bottom: 3px;">
+        Haz terminado el cuestionario, a continuación puedes:
+      </p>
+      <ul>
+        <li>Hacer click en alguna práctica para modificar su respuesta </li>
+        <li>Modificar el digrama antes de terminar</li>
+        <li>Terminar y guardar para continuar a los resultados</li>
+      </ul>
+    </div>
+  <% else %>
+    <p class="text-center">
+      Haz terminado el cuestionario, puedes hacer click en alguna <br>
+      práctica para modificar su respuesta o terminar el cuestionario.
+    </p> <br>
+  <% end %>
+
+  <table class="table table-striped table-bordered table-hover" style="width:auto;margin:0 auto;">
+    <thead>
+      <tr>
+         <th>ID</th> <th>Práctica</th> <th>Respuesta </th> <th> Valor </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_practices.each do |up| %>
+      <tr >
+        <td> <%= link_to up.practice.id, survey_path(id: up.practice.id) %> </td>
+        <td> <%= link_to up.practice.name, survey_path(id: up.practice.id) %> </td>
+        <td> <%= link_to up.answer==3 ? "Si":(up.answer==2 ?"No":"No sabe"), survey_path(id: up.practice.id) %> </td>
+       <td> <%= link_to up.added_value, survey_path(id: up.practice.id) %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <div class="text-center">
+    <% if @current_user.is_process_user? %>
+      <a id="completed_survey" class="btn btn-primary"> Terminar cuestionario </a>
+    <% else %>
+      <a id="save-diagram" class="btn btn-primary"> Terminar y guardar </a>
+    <% end %>
+  </div>
+</div>

@@ -25,6 +25,8 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip()
   $('body').on('click', '#save-diagram', save_diagram);
   $('body').on('click', '#completed_survey', completed_survey);
+  $('body').on('click', '#start-survey', start_survey);
+  id="start-survey"
 
   $('#company_employees_number').on('input', calc_sample_size );
 
@@ -39,6 +41,16 @@ $(document).ready(function(){
     $(this).children().toggleClass('fa-chevron-down');
   });
 });
+
+function start_survey(){
+  $('.loading').show();
+  window.location.href = "/survey";
+}
+
+function completed_survey(){
+  window.location.href = "/results";
+}
+
 
 function toggle_rate(){
   $('body').on('change', "input[type='radio']", function(){
@@ -67,7 +79,7 @@ function load_bpmn(diagramXML, company_name){
     if (err) { console.log(err); }
     canvas = bpmnjs.get('canvas');
     //canvas.zoom('fit-viewport');
-    canvas.zoom(1);
+    canvas.zoom(1);      
   });
   waitForCliToResize(company_name);
 }
@@ -96,11 +108,6 @@ function save_diagram(){
   });
   window.location.href = "/results";
 }
-
-function completed_survey(){
-  window.location.href = "/results";
-}
-
 
 function saveSVG(done) {
   console.log(bpmnjs.saveSVG(done));
@@ -220,21 +227,3 @@ function calc_sample_size(){
   var n = (N * variance_p * confidence_p) / ( error_p * (N-1) + (variance_p) * (confidence_p) );
   $('#sample-size').val(Math.round(n));
 }
-
-/*
-//Diagram my custom functions
-function add_element(element_name){
-  var element = 'StartEvent_15g66lo';
-  var new_element = cli.append(element, 'bpmn:Task', '150,0');
-  cli.setLabel(new_element, element_name);
-}
-
-$(document).on("ajax:success", "form#up_form", function(e, data){
-  add_element("Practica 1");
-  //console.log(data.practice.id);
-});
-
-$(document).on("ajax:error", "form#up_form", function(e, data){
-  console.log(data);
-});
-*/

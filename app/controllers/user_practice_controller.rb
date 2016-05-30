@@ -13,12 +13,16 @@ class UserPracticeController < ApplicationController
       @diagramXML = @company.as_is_diagram.squish
     end
 
-    user_practices = UserPractice.where(user_id: current_user.id)
-    user_practices.each do |up|
+    @user_practices = UserPractice.where(user_id: current_user.id)
+    @user_practices.each do |up|
       if up.answer.nil?
         @current_user_practice = up
         break
       end
+    end
+
+    if !params[:id].nil?
+      @current_user_practice = @user_practices.where(practice_id: params[:id]).first
     end
 
     if !@current_user_practice.nil?
@@ -37,6 +41,7 @@ class UserPracticeController < ApplicationController
     end
 
     @company = current_user.company
+    @user_practices = UserPractice.where(user_id: current_user.id)
     @current_user_practice = UserPractice.find(params[:id])
     respond_to do |format|
       if @current_user_practice.update(answer:question_answer)
@@ -57,6 +62,15 @@ class UserPracticeController < ApplicationController
     end
   end
 
+  def text_answer(answer)
+    if answer == 3
+      return "Si"
+    elsif answer == 2
+        return "No"
+    else
+      return "No sabe"
+    end
+  end
 
   private
   def association_complete!

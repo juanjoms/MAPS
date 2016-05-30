@@ -1,28 +1,7 @@
 <% if @current_user_practice.nil? %>
-  <% if @current_user.is_process_user? %>
-    <div class="questions-finished">
-      <h2 class="modal-title">Cuestionario terminado</h2>
-      <p>
-        Has terminado de calificar prácticas,<br>
-        puedes regresar a alguna pregunta o terminar el cuestionario.
-      </p>
-      <br>
-      <a id="completed_survey" class="btn btn-primary"> Terminar cuestionario </a>
-    </div>
-
-  <% else %>
-    <div class="questions-finished">
-      <h2 class="modal-title">Cuestionario terminado</h2>
-      <p>
-        Has terminado de calificar prácticas,<br>
-        puedes modificar el diagrama antes de terminar y continuar a los resultados.
-      </p>    <br>
-      <a id="save-diagram" class="btn btn-primary"> Terminar y guardar </a>
-    </div>
-  <% end %>
-
-
+  <%= render 'overview' %>
 <% else %>
+
   <% @practice = @current_user_practice.practice %>
 
   <h2 class="modal-title">Identificación de Prácticas</h2>

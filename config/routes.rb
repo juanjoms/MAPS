@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :user_practice
   get 'survey', to: 'user_practice#index', as: :survey
+  post 'survey', to: 'user_practice#index', as: :survey_withpost
   get 'results', to:'results#index', as: :results
 
   #patch gasta menos ancho de banda que put, porque solo actuliza una porción del registro (en teoría)

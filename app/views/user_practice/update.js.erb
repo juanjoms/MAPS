@@ -1,8 +1,9 @@
 function append_element(source, element_name) {
+
   //Si la pŕactica ya está añadida se sale de la función
   elems = cli.elements();
   for(i in elems){
-    if(cli.element(elems[i]).businessObject.name == element_name){
+    if(cli.element(elems[i]).businessObject.name == element_name){      
       return;
     }
   }
@@ -34,19 +35,18 @@ function save_diagram(final_element){
 <% id = @current_user_practice.id %>  //Id
 
 
-
 final_practice = false;
 <% if params[:next] == 'next' %>
-  <% if UserPractice.exists?(id + 1) %>
-    <% @current_user_practice = UserPractice.find(id + 1)%>
+  <% if @user_practices.exists?(id + 1) %>
+    <% @current_user_practice = @user_practices.find(id + 1)%>
     <% @progress = @current_user_practice.practice.progress %>
   <% else %>
     <% @current_user_practice = nil %>
     final_practice = true;
   <% end %>
 <% else %>
-  <% if UserPractice.exists?(id - 1) and @current_user_practice.practice.id != 1 %>
-    <% @current_user_practice = UserPractice.find(id - 1)%>
+  <% if @user_practices.exists?(id - 1) %>
+    <% @current_user_practice = @user_practices.find(id - 1)%>
     <% @progress = @current_user_practice.practice.progress %>
   <% end %>
 <% end %>
