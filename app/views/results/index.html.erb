@@ -127,6 +127,12 @@
               <td class="condensed"><%= techtool[0] %></td>
               <td class="condensed"><%= techtool[1] %></td>
               <td class="condensed">
+                <ul>
+                  <% techtool[3][:easy].each do |tt| %>
+                    <li> <%= tt %> </li>
+                  <% end %>
+                </ul>
+                <!-- Pending, waiting for Meredith work
                 <table class="table table-nested">
                   <tr>
                     <th> Sencillas </th>
@@ -136,7 +142,6 @@
                       <% end %>
                     </td>
                   </tr>
-
                   <tr>
                     <th> Punto medio </th>
                     <td>
@@ -145,7 +150,6 @@
                       <% end %>
                     </td>
                   </tr>
-
                   <tr>
                     <th> Complicadas </th>
                     <td>
@@ -155,6 +159,7 @@
                     </td>
                   </tr>
                 </table>
+              -->
               </td>
             </tr>
             <% end %>

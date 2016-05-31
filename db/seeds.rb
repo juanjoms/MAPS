@@ -182,108 +182,124 @@ Una vez elegidos los ítems que se van a desarrollar en el Sprint, el ScrumMaste
 
 ##Técnicas y herramientas ligeras
 #Practice 1
-TechniqueTool.create(practice_id:1, name: "Juicio experto", complexity:0, approach:1)
-TechniqueTool.create(practice_id:1, name: "COCOMO", complexity:2, approach:1)
-TechniqueTool.create(practice_id:1, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:1, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:1, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
-TechniqueTool.create(practice_id:1, name: "Consectetur adipisicing elit", complexity:1, approach:1)
-TechniqueTool.create(practice_id:1, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+TechniqueTool.create(practice_id:1, name: "Plantillas WBS de proyectos previos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:1, name: "Información Histórica", complexity:0, approach:1)
+TechniqueTool.create(practice_id:1, name: "Descomposición que comprende la subdivisión en entregables y subentregables", complexity:0, approach:1)
 
-#Practica 2
-TechniqueTool.create(practice_id:2, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:2, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:2, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:2, name: "Consectetur adipisicing elit", complexity:1, approach:0)
-TechniqueTool.create(practice_id:2, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+#Practice 2
+TechniqueTool.create(practice_id:2, name: "Información Histórica", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Juicio de especialistas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Información Histórica", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Líneas de código o puntos función para el software", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Número/ complejidad de requerimientos para la ingeniería de sistemas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Estimaciones Top-Down", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Estimaciones Bottom-Up", complexity:0, approach:1)
+TechniqueTool.create(practice_id:2, name: "Plantillas en donde se describan las actividades, recursos de habilidad, tiempo y esfuerzo requerido, identificación de riesgos", complexity:0, approach:1)
 
 #Practice 3
-TechniqueTool.create(practice_id:3, name: "Juicio experto", complexity:0, approach:1)
-TechniqueTool.create(practice_id:3, name: "COCOMO", complexity:2, approach:1)
-TechniqueTool.create(practice_id:3, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:3, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:3, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
-TechniqueTool.create(practice_id:3, name: "Consectetur adipisicing elit", complexity:1, approach:1)
-TechniqueTool.create(practice_id:3, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+TechniqueTool.create(practice_id:3, name: "Subdividir el proyecto en componentes más pequeños y manejables para soporte de las actividades del proyecto (planificación, ejecución, control y término)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:3, name: "Plantilla WBS pueden ser usadas como plantillas para nuevos proyectos", complexity:0, approach:1)
 
+#Practice 4
+TechniqueTool.create(practice_id:4, name: "Información Histórica", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Juicio de especialistas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Estimación Top-Down", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Estimaciones Bottom-Up", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Tormenta de ideas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Pensamiento colateral", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Métodos de estimación de costos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Modelo paramétrico", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Herramientas estadísticas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:4, name: "Herramientas de simulación", complexity:0, approach:1)
 
-#Practica 4
-TechniqueTool.create(practice_id:4, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:4, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:4, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:4, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
-TechniqueTool.create(practice_id:4, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
-
-#Practica 5
-TechniqueTool.create(practice_id:5, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:5, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:5, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:5, name: "Consectetur adipisicing elit", complexity:1, approach:0)
-TechniqueTool.create(practice_id:5, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+#Practice 5
+TechniqueTool.create(practice_id:5, name: "Métodos de diagramas de precedencia (PDM)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Métodos de diagramación de flechas (ADM)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Métodos de diagramación condicional (Técnica de revisión y evaluación gráfica GERT)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Método de ruta crítica (CPM)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Técnicas de revisión y evaluación de Programas (PERT)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Análisis What-if", complexity:0, approach:1)
+TechniqueTool.create(practice_id:5, name: "Gráficas de Gantt", complexity:0, approach:1)
 
 #Practice 6
-TechniqueTool.create(practice_id:6, name: "Juicio experto", complexity:0, approach:1)
-TechniqueTool.create(practice_id:6, name: "COCOMO", complexity:2, approach:1)
-TechniqueTool.create(practice_id:6, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:6, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Entrevistas estructuradas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Tormenta de Ideas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Revisión estructurada de documentación", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Delphi (Recolección de Información) ", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Análisis de fortalezas, debilidades, oportunidades y Amenazas (SOWT)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Taxonomía de Riesgos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Valoraciones de Riesgos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Listas de comprobación", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Diagrama de Fishbone", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Matriz de probabilidad / rango de impacto del riesgo", complexity:0, approach:1)
+TechniqueTool.create(practice_id:6, name: "Definición de puntos de revisión y responsabilidades para evaluar riesgos", complexity:0, approach:1)
 
-#Practica 7
-TechniqueTool.create(practice_id:7, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:7, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:7, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:7, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
-TechniqueTool.create(practice_id:7, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+#Practice 7
+TechniqueTool.create(practice_id:7, name: "Habilidades de Comunicación", complexity:0, approach:1)
+TechniqueTool.create(practice_id:7, name: "Sistemas manuales de archivos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:7, name: "Bases de datos electrónicas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:7, name: "Software de gestión de proyectos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:7, name: "Formas estandarizadas o plantillas", complexity:0, approach:1)
 
 #Practice 8
-TechniqueTool.create(practice_id:8, name: "Juicio experto", complexity:0, approach:1)
-TechniqueTool.create(practice_id:8, name: "COCOMO", complexity:2, approach:1)
-TechniqueTool.create(practice_id:8, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:8, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:8, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
-TechniqueTool.create(practice_id:8, name: "Consectetur adipisicing elit", complexity:1, approach:1)
-TechniqueTool.create(practice_id:8, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "Juicio de especialistas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "Estimación Top-down", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "Estimación Bottom-down", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "Descomposición (en tareas, roles y responsabilidades)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:8, name: "Juicio de especialistas", complexity:0, approach:1)
+
+#Practice 9
+TechniqueTool.create(practice_id:9, name: "Actividades de construcción de equipos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Habilidades de gestión general", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Sistemas de reconocimiento y recompensas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Disposición", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Información histórica", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Personal y nuevas contrataciones", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Formación interna", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Formación externa", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Adquisición de habilidades externas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:9, name: "Sistemas de reconocimiento y recompensas", complexity:0, approach:1)
+
+#Practice 10
+TechniqueTool.create(practice_id:10, name: "Prácticas de recursos humanos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Teoría organizacional", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Análisis de las partes interesadas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Análisis de información necesaria de varias las partes interesadas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Conjunto de métodos y tecnologías que proporcionen información necesaria", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Matriz de asignación de actividades (RAM)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:10, name: "Histogramas de recursos", complexity:0, approach:1)
 
 
-#Practica 9
-TechniqueTool.create(practice_id:9, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:9, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:9, name: "Consectetur adipisicing elit", complexity:1, approach:0)
-TechniqueTool.create(practice_id:9, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
-
-#Practica 10
-TechniqueTool.create(practice_id:10, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:10, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:10, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:10, name: "Consectetur adipisicing elit", complexity:1, approach:0)
-TechniqueTool.create(practice_id:10, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
-
-#Practica 11
-TechniqueTool.create(practice_id:11, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:11, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:11, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:11, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:11, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
-TechniqueTool.create(practice_id:11, name: "Consectetur adipisicing elit", complexity:1, approach:0)
-TechniqueTool.create(practice_id:11, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+#Practice 11
+TechniqueTool.create(practice_id:11, name: "Metodología de planificación del proyecto", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Conocimiento y habilidades del la parte interesada", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Sistemas de Gestión del proyecto (PMIS)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Gestión del valor ganado (EVM)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Formas estandarizadas o plantillas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Sistemas de Gestión del proyecto (PMIS)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:11, name: "Simulaciones", complexity:0, approach:1)
 
 #Practice 12
-TechniqueTool.create(practice_id:12, name: "Juicio experto", complexity:0, approach:1)
-TechniqueTool.create(practice_id:12, name: "COCOMO", complexity:2, approach:1)
-TechniqueTool.create(practice_id:12, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:12, name: "Lorem ipsum dolor sit amet", complexity:2, approach:1)
-TechniqueTool.create(practice_id:12, name: "Consectetur adipisicing elit", complexity:1, approach:1)
+TechniqueTool.create(practice_id:12, name: "Revisión estructurada de documentación", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Análisis de fortalezas, debilidades, oportunidades y Amenazas (SOWT)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Taxonomía de Riesgos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Valoraciones de Riesgos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Modelos de funcionamiento", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Modelos de costos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Análisis de red", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Análisis de factor de calidad", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Gráficas de Gantt", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Listas de Comprobación (Checklists)", complexity:0, approach:1)
+TechniqueTool.create(practice_id:12, name: "Lluvia de Ideas", complexity:0, approach:1)
 
+#Practice 13
+TechniqueTool.create(practice_id:13, name: "Identificación de alternativas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:13, name: "Tormenta de ideas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:13, name: "Pensamiento colateral", complexity:0, approach:1)
+TechniqueTool.create(practice_id:13, name: "Estimaciones análogas (top-down)", complexity:0, approach:1)
 
-#Practica 13
-TechniqueTool.create(practice_id:13, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:13, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:13, name: "Método delphi", complexity:1, approach:1)
-TechniqueTool.create(practice_id:13, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:13, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
-
-#Practica 14
-TechniqueTool.create(practice_id:14, name: "Juicio experto", complexity:0, approach:2)
-TechniqueTool.create(practice_id:14, name: "COCOMO", complexity:2, approach:2)
-TechniqueTool.create(practice_id:14, name: "Planning poker", complexity:2, approach:1)
-TechniqueTool.create(practice_id:14, name: "Lorem ipsum dolor sit amet", complexity:2, approach:0)
-TechniqueTool.create(practice_id:14, name: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", complexity:0, approach:2)
+#Practice 14
+TechniqueTool.create(practice_id:14, name: "Prácticas de recursos humanos", complexity:0, approach:1)
+TechniqueTool.create(practice_id:14, name: "Juicio de especialistas", complexity:0, approach:1)
+TechniqueTool.create(practice_id:14, name: "Plantillas WBS", complexity:0, approach:1)
+TechniqueTool.create(practice_id:14, name: "Información Histórica", complexity:0, approach:1)
