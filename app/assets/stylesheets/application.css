@@ -479,6 +479,14 @@ de las que se utilizan actualizarlas
 	fill: #f2dede !important;
 }
 .bpmn-icon-task{ display: none !important; }
+.agile-overlay{
+	width: 75px;
+	font-size: 10px;
+	background-color: #3484B7;
+	color: white;
+	padding: 4px;
+	border-radius: 4px;
+}
 
 /** Display errors **/
 #error_explanation{

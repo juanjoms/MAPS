@@ -79,7 +79,7 @@ function load_bpmn(diagramXML, company_name){
     if (err) { console.log(err); }
     canvas = bpmnjs.get('canvas');
     //canvas.zoom('fit-viewport');
-    canvas.zoom(1);      
+    canvas.zoom(1);
   });
   waitForCliToResize(company_name);
 }
@@ -165,7 +165,6 @@ function delete_lane_if_empty(){
       }
     }
   }
-
 }
 
 function remove_practice(practice){
@@ -187,20 +186,23 @@ function remove_practice(practice){
 
 function change_practice(p_old, p_new){
   var elements = cli.elements();
+  var overlays = bpmnjs.get('overlays');
+  var agileOverlay = '<div class="agile-overlay"><i class="fa fa-tag"></i> Práctica ágil </div>';
 
   for(i in elements){
     var elem = cli.element(elements[i]);
 
     if(p_old == elem.businessObject.name){
       cli.setLabel(elem, p_new);
+      overlays.add(elements[i], { position: { bottom: -3, right: 50 }, html: agileOverlay });
       break;
     }
   }
 }
 
 /* Resize canvas:
-  Aumenta el tamaño del div para
-  que aparesca el scroll bar */
+Aumenta el tamaño del div para
+que aparesca el scroll bar */
 function resize_canvas(scrollLeft){
   var elems = cli.elements();
   width = 0;
@@ -208,12 +210,12 @@ function resize_canvas(scrollLeft){
     if(elems[i].startsWith("Participant")){
       var elem = cli.element(elems[i]);
       if (width < elem.width + 100)
-        width = elem.width + 100;
+      width = elem.width + 100;
     }
   }
   $("#canvas").width(width + "px");
   if(scrollLeft)
-    $(".scroll-canvas").scrollLeft(width);
+  $(".scroll-canvas").scrollLeft(width);
 }
 
 
