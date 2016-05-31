@@ -180,7 +180,7 @@ meeting:'Sprint Planning Meeting #1', ingredients:'* El Product Backlog estimado
 Una vez elegidos los ítems que se van a desarrollar en el Sprint, el ScrumMaster le pregunta al equipo si se compromete a entregar dichos ítems.', duration: '60 minutos por semana de Sprint.')
 
 
-##Técnicas y herramientas ligeras
+##Técnicas y herramientas
 #Practice 1
 TechniqueTool.create(practice_id:1, name: "Plantillas WBS de proyectos previos", complexity:0, approach:1)
 TechniqueTool.create(practice_id:1, name: "Información Histórica", complexity:0, approach:1)

@@ -583,7 +583,7 @@ td.condensed{ padding: 0px !important; }
 	background-color: #fafafa;
 	border: 1px solid #ddd;
 	border-radius: 4px;
-	padding: 7px;
+	padding: 7px 10px;
 	cursor: pointer;
 
 	font-family: 'Raleway', sans-serif;
