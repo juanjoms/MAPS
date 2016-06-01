@@ -6,11 +6,12 @@
   rails new project_name    #Crear proyecto
   rails server              #Iniciar servidor en localhost:3000
 
-  rake db:create            #Crear base de datos
-  rake db:migrate           #Actualizar los modelos y migraciones
-  rake db:rollback         #Resetear última migracióon
-  rake db:purge            #Lose all data and start again
-  rake db:seed              #Insertar datos de prueba
+  rake db:create          #Crear base de datos
+  rake db:migrate         #Actualizar los modelos y migraciones
+  rake db:rollback        #Resetear última migracióon
+  rake db:purge           #Lose all data and start again
+  rake db:seed            #Insertar datos de prueba
+  rake db:setup           #does db:create, db:schema:load, db:seed
 
   #Generar un controlador con sus respectiva vista
   rails generate controller controller_name
