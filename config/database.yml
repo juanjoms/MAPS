@@ -17,8 +17,9 @@ test:
   <<: *default
   database: test
 
+#Don't do this anymore
 production:
   <<: *default
   database: MAPS_production
-  username: MAPS
-  password: <%= ENV['MAPS_DATABASE_PASSWORD'] %>
+  username: root
+  password: root
