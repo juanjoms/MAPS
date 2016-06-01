@@ -26,7 +26,6 @@ $(document).ready(function(){
   $('body').on('click', '#save-diagram', save_diagram);
   $('body').on('click', '#completed_survey', completed_survey);
   $('body').on('click', '#start-survey', start_survey);
-  id="start-survey"
 
   $('#company_employees_number').on('input', calc_sample_size );
 

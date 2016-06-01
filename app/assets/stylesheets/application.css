@@ -189,8 +189,8 @@ body {
 .loading{
 	display: none;
 	position: absolute;
-	bottom: 10px;
-	right: 30px;
+	top: 50%;
+	left: 44%;
 }
 
 /**quote**/

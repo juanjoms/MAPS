@@ -71,17 +71,19 @@
         <div class="modal-body">
           <div class="container-modal">
             <div class="text-center">
-              <%= image_tag('interface_questions', width: '1050')  %>
+              <%= image_tag('interface_questions', width: '1020')  %>
+
+              <div class="loading">                
+                <i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </div>
+
             </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" id="start-survey" >Comenzar cuestionario</button>
-        <div class="loading">
-          <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-          <span class="sr-only">Loading...</span>
-        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -11,6 +11,9 @@ gem 'jquery-turbolinks', '2.1.0'
 gem 'font-awesome-rails', '4.6.1.0'
 #Gravatar
 gem 'gravtastic', '3.2.6'
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.13', '< 0.5'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
