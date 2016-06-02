@@ -1,25 +1,14 @@
 <% if user_signed_in? %>
 <!--welcome user_signed_in -->
-<div class="welcome">
-  <div class="container">
-    <h1 class="text-head">¡Bienvenid@ <%= current_user.name %>!</h1><br>
-    <p><b>MAPS.</b> Es un método para aligerar procesos de software mediante la optimización en la selección de pŕacticas de Ingeniería de Software. Las prácticas utilizadas en esta aplicación pertenecen al área de proceso de Planificación de Proyecto.</p>
-    <ul>
-      <li>
-        Para comenzar a utilizar el método ve a
-        <button type="button" name="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalInterface"  >
-          Iniciar método
-          <i class="fa fa-caret-right" aria-hidden="true"></i>
-        </button>
-        donde verás las instrucciones para la identificación de prácticas.
-      </li>
-      <li>
-        Para conocer más sobre el funcionamiento del método visita el enlace: <%= link_to "Acerca del método", about_path %>.
-      </li>
-    </ul>
+
+  <div class="welcome">
+    <div class="container">
+      <h1 class="text-head">¡Bienvenid@ <%= current_user.name %>!</h1><br>
+      <p><b>MAPS.</b> Es un método para aligerar procesos de software mediante la optimización en la selección de pŕacticas de Ingeniería de Software. Las prácticas utilizadas en esta aplicación pertenecen al área de procesos: Planificación de Proyecto.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modalInterface">Iniciar método »</a></p>
     </div>
   </div>
-  <!--welcome ends-->
+    <!--welcome ends-->
 
   <% else %>
 
@@ -65,7 +54,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
           <div class="text-head-interface">
-            Funcionamiento de la interfaz para la identificación de prácticas:
+            Funcionamiento de la interfaz:
           </div>
         </div>
         <div class="modal-body">

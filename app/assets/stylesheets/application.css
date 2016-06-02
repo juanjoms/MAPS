@@ -171,23 +171,19 @@ body {
   background:none;
 }
 .welcome{
-	padding-top: 78px;
-  padding-bottom: 200px;
-	margin-bottom: 30px;
-	background-color: #f5f5f5;
-}
-.welcome .container{
-	width: 970px;
+	font-size: 21px;
+	padding-top: 48px;
+  padding-bottom: 48px;
+	margin-bottom: 125px;
+	background-color: #eee;
 }
 .welcome .text-head{
-	color:#777;
+	color:#666;
+	font-size: 40px;
 }
 .welcome p{
 	text-align:justify;
 	margin-bottom: 15px;
-}
-.welcome .btn-group-xs>.btn, .btn-xs {
-	font-size: 14px;
 }
 .loading{
 	display: none;
