@@ -23,14 +23,16 @@ ActiveRecord::Schema.define(version: 20160521062242) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",             limit: 255
-    t.text     "description",      limit: 65535
-    t.text     "as_is_diagram",    limit: 65535
-    t.text     "final_diagram",    limit: 65535
-    t.integer  "employees_number", limit: 4
-    t.datetime "created_at",                                                    null: false
-    t.datetime "updated_at",                                                    null: false
-    t.string   "final_element",    limit: 255,   default: "StartEvent_0gwlf1v"
+    t.string   "name",               limit: 255
+    t.text     "description",        limit: 65535
+    t.text     "as_is_diagram",      limit: 65535
+    t.text     "final_diagram",      limit: 65535
+    t.integer  "employees_number",   limit: 4
+    t.integer  "process_experience", limit: 4
+    t.integer  "spi_experience",     limit: 4
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.string   "final_element",      limit: 255,   default: "StartEvent_0gwlf1v"
   end
 
   create_table "overall_averages", force: :cascade do |t|

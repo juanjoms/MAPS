@@ -53,13 +53,24 @@ class UserPracticeController < ApplicationController
     end
   end
 
+  #POST
   def create
     @company = current_user.company
-    if @company.update({as_is_diagram: params['xml_diagram'], final_element: params['fe']})
-      render :json => { response:"diagram saved" } # send back any data if necessary
+    if !params['fe'].nil?
+      if @company.update({as_is_diagram: params['xml_diagram'], final_element: params['fe']})
+        render :json => { response:"diagram saved" } # send back any data if necessary
+      else
+        render :json => { response: "Diagram not saved" }, :status => 500
+      end
     else
-      render :json => { response: "Diagram not saved" }, :status => 500
+      if @company.update({as_is_diagram: params['xml_diagram']})
+        render :json => { response:"diagram saved" } # send back any data if necessary
+      else
+        render :json => { response: "Diagram not saved" }, :status => 500
+      end
     end
+
+
   end
 
   def text_answer(answer)

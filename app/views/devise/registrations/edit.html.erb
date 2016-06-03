@@ -22,18 +22,23 @@
 
 
     <!-- Empresa -->
-    <div class="form-group">
+    <div class="input-group" style="margin-bottom:0px;">
+      <span class="input-group-addon"><i class="fa fa-building fa-fw"></i></span>
       <%= f.collection_select(:company_id, Company.all, :id, :name,
       {:prompt => "Seleccione su empresa:"}, {class: "form-control"}) %>
-      <%= link_to "Agregar empresa", new_company_path %>
     </div>
 
-    <!-- Puesto -->
-    <div class="form-group">
-      <%= f.select(:position, [['Usuario del proceso', 1], ['Encargado de Mejoras (SEPG)', '2']],
-      {:prompt => "Seleccione su puesto:"}, {class: "form-control"}) %>      
-
+    <div class="input-group">
+      <%= link_to "Agregar empresa", new_company_path, class:'field', style:'margin-top:50px;' %>
     </div>
+
+    <!-- Rol -->
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user-md fa-fw"></i></span>
+      <%= f.select(:position, [['Usuario del proceso', 1], ['Encargado de Mejoras (SEPG)', 2]],
+      {:prompt => "Seleccione su rol:"}, {class: "form-control"}) %>
+    </div>
+
 
     <!-- Email -->
     <div class="input-group">

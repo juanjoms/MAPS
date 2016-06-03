@@ -92,7 +92,6 @@ function waitForCliToResize(company_name){
   else{ setTimeout(function(){ waitForCliToResize(company_name); },250); }
 }
 
-
 function save_diagram(){
   bpmnjs.saveXML(function(err, xml){
     $.ajax({
@@ -100,9 +99,7 @@ function save_diagram(){
       type: "POST",
       data: {xml_diagram: xml},
       success: function(resp){ console.log("Diagram saved"); },
-      error: function(){
-        console.err("Error al guardar diagrama");
-      }
+      error: function(){ console.err("Error al guardar diagrama"); }
     });
   });
   window.location.href = "/results";

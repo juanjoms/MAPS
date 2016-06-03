@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to root_path      
+      redirect_to root_path
       flash[:notice] = "Organización creada correctamente"
     else
       render :new
@@ -61,6 +61,6 @@ class CompaniesController < ApplicationController
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def company_params
-    params.require(:company).permit(:name, :description, :employees_number)
+    params.require(:company).permit(:name, :description, :process_experience, :employees_number)
   end
 end

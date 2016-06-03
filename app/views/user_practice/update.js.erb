@@ -1,9 +1,8 @@
 function append_element(source, element_name) {
-
   //Si la pŕactica ya está añadida se sale de la función
   elems = cli.elements();
   for(i in elems){
-    if(cli.element(elems[i]).businessObject.name == element_name){      
+    if(cli.element(elems[i]).businessObject.name == element_name){
       return;
     }
   }

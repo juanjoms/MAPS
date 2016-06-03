@@ -23,6 +23,15 @@
     <%= f.text_area :description, class: 'form-control', :placeholder => 'Descripción...' %>
   </div>
 
+  <!-- Puesto -->
+  <!-- Experiencia en procesos -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-list-alt fa-fw"></i></span>
+    <%= f.select(:process_experience, [['No', 1], ['Menos de 1 año', 2], ['Menos de 3 años', 3], ['Más de 3 años', 4], ],
+    {:prompt => "Experiencia en el uso de procesos:"}, {class: "form-control"}) %>
+  </div>
+
+
   <!-- Numero de empleados -->
   <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
