@@ -1,6 +1,6 @@
 $.fn.raty.defaults.half = false;
 $.fn.raty.defaults.halfShow = true;
-$.fn.raty.defaults.path = "<%= asset_path %>";
+$.fn.raty.defaults.path = '';
 $.fn.raty.defaults.cancel = false;
 
 $(function(){
@@ -23,7 +23,7 @@ function setRatyStar(){
       half:        $half,
       halfShow:    $halfShow,
       single:      $single,
-      path:        $(this).attr('data-star-path'),
+      path:        '', //$(this).attr('data-star-path'),
       starOn:      $(this).attr('data-star-on'),
       starOff:     $(this).attr('data-star-off'),
       starHalf:    $(this).attr('data-star-half'),
