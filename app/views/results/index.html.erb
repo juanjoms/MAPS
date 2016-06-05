@@ -1,7 +1,17 @@
 <!--results starts-->
 <div class="section-padding">
   <div class="container">
-    <h1 class="text-head">Resultados</h1>
+
+    <div class="results-title">
+      <h1 class="text-head">Resultados</h1>
+
+      <a class="btn btn-default print" href="#" onclick="window.print()">
+        <i class="fa fa-print fa-lg" aria-hidden="true"></i>
+        <span class="sr-only">Imprimir resultados</span>
+        Imprimir
+      </a>
+
+    </div>
     <% if !@complete_sample %>
       <p class="p-completed">
         Se requiere una muestra de <%= @sample %> empleados para la empresa <b><%= @company.name %></b>.  <br>
@@ -18,13 +28,13 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>ID</th><th>Práctica</th><th>Valor</th><th>Rango</th><th>Análisis del valor</th>
+              <th>ID</th><th>Práctica</th><th>Valor</th><th class="ph" >Rango</th><th>Análisis del valor</th>
             </tr>
           </thead>
           <tbody>
             <% for val in @value_matrix %>
             <tr class="<%= val[5] %>">
-              <td><%= val[0] %></td><td><%= val[1] %></td><td><%= "%.2f" % val[2] %></td><td><%= val[3] %></td><td><%= val[4] %></td>
+              <td><%= val[0] %></td><td><%= val[1] %></td><td><%= "%.2f" % val[2] %></td><td class="ph"><%= val[3] %></td><td><%= val[4] %></td>
             </tr>
             <% end %>
           </tbody>
@@ -40,17 +50,17 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
+              <th class="ph">ID</th>
               <th>Práctica</th>
               <th>Soporte</th>
               <th>Práctica de Scrum</th>
-              <th>Guías</th>
+              <th class="ph">Guías</th>
             </tr>
           </thead>
           <tbody>
             <% for scrum in @scrum_matrix %>
             <tr>
-              <td><%= scrum[0] %></td>
+              <td class="ph"><%= scrum[0] %></td>
               <td><%= scrum[1] %></td>
               <td class="text-center">
                 <i class="<%= scrum[2] %>" data-toggle="tooltip" title="<%= scrum[3] %>" aria-hidden="true" ></i>
@@ -58,7 +68,7 @@
               <td>
                 <%= scrum[4]  %>
               </td>
-              <td>
+              <td class="ph">
                 <% if scrum[5] != 0 %>
                 <button type="button" name="button" class="btn btn-primary btn-sm show-guides" >
                   Ver guías
@@ -72,9 +82,10 @@
                 <% end %>
               </td>
             </tr>
+
             <!-- Guias -->
             <tr class="accordion-row">
-              <td></td><td></td>
+              <td class="ph"></td><td class="ph"></td>
               <td colspan="3">
                 <table class="table-nested" style="width:640px;">
                   <tr>
@@ -141,7 +152,7 @@
 
       <br><hr>
       <!-- Rediseño del proceso -->
-      <div class="redesign-process-head">
+      <div class="redesign-head">
         <h2 class="text-head-h2"> Proceso rediseñado </h2>
         <div class="redesign-export">
           <a id="save_svg_diagram" class="btn btn-default" href="#" title="Descargar diagrama (SVG)">

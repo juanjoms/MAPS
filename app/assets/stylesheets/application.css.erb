@@ -9,8 +9,8 @@
 * compiled file so the styles you add here take precedence over styles defined in any styles
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
-*= require_tree .
 *= require font-awesome
+*= require_tree
 *= require_self
 */
 
@@ -24,7 +24,7 @@ h1, h2, h3, h4, p{
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
+	display: block;
 }
 .section-padding { padding:30px 0px; }
 
@@ -42,19 +42,19 @@ body {
 /** Main titles **/
 .text-head  /* h1 */
 {
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-size: 36px;
-  padding: 0px 0 10px 0;
-  color: #999;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	font-size: 36px;
+	padding: 0px 0 10px 0;
+	color: #999;
 }
 .text-head::after {
-  display: block;
-  margin: 10px auto 0px;
-  width: 70px;
-  height: 1px;
-  background: #19A9E5 none repeat scroll 0% 0%;
-  content: "";
+	display: block;
+	margin: 10px auto 0px;
+	width: 70px;
+	height: 1px;
+	background: #19A9E5 none repeat scroll 0% 0%;
+	content: "";
 }
 .text-head-h2{
 	font-family: 'Raleway', sans-serif;
@@ -63,7 +63,7 @@ body {
 	color: #666;
 }
 .text-head-h3{
-  font-size: 18px;
+	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0;
 }
@@ -72,105 +72,105 @@ body {
 	font-weight: bold;
 }
 .modal-title{
-  margin-top: 15px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-size: 28px;
-  color: #999;
+	margin-top: 15px;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	font-size: 28px;
+	color: #999;
 }
 .modal-title::after {
-  display: block;
-  margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 	margin-bottom: 30px;
-  width: 70px;
-  height: 1px;
-  background: #19A9E5 none repeat scroll 0% 0%;
-  content: "";
+	width: 70px;
+	height: 1px;
+	background: #19A9E5 none repeat scroll 0% 0%;
+	content: "";
 }
 
 
 /**header**/
 #header
 {
-  background-color: #fff;
+	background-color: #fff;
 }
 .navbar-default{
-  background-color: #fff !important;
+	background-color: #fff !important;
 	background-color: #fafafa !important;
-  border-bottom: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  color: #9AD22D;
+	color: #9AD22D;
 	background-color: #fafafa;
 }
 .navbar-default .navbar-brand  {
-  font-family: 'Oswald', sans-serif;
-  font-size: 24px;
-  color: #9AD22D;
+	font-family: 'Oswald', sans-serif;
+	font-size: 24px;
+	color: #9AD22D;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #A4A6A5;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: 'Open Sans Condensed', sans-serif;
+	color: #A4A6A5;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .navbar-default .navbar-nav > li > a:hover
 {
-  color: #9AD22D;
+	color: #9AD22D;
 }
 .img-grav{
-  vertical-align: middle;
-  width: 28px;
-  margin-right: 5px;
+	vertical-align: middle;
+	width: 28px;
+	margin-right: 5px;
 }
 .banner
 {
 	/* background: url('/assets/bannerbg.jpg') no-repeat 0% 0% / 100% 100%; */
 	background: url(<%= asset_path 'bannerbg.jpg' %>) no-repeat 0% 0% / 100% 100%;
 
-  padding-bottom: 131px;
+	padding-bottom: 131px;
 	line-height: 1;
 }
 .banner-text p, .banner-text a{
-  font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .banner-text a{
-  font-weight: 14px;
+	font-weight: 14px;
 }
 .banner-text h2
 {
-  font-family: 'Raleway', serif;
-  color: #ffffff;
-  font-size: 48px;
-  padding: 131px 0 10px 0;
+	font-family: 'Raleway', serif;
+	color: #ffffff;
+	font-size: 48px;
+	padding: 131px 0 10px 0;
 }
 .banner-text h2 span
 {
-  color: #9AD22D;
+	color: #9AD22D;
 }
 .banner-text p {
-  font-size: 24px;
-  color: #fcffff;
-  padding-bottom: 10px;
+	font-size: 24px;
+	color: #fcffff;
+	padding-bottom: 10px;
 }
 .banner-text a
 {
-  font-size: 18px;
-  text-decoration: none;
-  padding: 10px 30px;
-  border-radius: 71px;
-  background-color: #9AD22D;
-  margin-top: 10px;
-  display: inline-block;
-  color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 10px 30px;
+	border-radius: 71px;
+	background-color: #9AD22D;
+	margin-top: 10px;
+	display: inline-block;
+	color: #fff;
 }
 .banner-text a:hover
 {
-  color:#fff;
+	color:#fff;
 }
 .navbar-default {
-  background:none;
+	background:none;
 }
 .welcome{
 	font-size: 21px;
@@ -201,84 +201,84 @@ body {
 /**quote**/
 #quote-desc
 {
-  padding: 40px 0px;
+	padding: 40px 0px;
 }
 .desc-text p {
-  font-size: 30px;
-  font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
 	line-height: 1.1;
 }
 .desc-author p{
 	font-size: 22px;
-  font-family: 'Monserrat', sans-serif;
+	font-family: 'Monserrat', sans-serif;
 	color: #999;
 	margin-top: 5px;
 }
 .banner-text p span {
-  display: block;
+	display: block;
 }
 
 
 .input-group{
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 /**contact**/
 #contact h2{
 	font-family: "Raleway",sans-serif;
-  color: #0e0e0e;
-  font-size: 24px;
-  padding-bottom: 12px;
+	color: #0e0e0e;
+	font-size: 24px;
+	padding-bottom: 12px;
 	margin-top: 10px;
 }
 #contact .form-group{
-  font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .form-group input, .form-group textarea
 {
-  background-color: rgba(25, 169, 229, 0.26);
+	background-color: rgba(25, 169, 229, 0.26);
 }
 .form-group textarea
 {
-  height:150px;
-  resize:none;
+	height:150px;
+	resize:none;
 }
 #contact label {
-  color: #0e0e0e;
+	color: #0e0e0e;
 }
 label{ font-weight: normal; }
 
 
 .small-address p
 {
-  color:	#0e0e0e;
-  font-size:	20px;
-  padding-top: 5px;
-  font-family: 'Open Sans Condensed', sans-serif;
+	color:	#0e0e0e;
+	font-size:	20px;
+	padding-top: 5px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .small-address p i{
-  color:	#9AD22D;
-  width:30px;
-  height: 30px;
-  ight: 50px;
+	color:	#9AD22D;
+	width:30px;
+	height: 30px;
+	ight: 50px;
 }
 
 /** modals **/
 #modalLogin .modal-dialog,
 #modalRegister .modal-dialog{
-  width: 350px;
+	width: 350px;
 }
 #modalInterface .modal-dialog{
-  width: 1200px;
+	width: 1200px;
 }
 #modalInterface .modal-body{
-  padding: 0;
+	padding: 0;
 }
 .modal-content{
 	border-radius: 3px;
 }
 .devise-forms{
-  width: 300px;
-  margin: 0 auto;
+	width: 300px;
+	margin: 0 auto;
 }
 
 .field{
@@ -303,9 +303,9 @@ a.forgot {
 .rd-btn label {
 	margin-bottom: 0;
 	color: #999;
-  width: 150px;
-  border-radius: 3px;
-  border: 1px solid #D1D3D4
+	width: 150px;
+	border-radius: 3px;
+	border: 1px solid #D1D3D4
 }
 input.radio{ margin: 0;}
 /* hide input */
@@ -350,118 +350,60 @@ input.radio:checked ~ label:before {
 input.radio:checked ~ label { color: #777; }
 input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 
-/*  Hay que revisar todas las medias, ver cuales no se están utilizando, y
-de las que se utilizan actualizarlas
-*/
+
 /**media Queries**/
-@media (min-width: 768px) and (max-width: 980px)
-{
-  .sub-text h3
-  {
-    font-size: 28px;
-  }
-  .sub-text p
-  {
-    font-size: 14px;
-  }
-  .img-portfolio
-  {
-    padding-bottom: 5px;
-  }
+@media print {
+	.nav, .footer, .print, .redesign-head, .ph, .accordion .fa, #bpmn{
+		display: none;
+	}
+	.accordion-body, .accordion-row{
+		display: block !important;
+		height: auto !important;
+	}
+	.table td{
+		font-size: 12px;
+	}
+	.accordion-row td, .accordion-row th{
+		font-size: 8px !important;
+	}
+	.accordion-row{
+		display: table-row !important;
+	}
+	.accordion{
+		border-radius: 0 !important;
+		background-color: #ddd !important;
+		border-color: #999 !important;
+		-webkit-print-color-adjust: exact;
+	}
+	.accordion-body{
+		border-color: #999 !important;
+	}
 }
 @media (min-width:360px ) and (max-width: 768px)
 {
-  .banner-text h2 {
-    font-size: 41px;
-    padding: 100px 0px 10px;
-  }
-  .quote-desc p {
-    font-size: 30px;
-    padding: 30px 0px;
-  }
-  .large-box h3 {
-    font-size: 25px;
-  }
-  .sub-icon i
-  {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 100px;
-  }
-  .sub-text h3 {
-    padding-top: 20px;
-    font-size: 25px;
-  }
-  .sub-text p
-  {
-    font-size: 14px;
-  }
-  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
-  {
-    margin-bottom: 20px;
-  }
-  .small-address p {
-    font-size: 15px;
-  }
-  .btn-default {
-    padding: 4px 5px;
-  }
-  .text-contact h3 {
-    font-size: 20px;
-  }
-  .text-address h3 {
-    font-size: 24px;
-  }
-  .footer-line p {
-    font-size: 11px;
-  }
+	.banner-text h2 {
+		font-size: 41px;
+		padding: 100px 0px 10px;
+	}
+	.small-address p {
+		font-size: 15px;
+	}
+	.btn-default {
+		padding: 4px 5px;
+	}
 }
 @media (min-width:30px ) and (max-width: 360px)
 {
-  .banner-text h2 {
-    font-size: 32px;
-    padding: 50px 0px 10px;
-  }
-  .quote-desc p {
-    font-size: 18px;
-    padding: 30px 0px;
-  }
-  .large-box h3 {
-    font-size: 22px;
-  }
-  .sub-icon i
-  {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 100px;
-  }
-  .sub-text h3 {
-    padding-top: 20px;
-    font-size: 25px;
-  }
-  .btn-default {
-    padding: 4px 5px;
-  }
-  .sub-text p
-  {
-    font-size: 14px;
-  }
-  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
-  {
-    margin-bottom: 20px;
-  }
-  .small-address p {
-    font-size: 15px;
-  }
-  .text-contact h3 {
-    font-size: 20px;
-  }
-  .text-address h3 {
-    font-size: 22px;
-  }
-  .footer-line p {
-    font-size: 10px;
-  }
+	.banner-text h2 {
+		font-size: 32px;
+		padding: 50px 0px 10px;
+	}
+	.btn-default {
+		padding: 4px 5px;
+	}
+	.small-address p {
+		font-size: 15px;
+	}
 }
 
 
@@ -480,7 +422,7 @@ de las que se utilizan actualizarlas
 .highlight:not(.djs-connection) .djs-visual > :nth-child(1) {
 	stroke: #E85D45 !important;
 	stroke-width: 2 !important;
-  /*fill: #f5f5f5 !important; /* color elements as gray */
+	/*fill: #f5f5f5 !important; /* color elements as gray */
 	fill: #f2dede !important;
 }
 .bpmn-icon-task{ display: none !important; }
@@ -495,12 +437,12 @@ de las que se utilizan actualizarlas
 
 /** Display errors **/
 #error_explanation{
-  padding: 15px;
-  margin-bottom: 20px;
-  color: #a94442;
-  border: 1px solid transparent;
-  background-color: #f2dede;
-  border-radius: 4px;
+	padding: 15px;
+	margin-bottom: 20px;
+	color: #a94442;
+	border: 1px solid transparent;
+	background-color: #f2dede;
+	border-radius: 4px;
 }
 #error_explanation h2 { display: none; }
 #error_explanation ul li{ list-style: none; }
@@ -515,25 +457,7 @@ de las que se utilizan actualizarlas
 	font-weight: bold;
 	clear: both;
 	margin-top: 15px;
-	/*margin-top: 50px;*/
 }
-
-/* Overview */
-/*
-.survey-finished .table th,
-.survey-finished .table td{
-	border-color: #98bf21 !important;
-}
-*/
-/*
-.survey-finished .table thead{
-	background-color: #a7c942;
-	color:white;
-}
-.survey-finished .table tbody>tr:nth-of-type(odd) {
-	background-color: #eaf2d3
-}
-*/
 
 .survey-finished .table tbody tr:hover {
 	text-decoration: underline;
@@ -605,17 +529,25 @@ td.condensed{ padding: 0px !important; }
 }
 
 .accordion-body {
-		display: none;
-    padding: 18px;
-		border-radius: 0 0 4px 4px;
-		border: 1px solid #eaeaea;
-		border-top: none;
+	display: none;
+	padding: 18px;
+	border-radius: 0 0 4px 4px;
+	border: 1px solid #eaeaea;
+	border-top: none;
 }
 .accordion-row {
 	display: none;
 }
 
-.redesign-process-head{
+.results-title{
+	position: relative;
+}
+.results-title .print{
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+}
+.redesign-head{
 	position: relative;
 }
 .redesign-export{
@@ -632,9 +564,9 @@ td.condensed{ padding: 0px !important; }
 	width: 100%;
 	border-top: 1px solid #eaeaea;
 	font-size: 14px;
-  background-color: #f5f5f5;
+	background-color: #f5f5f5;
 	position: absolute;
-  bottom: 0;
+	bottom: 0;
 }
 
 .footer p a:hover {

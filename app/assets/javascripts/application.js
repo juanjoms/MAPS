@@ -126,7 +126,6 @@ function setEncoded(link, name, data) {
       'href': 'data:application/bpmn20-xml;charset=UTF-8,' + encodedData,
       'download': name
     });
-
   }
 }
 
