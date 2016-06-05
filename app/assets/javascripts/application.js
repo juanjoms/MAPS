@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
@@ -27,6 +15,10 @@ $(document).ready(function(){
   $('body').on('click', '#completed_survey', completed_survey);
   $('body').on('click', '#start-survey', start_survey);
 
+  $('body').on('click', '#save_xml_diagram', save_xml_diagram);
+  $('body').on('click', '#save_svg_diagram', save_svg_diagram);
+
+
   $('#company_employees_number').on('input', calc_sample_size );
 
   $('.accordion').click(function(){
@@ -41,16 +33,17 @@ $(document).ready(function(){
   });
 });
 
+/* Iniciar cuesetionario */
 function start_survey(){
   $('.loading').show();
   window.location.href = "/survey";
 }
-
+/* Terminar cuesetionario */
 function completed_survey(){
   window.location.href = "/results";
 }
 
-
+/* No mostrar starRating cunado se selecciona No o No sabe */
 function toggle_rate(){
   $('body').on('change', "input[type='radio']", function(){
     if(this.value < 3){
@@ -64,6 +57,7 @@ function toggle_rate(){
   });
 }
 
+/* Cargar diagrama */
 var bpmnjs, canvas;
 function load_bpmn(diagramXML, company_name){
   var BpmnViewer = window.BpmnJS;
@@ -83,6 +77,7 @@ function load_bpmn(diagramXML, company_name){
   waitForCliToResize(company_name);
 }
 
+/* Esperar que carque el modulo cli para poder modificar el diagrama */
 function waitForCliToResize(company_name){
   if(typeof cli !== "undefined")
   {
@@ -92,6 +87,7 @@ function waitForCliToResize(company_name){
   else{ setTimeout(function(){ waitForCliToResize(company_name); },250); }
 }
 
+/* Guardar diagrama (en la base de datos) */
 function save_diagram(){
   bpmnjs.saveXML(function(err, xml){
     $.ajax({
@@ -105,14 +101,33 @@ function save_diagram(){
   window.location.href = "/results";
 }
 
-function saveSVG(done) {
-  console.log(bpmnjs.saveSVG(done));
+/* Guardar diagrama (como XML) */
+function save_xml_diagram(e) {
+  var xml_link = $('#save_xml_diagram');
+  bpmnjs.saveXML({format: true }, function(err, xml){
+    setEncoded(xml_link, 'diagram.bpmn', err? null : xml);
+    xml_link.removeClass('active');
+  });
+}
+/* Guardar diagrama (como SVG) */
+function save_svg_diagram(link){
+  var svg_link = $('#save_svg_diagram');
+  bpmnjs.saveSVG(function(err, svg){
+    setEncoded(svg_link, 'diagram.svg', err ? nll: svg);
+    svg_link.removeClass('active');
+  });
 }
 
-function saveDiagram(done) {
-  bpmnjs.saveXML({ format: true }, function(err, xml) {
-    done(err, xml);
-  });
+
+function setEncoded(link, name, data) {
+  var encodedData = encodeURIComponent(data);
+  if (data) {
+    link.addClass('active').attr({
+      'href': 'data:application/bpmn20-xml;charset=UTF-8,' + encodedData,
+      'download': name
+    });
+
+  }
 }
 
 missing_lane = "";

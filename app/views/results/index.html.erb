@@ -132,34 +132,6 @@
                     <li> <%= tt %> </li>
                   <% end %>
                 </ul>
-                <!-- Pending, waiting for Meredith work
-                <table class="table table-nested">
-                  <tr>
-                    <th> Sencillas </th>
-                    <td>
-                      <% techtool[3][:easy].each do |tt| %>
-                      <%= tt %><br>
-                      <% end %>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> Punto medio </th>
-                    <td>
-                      <% techtool[3][:medium].each do |tt| %>
-                      <%= tt %><br>
-                      <% end %>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> Complicadas </th>
-                    <td>
-                      <% techtool[3][:hard].each do |tt| %>
-                      <%= tt %><br>
-                      <% end %>
-                    </td>
-                  </tr>
-                </table>
-              -->
               </td>
             </tr>
             <% end %>
@@ -169,9 +141,19 @@
 
       <br><hr>
       <!-- Rediseño del proceso -->
-      <h2 class="text-head-h2">
-        Proceso rediseñado
-      </h2>
+      <div class="redesign-process-head">
+        <h2 class="text-head-h2"> Proceso rediseñado </h2>
+        <div class="redesign-export">
+          <a id="save_svg_diagram" class="btn btn-default" href="#" title="Descargar diagrama (SVG)">
+            <i class="fa fa-picture-o fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Descargar diagrama (SVG)</span>
+          </a>
+          <a id="save_xml_diagram" class="btn btn-default" href="#" title="Descargar diagrama (XML)">
+            <i class="fa fa-download fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Descargar diagrama (XML)</span>
+          </a>
+        </div>
+      </div>
 
       <!-- render bpmn -->
       <div id="bpmn">
