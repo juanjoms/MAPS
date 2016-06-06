@@ -5,7 +5,7 @@
   <div class="container">
     <h1 class="text-head">¡Bienvenid@ <%= current_user.name %>!</h1><br>
     <p><b>MAPS.</b> Es un método para aligerar procesos de software mediante la optimización en la selección de pŕacticas de Ingeniería de Software. Las prácticas utilizadas en esta aplicación pertenecen al área de procesos: Planificación de Proyecto.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modalInterface">Iniciar método »</a></p>
+    <p><a class="btn btn-primary btn-lg" href="survey" id="start-survey">Iniciar método »</a></p>
   </div>
 </div>
     <!--welcome ends-->
@@ -42,39 +42,3 @@
     </div>
   </div>
   <!--quote ends-->
-
-
-
-
-  <!-- interfaz indentificación de prácticas -->
-
-  <div id="modalInterface" class="modal fade">
-    <div class="modal-dialog" style="margin-top:10px;" >
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <div class="text-head-interface">
-            Funcionamiento de la interfaz:
-          </div>
-        </div>
-        <div class="modal-body">
-          <div class="container-modal">
-            <div class="text-center">
-              <%= image_tag "interface_questions.png", width: '1020', alt: "Interfaz para contestar preguntas" %>
-
-              <div class="loading">
-                <i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
-                <span class="sr-only">Loading...</span>
-              </div>
-
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="start-survey" >Comenzar cuestionario</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- Login ends -->

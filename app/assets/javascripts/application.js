@@ -21,7 +21,8 @@ $(document).ready(function(){
 
   $('#company_employees_number').on('input', calc_sample_size );
 
-  $('.accordion').click(function(){
+  $('.accordion').click(function(){a
+
     $(this).next().slideToggle();
     $(this).children().toggleClass('fa-caret-up');
     $(this).toggleClass('open');
@@ -36,10 +37,10 @@ $(document).ready(function(){
 /* Iniciar cuesetionario */
 function start_survey(){
   $('.loading').show();
-  window.location.href = "/survey";
 }
 /* Terminar cuesetionario */
 function completed_survey(){
+  $('.loading').show();
   window.location.href = "/results";
 }
 
@@ -89,16 +90,16 @@ function waitForCliToResize(company_name){
 
 /* Guardar diagrama (en la base de datos) */
 function save_diagram(){
+  $('.loading').show();
   bpmnjs.saveXML(function(err, xml){
     $.ajax({
       url: "/user_practice",
       type: "POST",
       data: {xml_diagram: xml},
-      success: function(resp){ console.log("Diagram saved"); },
-      error: function(){ console.err("Error al guardar diagrama"); }
+      success: function(resp){ window.location.href = "/results";  },
+      error: function(){ window.location.href = "/results"; }
     });
   });
-  window.location.href = "/results";
 }
 
 /* Guardar diagrama (como XML) */

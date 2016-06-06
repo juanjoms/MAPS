@@ -193,9 +193,15 @@ body {
 }
 .loading{
 	display: none;
+	background: rgba(230, 230, 230, 0.5);
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 10px;
 	position: absolute;
-	top: 50%;
-	left: 44%;
+	left: 50%;
+	top: 330px;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
 }
 
 /**quote**/
@@ -267,12 +273,6 @@ label{ font-weight: normal; }
 #modalRegister .modal-dialog{
 	width: 350px;
 }
-#modalInterface .modal-dialog{
-	width: 1200px;
-}
-#modalInterface .modal-body{
-	padding: 0;
-}
 .modal-content{
 	border-radius: 3px;
 }
@@ -280,7 +280,6 @@ label{ font-weight: normal; }
 	width: 300px;
 	margin: 0 auto;
 }
-
 .field{
 	font-size: 14px;
 }
