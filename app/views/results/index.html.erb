@@ -5,20 +5,32 @@
     <div class="results-title">
       <h1 class="text-head">Resultados</h1>
 
-      <a class="btn btn-default print" href="#" onclick="window.print()">
-        <i class="fa fa-print fa-lg" aria-hidden="true"></i>
-        <span class="sr-only">Imprimir resultados</span>
-        Imprimir
-      </a>
+      <% if @complete_sample and !@no_diagram %>
+        <a class="btn btn-default print" href="#" onclick="window.print()">
+          <i class="fa fa-print fa-lg" aria-hidden="true"></i>
+          <span class="sr-only">Imprimir resultados</span>
+          Imprimir
+        </a>
+      <% end %>
 
     </div>
-    <% if !@complete_sample %>
-      <p class="p-completed">
-        Se requiere una muestra de <%= @sample %> empleados para la empresa <b><%= @company.name %></b>.  <br>
-        Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados.
-      </p>
-    <% else %>
 
+    <% if !@complete_sample %>
+      <div class="text-center">
+        <div class="alert alert-info d-completed" >
+          Se requiere una muestra de <%= @sample %> empleados para la empresa <b><%= @company.name %></b>.  <br>
+          Faltan <%= @sample - @cont_users %> personas de responder el cuestionario para poder calcular los resultados. <br>
+        </div>
+      </div>
+    <% elsif @no_diagram %>
+      <div class="text-center">
+        <div class="alert alert-warning d-completed" >
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <%= @no_diagram %>
+        </div>
+      </div>
+    <% else %>
+    
       <!-- Valor añadido -->
       <div class="accordion">
         Análisis del valor añadido

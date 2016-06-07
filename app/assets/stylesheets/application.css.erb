@@ -308,7 +308,7 @@ a.forgot {
 }
 input.radio{ margin: 0;}
 /* hide input */
-input.radio:empty {	margin-left: -999px; }
+input.radio:empty {	margin-left: -999px;}
 input.radio:empty ~ label {
 	position: relative;
 	float: left;
@@ -445,11 +445,17 @@ input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 }
 #error_explanation h2 { display: none; }
 #error_explanation ul li{ list-style: none; }
-.alert-info{ margin-top: 15px;}
+.alert{ margin-top: 15px;}
 
 /* Preguntas */
 .question{ line-height: 1.3; }
 .question_examples{ font-size: 16px; color: #777; }
+.warning-options{
+	display: none;
+	position: absolute;
+	top: 28px;
+	right: 150px;
+}
 .mtop{ margin-top:10px;}
 .star, #hintStars{ display: inline-block; }
 .added-value-title{
@@ -476,10 +482,10 @@ input.radio:focus ~ label:before { box-shadow: 0 0 0 3px #999; }
 	width: 700px;
 }
 
-.p-completed{
-	margin-top: 15px;
+.d-completed{
+	display: inline-block;
+	padding: 15px 50px;
 	text-align: center;
-	font-size: 18px;
 }
 
 /* Resultados */

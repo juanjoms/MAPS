@@ -4,8 +4,6 @@ class ResultsController < ApplicationController
 
   def index
     @company = current_user.company
-    @diagramXML = @company.as_is_diagram.squish
-
 
     #Cálculo del tamaño muestral
     eN = @company.employees_number
@@ -28,6 +26,13 @@ class ResultsController < ApplicationController
       @complete_sample = true
     else
       return
+    end
+
+    #Checo que se creó el diagrama: el SEPG modeló el proceso
+    if @company.as_is_diagram.nil?
+      @no_diagram = "Aún no se ha diagramado el proceso de la empresa."
+    else
+      @diagramXML = @company.as_is_diagram.squish
     end
 
     @value_matrix = []  #Added value array

@@ -3,6 +3,11 @@
   <div class="rd-btn"> <%= f.radio_button(:answer, 3, class:"radio") %> <%= f.label(:answer_3, "Sí") %> </div>
   <div class="rd-btn"> <%= f.radio_button(:answer, 2, class:"radio") %> <%= f.label(:answer_2, "No") %> </div>
   <div class="rd-btn"> <%= f.radio_button(:answer, 1, class:"radio") %> <%= f.label(:answer_1, "No sabe") %> </div>
+
+  <div class="alert alert-warning warning-options">
+    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+    Seleccione una<br>de estas opciones
+  </div>
   <div style="clear:both;"> </div>
   <div class="added-value-title" > Califica ésta práctica: </div>
 
@@ -15,7 +20,7 @@
     cancel_off: asset_path("cancel-off.png"),
     star_off: asset_path("star-off.png"),
     star_on: asset_path("star-on.png")
-  %>  
+  %>
 
   <div class="mtop">
 

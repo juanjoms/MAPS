@@ -17,7 +17,7 @@ $(document).ready(function(){
 
   $('body').on('click', '#save_xml_diagram', save_xml_diagram);
   $('body').on('click', '#save_svg_diagram', save_svg_diagram);
-
+  $('body').on('submit', "#up_form", validate_responses);
 
   $('#company_employees_number').on('input', calc_sample_size );
 
@@ -128,6 +128,14 @@ function setEncoded(link, name, data) {
       'download': name
     });
   }
+}
+
+/* Si no se selecciona ninguna respuesta se muestra alerta */
+function validate_responses(){
+  if ( !$("input[name='user_practice[answer]']:checked").val() ){
+    $('.warning-options').fadeIn();
+    return false;
+  }  
 }
 
 missing_lane = "";
