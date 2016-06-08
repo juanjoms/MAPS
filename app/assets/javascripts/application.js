@@ -21,7 +21,7 @@ $(document).ready(function(){
 
   $('#company_employees_number').on('input', calc_sample_size );
 
-  $('.accordion').click(function(){a
+  $('.accordion').click(function(){
 
     $(this).next().slideToggle();
     $(this).children().toggleClass('fa-caret-up');
@@ -135,7 +135,7 @@ function validate_responses(){
   if ( !$("input[name='user_practice[answer]']:checked").val() ){
     $('.warning-options').fadeIn();
     return false;
-  }  
+  }
 }
 
 missing_lane = "";

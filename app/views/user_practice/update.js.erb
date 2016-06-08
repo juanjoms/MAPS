@@ -3,6 +3,7 @@ function append_element(source, element_name) {
   elems = cli.elements();
   for(i in elems){
     if(cli.element(elems[i]).businessObject.name == element_name){
+      save_diagram(source);
       return;
     }
   }
@@ -59,6 +60,10 @@ $('#cuestionario').fadeOut(400, function(){
 
 
 //Añadiendo la práctica al diagrama
-<% if answer == 3 %>
-  append_element('<%= source %>', '<%= practice_name %>');
+<% if @current_user.is_sepg? %>
+  <% if answer == 3 %>
+    append_element('<%= source %>', '<%= practice_name %>');
+  <% else %>
+    save_diagram('<%= source %>');
+  <% end %>
 <% end %>
