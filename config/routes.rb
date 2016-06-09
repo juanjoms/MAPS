@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'welcome#contact', as: :contact
   get 'about', to:'welcome#about', as: :about
+  get 'encuesta', to:'welcome#encuesta', as: :encuesta
 
 
 

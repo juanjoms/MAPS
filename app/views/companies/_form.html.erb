@@ -31,6 +31,12 @@
     {:prompt => "Experiencia en el uso de procesos:"}, {class: "form-control"}) %>
   </div>
 
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-list-alt fa-fw"></i></span>
+    <%= f.select(:process_experience, [['Ninguna', 1], ['De 1 a 3', 2], ['De 3 a 5', 3], ['Más de 5', 4], ],
+    {:prompt => "Implementaciones de mejora (SPI) en las que ha participado:"}, {class: "form-control"}) %>
+  </div>
+
 
   <!-- Numero de empleados -->
   <div class="input-group">
