@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   def check_postion_sepg
     if self.position == 2
       sepgs = self.company.users.where(position:2)
-      errors.add(:position, "- Ya está registrado el siguiente encargado de mejoras: #{sepgs.first.name} ") if sepgs.exists?
+      errors.add(:position, "- Ya está registrado el siguiente encargado de mejoras: #{sepgs.first.name} ") if sepgs.exists? and sepgs.first.id != self.id
     end
   end
 
