@@ -30,7 +30,7 @@ class ResultsController < ApplicationController
 
     #Checo que se creó el diagrama: el SEPG modeló el proceso
     if @company.as_is_diagram.nil?
-      @no_diagram = "Aún no se ha diagramado el proceso de la empresa."
+      @no_diagram = "El encargado de mejoras aún no ha diagramado el proceso de la empresa."
     else
       @diagramXML = @company.as_is_diagram.squish
     end

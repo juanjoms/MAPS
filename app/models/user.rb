@@ -6,12 +6,22 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
+  validate :check_postion_sepg
+
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  def check_postion_sepg
+    if self.position == 2
+      sepgs = self.company.users.where(position:2)
+      errors.add(:position, "- Ya está registrado el siguiente encargado de mejoras: #{sepgs.first.name} ") if sepgs.exists?
+    end
+  end
 
   def has_profile_complete?
     (self.position != nil) and (self.company_id != nil)
