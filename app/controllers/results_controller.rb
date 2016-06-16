@@ -17,8 +17,8 @@ class ResultsController < ApplicationController
     #contestado es igual o mayor a la muestra
     @cont_users = 0
     @company.users.each do |user|
-      practice = UserPractice.where(user_id: user.id).last
-      if !practice.answer.nil?
+      up = UserPractice.where(user_id: user.id).last
+      if !up.nil? and !up.answer.nil?
         @cont_users += 1
       end
     end
@@ -50,7 +50,7 @@ class ResultsController < ApplicationController
       av_list = []
       @company.users.each do |user|
         up = UserPractice.where('user_id': user.id, practice_id: practice.id).last
-        if !up.answer.nil?
+        if !up.nil? and !up.answer.nil?
           av_list.push(up.added_value)
         end
       end
