@@ -73,7 +73,7 @@ class ResultsController < ApplicationController
     ##################################
     @value_matrix.each do |p|
       #Practicas entre 26-75, o menores a 25 solo si son indispensable
-      if (p[2] > 25 and p[2] < 76) or (p[2] <= 25 and p[6] == 1)
+      if (p[2] > 25 and p[2] <= 75) or (p[2] <= 25 and p[6] == 1)
         scrump = ScrumPractice.where(practice_id: p[0]).last;
         @scrum_matrix.push([p[0], p[1], supported_class(scrump.supported), supported_tooltip(scrump.supported),
         scrump.name, scrump.supported, scrump.description, scrump.meeting, scrump.ingredients,
@@ -145,11 +145,11 @@ class ResultsController < ApplicationController
   end
 
   def value_anlys(index)
-    if index < 26
+    if index <= 25
       return "No aporta valor"
-    elsif index < 51
+    elsif index <= 50
       return "Aporta poco valor"
-    elsif index < 76
+    elsif index <= 75
       return "Aporta valor"
     else
       return "Mejor práctica"
@@ -158,11 +158,11 @@ class ResultsController < ApplicationController
   end
 
   def value_range(index)
-    if index < 26
+    if index <= 25
       return "1-25"
-    elsif index < 51
+    elsif index <= 50
       return "26-50"
-    elsif index < 76
+    elsif index <= 75
       return "51-75"
     else
       return "76-100"
@@ -170,11 +170,11 @@ class ResultsController < ApplicationController
   end
 
   def value_class(index)
-    if index < 26
+    if index <= 25
       return "danger"
-    elsif index < 51
+    elsif index <= 50
       return "warning"
-    elsif index < 76
+    elsif index <= 75
       return "info"
     else
       return "success"
