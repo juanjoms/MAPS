@@ -9,8 +9,14 @@
 | Rails    | 4.2.5                                 |
 | Gems     | See versions in the [Gemfile](Gemfile)|
 
-### Installation
-[How to install Ruby on Rails with rbenv on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
+### Installation:
+1. Install Ruby on Rails:   
+  [How to install Ruby on Rails with rbenv on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
+
+2. Install a mysql database:
+```
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+```
 
 
 * Configuration
