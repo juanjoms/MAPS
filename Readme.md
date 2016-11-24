@@ -1,9 +1,7 @@
 
 ## MAPS: A method for lightweight software processes
 
-### Steps to get the application up and running
-
-#### Dependences
+### Dependences
 
 | Software | Version                          |
 | -------- | ---------------------------------|
@@ -11,9 +9,7 @@
 | Rails    | 4.2.5                            |
 |          |                                  |
 
-* Ruby version
-
-* System dependencies
+- [How to install Ruby on Rails with rbenv on ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
 
 * Configuration
 
