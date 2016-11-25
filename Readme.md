@@ -29,6 +29,11 @@ cd MAPS
 bundle install
 ```
 
+5. Setup the databse (Create db, load schema, seed data):
+ ```
+rake db:setup
+```
+
 
 * Configuration
 
