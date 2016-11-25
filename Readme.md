@@ -11,20 +11,20 @@
 
 ### Installation:
 1. Install Ruby on Rails:   
-  [How to install Ruby on Rails with rbenv on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
+[How to install Ruby on Rails with rbenv on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
   
 2. Install a mysql database:
-```
+ ```
 sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 ```
 
 3. Clone the project in the local machine:
-```
+ ```
 git clone git://github.com/juanjo23/MAPS.git
 ```
 
 4. Install the required gems:
-```
+ ```
 cd MAPS
 bundle install
 ```
